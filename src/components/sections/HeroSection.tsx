@@ -1,0 +1,133 @@
+"use client";
+
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ChevronDown } from "lucide-react";
+import "@/lib/gsap-config";
+import { Button } from "../global/Button";
+
+const headline = "Strategic Clarity. Sustainable Growth.";
+
+function splitWords(text: string) {
+  return text.split(/\s+/).filter(Boolean);
+}
+
+export function HeroSection() {
+  const containerRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl.from(".hero-wordmark-wrap", {
+        y: 28,
+        opacity: 0,
+        duration: 0.85,
+      }).from(
+          ".hero-headline .word",
+          {
+            y: 72,
+            opacity: 0,
+            duration: 0.95,
+            stagger: 0.07,
+          },
+          "-=0.35",
+        )
+        .from(
+          ".hero-subheadline",
+          {
+            y: 28,
+            opacity: 0,
+            duration: 0.75,
+          },
+          "-=0.45",
+        )
+        .from(
+          ".hero-cta-group",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.55,
+          },
+          "-=0.35",
+        )
+        .from(
+          ".hero-scroll-indicator",
+          {
+            opacity: 0,
+            duration: 0.45,
+          },
+          "-=0.2",
+        );
+    },
+    { scope: containerRef },
+  );
+
+  const words = splitWords(headline);
+
+  return (
+    <section
+      ref={containerRef}
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 pt-28 md:px-14 md:pt-36 lg:px-20"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,#240818_0%,#0A0A0A_55%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+        }}
+        aria-hidden
+      />
+
+      <div className="relative z-10 flex max-w-3xl flex-col items-center text-center">
+        <div className="hero-wordmark-wrap mb-10 w-full max-w-lg md:mb-12">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/compasspoint-logotext.svg"
+            alt="Compass Point Advisory"
+            className="hero-wordmark-img mx-auto block h-auto w-full max-w-[min(100%,28rem)] cursor-default object-contain transition-transform duration-300 ease-out will-change-transform md:max-w-[32rem] hover:-translate-y-1.5"
+            style={{
+              filter:
+                "drop-shadow(0 4px 24px rgba(0,0,0,0.75)) drop-shadow(0 12px 40px rgba(212,165,116,0.22)) drop-shadow(0 2px 8px rgba(0,0,0,0.9))",
+            }}
+          />
+        </div>
+
+        <h1 className="hero-headline font-[family-name:var(--font-playfair)] text-5xl font-bold leading-tight tracking-tight text-[#F3F4F6] md:text-7xl">
+          {words.map((w, i) => (
+            <span key={i} className="word inline-block">
+              {w}
+              {i < words.length - 1 ? "\u00A0" : ""}
+            </span>
+          ))}
+        </h1>
+        <p className="hero-subheadline mt-8 max-w-2xl text-lg text-[#9CA3AF] md:text-xl">
+          Enterprise-grade advisory and investment strategy for ambitious SMEs and founders. Guided by
+          Amelia Ghofrany, Compass Point Advisory helps you navigate complexity and build businesses that are
+          ready for the next stage.
+        </p>
+        <div className="hero-cta-group mt-10 flex flex-col gap-4 sm:flex-row sm:gap-4">
+          <Button
+            onClick={() => document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Book a Strategy Session
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Explore Our Services
+          </Button>
+        </div>
+      </div>
+
+      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[#9CA3AF]">
+        <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
+        <ChevronDown className="h-6 w-6 animate-bounce" aria-hidden />
+      </div>
+    </section>
+  );
+}

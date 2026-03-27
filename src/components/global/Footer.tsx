@@ -1,0 +1,115 @@
+"use client";
+
+import { Mail } from "lucide-react";
+import { CONTACT_EMAIL, LINKEDIN_URL, mailtoHref } from "@/lib/contact";
+import { BRIGHT_PATH_CONTACT_URL } from "@/lib/site";
+import { BrandLockup } from "./BrandLockup";
+
+export function Footer() {
+  return (
+    <footer className="section-brand-plum text-[#F3F4F6]">
+      <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 py-16 md:px-14 lg:px-20">
+        <div className="grid gap-12 md:grid-cols-3">
+          <div className="space-y-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <BrandLockup variant="onPlum" clickable={false} />
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-[#E5E7EB]/90">
+              Strategic clarity and enterprise-grade advisory for ambitious SMEs and founders—guided by
+              Amelia Ghofrany.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-white/20 p-2 transition-colors hover:border-[#D4A574] hover:text-[#D4A574]"
+                aria-label="Amelia Ghofrany on LinkedIn"
+              >
+                <LinkedInGlyph className="h-5 w-5" />
+              </a>
+              <a
+                href={mailtoHref}
+                className="rounded-full border border-white/20 p-2 transition-colors hover:border-[#D4A574] hover:text-[#D4A574]"
+                aria-label={`Email ${CONTACT_EMAIL}`}
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#D4A574]">
+              Quick links
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {[
+                ["#about", "About"],
+                ["#services", "Services"],
+                ["#methodology", "Methodology"],
+                ["#testimonials", "Testimonials"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <a href={href} className="text-[#E5E7EB]/90 transition-colors hover:text-white">
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#D4A574]">
+              Contact
+            </h3>
+            <p className="text-sm text-[#E5E7EB]/90">
+              <a href={mailtoHref} className="hover:underline">
+                {CONTACT_EMAIL}
+              </a>
+            </p>
+            <form className="mt-6 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="footer-email" className="sr-only">
+                Email for newsletter
+              </label>
+              <input
+                id="footer-email"
+                type="email"
+                placeholder="Your email"
+                className="min-h-11 flex-1 rounded-md border border-white/20 bg-black/20 px-3 text-sm text-[#F3F4F6] placeholder:text-[#9CA3AF] focus:border-[#D4A574] focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="rounded-md border border-[#D4A574] bg-transparent px-4 py-2 text-sm font-medium text-[#D4A574] transition-colors hover:bg-[#D4A574] hover:text-[#0A0A0A]"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-black/20 bg-[#2A061F] py-4 text-center text-xs text-[#D1D5DB]/80">
+        <p>© {new Date().getFullYear()} Compass Point Advisory. All rights reserved.</p>
+        <p className="mt-2 text-[#B8BCC3]/90">
+          Built and maintained by{" "}
+          <a
+            href={BRIGHT_PATH_CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#E8C9A0] underline decoration-[#D4A574]/50 underline-offset-2 transition-colors hover:text-[#F3F4F6] hover:decoration-[#D4A574]"
+          >
+            Bright Path Creative
+          </a>
+          .
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+function LinkedInGlyph({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
