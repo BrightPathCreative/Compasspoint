@@ -13,13 +13,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium transition-all duration-300 md:text-base";
+    "inline-flex items-center justify-center rounded-md px-6 py-3 font-[family-name:var(--font-montserrat)] text-sm font-semibold transition-all duration-300 md:text-base";
 
   const variants = {
     primary:
-      "bg-[#D4A574] text-[#0A0A0A] hover:bg-[#E8C9A0] hover:scale-105 active:scale-100",
+      "bg-[var(--brand-gold)] text-[var(--brand-black)] hover:bg-[var(--accent-gold-hover)] hover:scale-105 active:scale-100",
     secondary:
-      "border border-[#D4A574] bg-transparent text-[#D4A574] hover:bg-[#D4A574] hover:text-[#0A0A0A]",
+      "border border-[var(--brand-gold)] bg-transparent text-[var(--brand-gold)] hover:bg-[var(--brand-gold)] hover:text-[var(--brand-black)]",
   };
 
   return (

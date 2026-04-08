@@ -1,25 +1,46 @@
 @import "tailwindcss";
 
-/* Logo-derived plum (Untitled design.png sampled) + champagne accents */
+/* CompassPoint Advisory — Brand Guide (Visual Edition) tokens */
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --bg-brand-plum: #440930;
-  --bg-accent: #440930;
-  --bg-accent-deep: #2a061f;
-  --accent-gold: #d4a574;
-  --accent-gold-light: #e8c9a0;
-  --hero-plum-tint: #240818;
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --border-subtle: #2a2a2a;
-  --neon-gold: rgba(212, 165, 116, 0.45);
-  --neon-cream: rgba(232, 201, 160, 0.35);
+  --brand-plum: #5b184c;
+  --brand-plum-deep: #3d1034;
+  --brand-plum-mid: #4a1539;
+  --brand-gold: #d4af37;
+  --brand-gold-bright: #ffd700;
+  --brand-gold-antique: #b8860b;
+  --brand-charcoal: #2e2e2e;
+  --brand-ivory: #f6f1e7;
+  --brand-black: #0a0a0a;
+
+  --bg-primary: var(--brand-black);
+  --bg-secondary: #161314;
+  --bg-brand-plum: var(--brand-plum);
+  --bg-accent: var(--brand-plum);
+  --bg-accent-deep: var(--brand-plum-deep);
+  --hero-plum-tint: #2a0f24;
+
+  --accent-gold: var(--brand-gold);
+  --accent-gold-light: #e8d4a8;
+  --accent-gold-hover: #e4c657;
+
+  --text-primary: var(--brand-ivory);
+  --text-secondary: rgba(246, 241, 231, 0.68);
+  --text-tertiary: rgba(246, 241, 231, 0.45);
+
+  --border-subtle: rgba(46, 46, 46, 0.85);
+  --border-gold-soft: rgba(212, 175, 55, 0.28);
+
+  --neon-gold: rgba(212, 175, 55, 0.4);
+  --neon-gold-bright: rgba(255, 215, 0, 0.22);
+  --neon-ivory: rgba(246, 241, 231, 0.2);
 }
 
 @theme inline {
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-lato);
+  --font-serif: var(--font-cormorant);
+  --font-heading: var(--font-cormorant);
+  --font-subheading: var(--font-cinzel);
+  --font-ui: var(--font-montserrat);
 }
 
 html {
@@ -29,24 +50,23 @@ html {
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-lato), system-ui, sans-serif;
 }
 
 .nav-scrolled {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(10, 10, 10, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border-subtle) !important;
 }
 
-/* Subtle paper-like grain on brand-plum sections (colour from asset; texture is CSS-only) */
 .section-brand-plum {
   background-color: var(--bg-brand-plum);
-  background-image: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 55%),
+  background-image: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.035) 0%, transparent 55%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
 }
 
 ::selection {
-  background: rgba(212, 165, 116, 0.35);
+  background: rgba(212, 175, 55, 0.35);
   color: var(--text-primary);
 }

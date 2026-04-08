@@ -1,25 +1,37 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Cinzel, Cormorant_Garamond, Lato, Montserrat } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { LenisProvider } from "@/components/global/LenisProvider";
 
-const inter = Inter({
-  variable: "--font-inter",
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+});
+
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Compass Point Advisory | Amelia Ghofrany",
   description:
-    "Strategic clarity and sustainable growth—enterprise-grade advisory and investment strategy for ambitious SMEs and founders.",
+    "Guiding businesses toward clarity, growth, and transformation—strategic advisory and investment strategy for ambitious SMEs and founders.",
 };
 
 export default function RootLayout({
@@ -28,8 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-AU" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full bg-[#0A0A0A]">
+    <html
+      lang="en-AU"
+      className={`${lato.variable} ${cormorant.variable} ${cinzel.variable} ${montserrat.variable} h-full antialiased`}
+    >
+      <body className="min-h-full bg-[var(--bg-primary)]">
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

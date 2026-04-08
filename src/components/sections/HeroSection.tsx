@@ -71,7 +71,7 @@ export function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 pt-28 md:px-14 md:pt-36 lg:px-20"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,#240818_0%,#0A0A0A_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,var(--hero-plum-tint)_0%,var(--brand-black)_55%)]"
         aria-hidden
       />
       <div
@@ -83,20 +83,19 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 flex max-w-3xl flex-col items-center text-center">
-        <div className="hero-wordmark-wrap mb-10 w-full max-w-lg md:mb-12">
+        <div className="hero-wordmark-wrap mb-8 w-full max-w-lg md:mb-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/compasspoint-logotext.svg"
             alt="Compass Point Advisory"
-            className="hero-wordmark-img mx-auto block h-auto w-full max-w-[min(100%,28rem)] cursor-default object-contain transition-transform duration-300 ease-out will-change-transform md:max-w-[32rem] hover:-translate-y-1.5"
-            style={{
-              filter:
-                "drop-shadow(0 4px 24px rgba(0,0,0,0.75)) drop-shadow(0 12px 40px rgba(212,165,116,0.22)) drop-shadow(0 2px 8px rgba(0,0,0,0.9))",
-            }}
+            className="hero-wordmark-img mx-auto block h-auto w-full max-w-[min(100%,28rem)] cursor-default object-contain transition-transform duration-300 ease-out will-change-transform md:max-w-[32rem] hover:-translate-y-1"
           />
+          <p className="mx-auto mt-6 max-w-md px-2 text-center font-[family-name:var(--font-montserrat)] text-[0.65rem] font-medium uppercase leading-relaxed tracking-[0.18em] text-[var(--text-secondary)] sm:text-xs md:tracking-[0.22em]">
+            Guiding businesses toward clarity, growth, and transformation
+          </p>
         </div>
 
-        <h1 className="hero-headline font-[family-name:var(--font-playfair)] text-5xl font-bold leading-tight tracking-tight text-[#F3F4F6] md:text-7xl">
+        <h1 className="hero-headline font-[family-name:var(--font-cormorant)] text-5xl font-bold leading-tight tracking-tight text-[var(--text-primary)] md:text-7xl">
           {words.map((w, i) => (
             <span key={i} className="word inline-block">
               {w}
@@ -104,7 +103,7 @@ export function HeroSection() {
             </span>
           ))}
         </h1>
-        <p className="hero-subheadline mt-8 max-w-2xl text-lg text-[#9CA3AF] md:text-xl">
+        <p className="hero-subheadline mt-8 max-w-2xl text-lg text-[var(--text-secondary)] md:text-xl">
           Enterprise-grade advisory and investment strategy for ambitious SMEs and founders. Guided by
           Amelia Ghofrany, Compass Point Advisory helps you navigate complexity and build businesses that are
           ready for the next stage.
@@ -124,7 +123,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[#9CA3AF]">
+      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 font-[family-name:var(--font-montserrat)] text-[var(--text-secondary)]">
         <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
         <ChevronDown className="h-6 w-6 animate-bounce" aria-hidden />
       </div>

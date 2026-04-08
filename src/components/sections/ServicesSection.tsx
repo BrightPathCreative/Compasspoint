@@ -56,11 +56,11 @@ export function ServicesSection() {
   );
 
   return (
-    <SectionWrapper id="services" ref={containerRef} className="bg-[#0A0A0A]">
-      <h2 className="text-center font-[family-name:var(--font-playfair)] text-3xl font-semibold text-[#F3F4F6] md:text-5xl">
+    <SectionWrapper id="services" ref={containerRef} className="bg-[var(--bg-primary)]">
+      <h2 className="text-center font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[var(--text-primary)] md:text-5xl">
         Our Expertise
       </h2>
-      <p className="mx-auto mt-6 max-w-3xl text-center text-base text-[#9CA3AF] md:text-lg">
+      <p className="mx-auto mt-6 max-w-3xl text-center text-base text-[var(--text-secondary)] md:text-lg">
         Enterprise-grade support across strategy, capital readiness, and leadership.
       </p>
 

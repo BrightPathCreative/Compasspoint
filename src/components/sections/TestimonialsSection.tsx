@@ -54,10 +54,10 @@ export function TestimonialsSection() {
 
   return (
     <SectionWrapper id="testimonials" ref={containerRef} className="section-brand-plum">
-      <h2 className="text-center font-[family-name:var(--font-playfair)] text-3xl font-semibold text-[#F3F4F6] md:text-5xl">
+      <h2 className="text-center font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[var(--text-primary)] md:text-5xl">
         What Our Clients Say
       </h2>
-      <p className="mx-auto mt-6 max-w-3xl text-center text-base text-[#9CA3AF]">
+      <p className="mx-auto mt-6 max-w-3xl text-center text-base text-[var(--text-secondary)]">
         Representative feedback from Amelia&apos;s advisory and coaching engagements.
       </p>
 
@@ -65,18 +65,20 @@ export function TestimonialsSection() {
         {quotes.map((q) => (
           <article
             key={q.name}
-            className="testimonial-card group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-gradient-to-b from-[#1a0a14]/80 to-[#140810]/90 p-6 shadow-[0_24px_64px_-32px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.05] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[#D4A574]/25 hover:shadow-[0_28px_70px_-28px_rgba(0,0,0,0.6)] md:p-8"
+            className="testimonial-card group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-gradient-to-b from-[color-mix(in_srgb,var(--brand-plum-deep)_75%,transparent)] to-[color-mix(in_srgb,var(--brand-plum)_80%,transparent)] p-6 shadow-[0_24px_64px_-32px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.05] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)]/25 hover:shadow-[0_28px_70px_-28px_rgba(0,0,0,0.6)] md:p-8"
           >
-            <div className="mb-4 flex items-center gap-2 text-[#D4A574]/90">
+            <div className="mb-4 flex items-center gap-2 text-[var(--brand-gold)]/90">
               <Quote className="h-6 w-6 shrink-0" strokeWidth={1.75} aria-hidden />
-              <span className="h-px flex-1 bg-gradient-to-r from-[#D4A574]/70 to-transparent" aria-hidden />
+              <span className="h-px flex-1 bg-gradient-to-r from-[var(--brand-gold)]/70 to-transparent" aria-hidden />
             </div>
-            <p className="flex-1 text-[0.95rem] leading-relaxed text-[#E5E7EB] md:text-[1.05rem]">{q.quote}</p>
+            <p className="flex-1 text-[0.95rem] leading-relaxed text-[color-mix(in_srgb,var(--brand-ivory)_92%,white)] md:text-[1.05rem]">
+              {q.quote}
+            </p>
             <footer className="mt-8 border-t border-white/[0.06] pt-6">
-              <p className="font-medium text-[#F3F4F6]">{q.name}</p>
-              <p className="mt-1 text-sm text-[#9CA3AF]">
+              <p className="font-[family-name:var(--font-montserrat)] font-medium text-[var(--text-primary)]">{q.name}</p>
+              <p className="mt-1 font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]">
                 {q.role}
-                <span className="text-[#6B7280]"> · </span>
+                <span className="text-[var(--text-tertiary)]"> · </span>
                 {q.org}
               </p>
             </footer>

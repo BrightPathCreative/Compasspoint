@@ -10,7 +10,7 @@ import { SectionWrapper } from "../global/SectionWrapper";
 const logos = ["Telstra", "Qantas", "TechCo", "ProServices", "GrowthLab"];
 
 const frame =
-  "rounded-2xl border border-[#D4A574]/20 bg-[#141414]/50 p-2 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.6)] ring-1 ring-white/[0.05] md:p-2.5";
+  "rounded-2xl border border-[var(--border-gold-soft)] bg-[var(--bg-secondary)]/50 p-2 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.6)] ring-1 ring-white/[0.05] md:p-2.5";
 
 export function AboutSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -93,13 +93,13 @@ export function AboutSection() {
   );
 
   return (
-    <SectionWrapper id="about" ref={containerRef} className="about-section bg-[#141414]">
+    <SectionWrapper id="about" ref={containerRef} className="about-section bg-[var(--bg-secondary)]">
       <div className="grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-20">
         <div ref={textRef} className="about-text order-2 lg:order-1">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-semibold text-[#F3F4F6] md:text-5xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[var(--text-primary)] md:text-5xl">
             Guiding Your True North.
           </h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-[#9CA3AF] md:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">
             <p>
               Amelia Ghofrany founded CompassPoint Advisory after more than two decades operating at the
               intersection of corporate strategy and entrepreneurial growth. Her career has spanned some of
@@ -124,7 +124,7 @@ export function AboutSection() {
             {logos.map((name) => (
               <span
                 key={name}
-                className="client-logo font-[family-name:var(--font-playfair)] text-sm font-semibold tracking-wide text-[#9CA3AF]"
+                className="client-logo font-[family-name:var(--font-montserrat)] text-sm font-semibold tracking-wide text-[var(--text-secondary)]"
               >
                 {name}
               </span>
@@ -154,7 +154,7 @@ export function AboutSection() {
                 />
               </div>
             </div>
-            <p className="w-full max-w-[min(100%,380px)] shrink-0 text-center text-sm text-[#6B7280] lg:text-right">
+            <p className="w-full max-w-[min(100%,380px)] shrink-0 text-center font-[family-name:var(--font-montserrat)] text-sm text-[var(--text-tertiary)] lg:text-right">
               Amelia Ghofrany — Compass Point Advisory.
             </p>
           </div>

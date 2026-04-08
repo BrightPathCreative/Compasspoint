@@ -32,12 +32,15 @@ export function Navbar() {
         <div className="mx-auto flex w-full max-w-[min(100%,1920px)] items-center justify-between px-8 md:px-14 lg:px-20">
           <NavbarLogo />
 
-          <nav className="hidden flex-1 items-center justify-center gap-10 lg:gap-12 md:flex" aria-label="Primary">
+          <nav
+            className="hidden flex-1 items-center justify-center gap-10 font-[family-name:var(--font-montserrat)] md:flex lg:gap-12"
+            aria-label="Primary"
+          >
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="relative text-sm font-medium text-[#9CA3AF] transition-colors hover:text-[#F3F4F6] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[#D4A574] after:transition-transform hover:after:scale-x-100"
+                className="relative text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--brand-gold)] after:transition-transform hover:after:scale-x-100"
               >
                 {l.label}
               </a>
@@ -55,7 +58,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="rounded-md p-2 text-[#F3F4F6] md:hidden"
+            className="rounded-md p-2 text-[var(--text-primary)] md:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
@@ -67,20 +70,20 @@ export function Navbar() {
 
       {open && (
         <div
-          className="fixed inset-0 z-40 flex flex-col bg-[#0A0A0A]/98 px-8 pb-12 pt-28 backdrop-blur-md md:hidden"
+          className="fixed inset-0 z-40 flex flex-col bg-[var(--brand-black)]/98 px-8 pb-12 pt-28 backdrop-blur-md md:hidden"
           role="dialog"
           aria-modal="true"
         >
-          <div className="mb-8 shrink-0 border-b border-[#2A2A2A] pb-6">
+          <div className="mb-8 shrink-0 border-b border-[var(--brand-charcoal)] pb-6">
             <NavbarLogo />
           </div>
-          <nav className="flex flex-1 flex-col gap-8 text-2xl font-[family-name:var(--font-playfair)] text-[#F3F4F6]">
+          <nav className="flex flex-1 flex-col gap-8 font-[family-name:var(--font-cinzel)] text-2xl text-[var(--text-primary)]">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-[#2A2A2A] pb-4"
+                className="border-b border-[var(--brand-charcoal)] pb-4"
               >
                 {l.label}
               </a>

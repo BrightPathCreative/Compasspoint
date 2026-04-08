@@ -7,14 +7,14 @@ import { BrandLockup } from "./BrandLockup";
 
 export function Footer() {
   return (
-    <footer className="section-brand-plum text-[#F3F4F6]">
+    <footer className="section-brand-plum text-[var(--text-primary)]">
       <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 py-16 md:px-14 lg:px-20">
         <div className="grid gap-12 md:grid-cols-3">
           <div className="space-y-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <BrandLockup variant="onPlum" clickable={false} />
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-[#E5E7EB]/90">
+            <p className="max-w-sm font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-secondary)]">
               Strategic clarity and enterprise-grade advisory for ambitious SMEs and founders—guided by
               Amelia Ghofrany.
             </p>
@@ -23,14 +23,14 @@ export function Footer() {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/20 p-2 transition-colors hover:border-[#D4A574] hover:text-[#D4A574]"
+                className="rounded-full border border-white/20 p-2 transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]"
                 aria-label="Amelia Ghofrany on LinkedIn"
               >
                 <LinkedInGlyph className="h-5 w-5" />
               </a>
               <a
                 href={mailtoHref}
-                className="rounded-full border border-white/20 p-2 transition-colors hover:border-[#D4A574] hover:text-[#D4A574]"
+                className="rounded-full border border-white/20 p-2 transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]"
                 aria-label={`Email ${CONTACT_EMAIL}`}
               >
                 <Mail className="h-5 w-5" />
@@ -39,10 +39,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#D4A574]">
+            <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wider text-[var(--brand-gold)]">
               Quick links
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 font-[family-name:var(--font-lato)] text-sm">
               {[
                 ["#about", "About"],
                 ["#services", "Services"],
@@ -50,7 +50,10 @@ export function Footer() {
                 ["#testimonials", "Testimonials"],
               ].map(([href, label]) => (
                 <li key={href}>
-                  <a href={href} className="text-[#E5E7EB]/90 transition-colors hover:text-white">
+                  <a
+                    href={href}
+                    className="text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                  >
                     {label}
                   </a>
                 </li>
@@ -59,10 +62,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#D4A574]">
+            <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wider text-[var(--brand-gold)]">
               Contact
             </h3>
-            <p className="text-sm text-[#E5E7EB]/90">
+            <p className="font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]">
               <a href={mailtoHref} className="hover:underline">
                 {CONTACT_EMAIL}
               </a>
@@ -75,11 +78,11 @@ export function Footer() {
                 id="footer-email"
                 type="email"
                 placeholder="Your email"
-                className="min-h-11 flex-1 rounded-md border border-white/20 bg-black/20 px-3 text-sm text-[#F3F4F6] placeholder:text-[#9CA3AF] focus:border-[#D4A574] focus:outline-none"
+                className="min-h-11 flex-1 rounded-md border border-white/20 bg-black/20 px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--brand-gold)] focus:outline-none"
               />
               <button
                 type="submit"
-                className="rounded-md border border-[#D4A574] bg-transparent px-4 py-2 text-sm font-medium text-[#D4A574] transition-colors hover:bg-[#D4A574] hover:text-[#0A0A0A]"
+                className="rounded-md border border-[var(--brand-gold)] bg-transparent px-4 py-2 font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] transition-colors hover:bg-[var(--brand-gold)] hover:text-[var(--brand-black)]"
               >
                 Subscribe
               </button>
@@ -87,15 +90,17 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-black/20 bg-[#2A061F] py-4 text-center text-xs text-[#D1D5DB]/80">
-        <p>© {new Date().getFullYear()} Compass Point Advisory. All rights reserved.</p>
-        <p className="mt-2 text-[#B8BCC3]/90">
+      <div className="border-t border-black/25 bg-[var(--brand-plum-deep)] py-4 text-center text-xs text-[var(--text-secondary)]">
+        <p className="font-[family-name:var(--font-montserrat)]">
+          © {new Date().getFullYear()} Compass Point Advisory. All rights reserved.
+        </p>
+        <p className="mt-2 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
           Built and maintained by{" "}
           <a
             href={BRIGHT_PATH_CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#E8C9A0] underline decoration-[#D4A574]/50 underline-offset-2 transition-colors hover:text-[#F3F4F6] hover:decoration-[#D4A574]"
+            className="text-[var(--accent-gold-light)] underline decoration-[var(--brand-gold)]/50 underline-offset-2 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--brand-gold)]"
           >
             Bright Path Creative
           </a>
