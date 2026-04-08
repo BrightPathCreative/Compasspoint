@@ -49,7 +49,7 @@ export function ServiceCard({ icon: Icon, title, description, image, imageAlt }:
       </div>
       <div className="flex flex-1 flex-col p-8 md:p-9">
         <Icon className="h-9 w-9 text-[var(--brand-gold)]" strokeWidth={1.2} aria-hidden />
-        <h3 className="mt-5 font-[family-name:var(--font-cinzel)] text-xl font-semibold text-[var(--text-primary)] md:text-2xl">
+        <h3 className="mt-5 font-[family-name:var(--font-cormorant)] text-xl font-bold text-[var(--text-primary)] md:text-2xl">
           {title}
         </h3>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-[var(--text-secondary)] md:text-base">{description}</p>

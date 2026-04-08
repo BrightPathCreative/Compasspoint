@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Cinzel, Cormorant_Garamond, Lato, Montserrat } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { LenisProvider } from "@/components/global/LenisProvider";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationJsonLd } from "@/lib/seo-schemas";
+import { SITE_URL } from "@/lib/site";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -29,9 +33,21 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Compass Point Advisory | Amelia Ghofrany",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "CompassPoint Advisory — Strategic Business Consulting for Australian SMEs",
+    template: "%s | CompassPoint Advisory",
+  },
   description:
-    "Guiding businesses toward clarity, growth, and transformation—strategic advisory and investment strategy for ambitious SMEs and founders.",
+    "Strategic consulting for Australian SMEs and startups. Growth strategy, operations, AI transformation, and executive coaching. Melbourne-based, nationally active.",
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    siteName: "CompassPoint Advisory",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -45,7 +61,9 @@ export default function RootLayout({
       className={`${lato.variable} ${cormorant.variable} ${cinzel.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[var(--bg-primary)]">
+        <JsonLd data={organizationJsonLd()} />
         <LenisProvider>{children}</LenisProvider>
+        <Analytics />
       </body>
     </html>
   );

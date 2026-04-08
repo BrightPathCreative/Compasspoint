@@ -3,15 +3,17 @@
 import "@/lib/gsap-config";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/site";
 import { NavbarLogo } from "./NavbarLogo";
 import { Button } from "./Button";
 import { useLenisScroll } from "./LenisProvider";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#methodology", label: "Methodology" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -23,6 +25,13 @@ export function Navbar() {
     navRef.current?.classList.toggle("nav-scrolled", scrollY > 80);
   }, [scrollY]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <>
       <header
@@ -33,14 +42,14 @@ export function Navbar() {
           <NavbarLogo />
 
           <nav
-            className="hidden flex-1 items-center justify-center gap-10 font-[family-name:var(--font-montserrat)] md:flex lg:gap-12"
+            className="hidden flex-1 items-center justify-center gap-10 font-[family-name:var(--font-lato)] md:flex lg:gap-12"
             aria-label="Primary"
           >
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="relative text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--brand-gold)] after:transition-transform hover:after:scale-x-100"
+                className="relative text-[15px] font-normal text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--brand-gold)] after:transition-transform hover:after:scale-x-100"
               >
                 {l.label}
               </a>
@@ -48,11 +57,8 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button
-              className="!py-2.5 !text-sm"
-              onClick={() => document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Book a Consultation
+            <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="!py-2.5 !text-sm">
+              Book a Free Discovery Call
             </Button>
           </div>
 
@@ -68,38 +74,58 @@ export function Navbar() {
         </div>
       </header>
 
-      {open && (
+      {/* Mobile: slide-in panel from right, plum background */}
+      <div
+        className={`fixed inset-0 z-40 md:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+        aria-hidden={!open}
+      >
+        <button
+          type="button"
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
+          aria-label="Close menu"
+          onClick={() => setOpen(false)}
+        />
         <div
-          className="fixed inset-0 z-40 flex flex-col bg-[var(--brand-black)]/98 px-8 pb-12 pt-28 backdrop-blur-md md:hidden"
-          role="dialog"
-          aria-modal="true"
+          className={`absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[var(--brand-plum)] shadow-2xl transition-transform duration-300 ease-out ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          <div className="mb-8 shrink-0 border-b border-[var(--brand-charcoal)] pb-6">
+          <div className="flex items-center justify-between border-b border-[var(--brand-gold)]/20 px-6 py-6">
             <NavbarLogo />
+            <button
+              type="button"
+              className="rounded-md p-2 text-[var(--text-primary)]"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+            >
+              <X className="h-6 w-6" />
+            </button>
           </div>
-          <nav className="flex flex-1 flex-col gap-8 font-[family-name:var(--font-cinzel)] text-2xl text-[var(--text-primary)]">
+          <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-8 font-[family-name:var(--font-lato)]">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-[var(--brand-charcoal)] pb-4"
+                className="border-b border-[var(--brand-gold)]/15 py-4 text-lg text-[var(--text-primary)] transition-colors hover:text-[var(--brand-gold)]"
               >
                 {l.label}
               </a>
             ))}
           </nav>
-          <Button
-            className="w-full"
-            onClick={() => {
-              setOpen(false);
-              document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Book a Consultation
-          </Button>
+          <div className="border-t border-[var(--brand-gold)]/20 p-6">
+            <Button
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+              onClick={() => setOpen(false)}
+            >
+              Book a Free Discovery Call
+            </Button>
+          </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

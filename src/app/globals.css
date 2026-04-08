@@ -70,3 +70,19 @@ body {
   background: rgba(212, 175, 55, 0.35);
   color: var(--text-primary);
 }
+
+/* Hero compass — subtle motion per site spec (GPU-friendly) */
+@keyframes hero-compass-sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+.hero-compass-emblem {
+  animation: hero-compass-sway 10s ease-in-out infinite;
+  will-change: transform;
+}

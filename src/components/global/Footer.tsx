@@ -2,8 +2,18 @@
 
 import { Mail } from "lucide-react";
 import { CONTACT_EMAIL, LINKEDIN_URL, mailtoHref } from "@/lib/contact";
-import { BRIGHT_PATH_CONTACT_URL } from "@/lib/site";
+import { BRIGHT_PATH_CONTACT_URL, CALENDLY_URL } from "@/lib/site";
 import { BrandLockup } from "./BrandLockup";
+
+const footerLinks = [
+  ["/about", "About"],
+  ["/services", "Services"],
+  ["/methodology", "Methodology"],
+  ["/faq", "FAQ"],
+  ["/contact", "Contact"],
+  ["/privacy-policy", "Privacy Policy"],
+  ["/terms", "Terms of Service"],
+] as const;
 
 export function Footer() {
   return (
@@ -15,9 +25,16 @@ export function Footer() {
               <BrandLockup variant="onPlum" clickable={false} />
             </div>
             <p className="max-w-sm font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-secondary)]">
-              Strategic clarity and enterprise-grade advisory for ambitious SMEs and founders—guided by
-              Amelia Ghofrany.
+              Strategic consulting for Australian SMEs and startups—Melbourne-based, nationally active.
             </p>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] underline-offset-2 hover:underline"
+            >
+              Book a free discovery call
+            </a>
             <div className="flex gap-4">
               <a
                 href={LINKEDIN_URL}
@@ -43,12 +60,7 @@ export function Footer() {
               Quick links
             </h3>
             <ul className="space-y-2 font-[family-name:var(--font-lato)] text-sm">
-              {[
-                ["#about", "About"],
-                ["#services", "Services"],
-                ["#methodology", "Methodology"],
-                ["#testimonials", "Testimonials"],
-              ].map(([href, label]) => (
+              {footerLinks.map(([href, label]) => (
                 <li key={href}>
                   <a
                     href={href}
@@ -70,6 +82,9 @@ export function Footer() {
                 {CONTACT_EMAIL}
               </a>
             </p>
+            <p className="mt-2 font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]">
+              Melbourne, Victoria, Australia
+            </p>
             <form className="mt-6 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="footer-email" className="sr-only">
                 Email for newsletter
@@ -82,7 +97,7 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="rounded-md border border-[var(--brand-gold)] bg-transparent px-4 py-2 font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] transition-colors hover:bg-[var(--brand-gold)] hover:text-[var(--brand-black)]"
+                className="rounded-md border border-[var(--brand-gold)] bg-transparent px-4 py-2 font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] transition-colors hover:bg-[var(--brand-gold)] hover:text-[var(--brand-plum)]"
               >
                 Subscribe
               </button>
@@ -92,7 +107,7 @@ export function Footer() {
       </div>
       <div className="border-t border-black/25 bg-[var(--brand-plum-deep)] py-4 text-center text-xs text-[var(--text-secondary)]">
         <p className="font-[family-name:var(--font-montserrat)]">
-          © {new Date().getFullYear()} Compass Point Advisory. All rights reserved.
+          © {new Date().getFullYear()} CompassPoint Advisory Pty Ltd. All rights reserved.
         </p>
         <p className="mt-2 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
           Built and maintained by{" "}
