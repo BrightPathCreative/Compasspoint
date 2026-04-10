@@ -1,11 +1,25 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import Lenis from "lenis";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import type Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "@/lib/gsap-config";
+import { initSmoothScroll } from "@/lib/smooth-scroll";
 
-const LenisScrollContext = createContext(0);
+type LenisApi = {
+  scrollY: number;
+  scrollToTop: () => void;
+};
+
+const LenisScrollContext = createContext<LenisApi>({ scrollY: 0, scrollToTop: () => {} });
 
 export function useLenisScroll() {
   return useContext(LenisScrollContext);
@@ -13,32 +27,39 @@ export function useLenisScroll() {
 
 export function LenisProvider({ children }: { children: ReactNode }) {
   const [scrollY, setScrollY] = useState(0);
+  const lenisRef = useRef<Lenis | null>(null);
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      smoothWheel: true,
-    });
-
-    lenis.on("scroll", (l: Lenis) => {
-      setScrollY(l.scroll);
-      ScrollTrigger.update();
-    });
-
-    let rafId = 0;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
+  const scrollToTop = useCallback(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
     }
-    rafId = requestAnimationFrame(raf);
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
-    };
   }, []);
 
-  return <LenisScrollContext.Provider value={scrollY}>{children}</LenisScrollContext.Provider>;
+  useEffect(() => {
+    const isTouchDevice = "ontouchstart" in window;
+
+    if (!isTouchDevice) {
+      const lenis = initSmoothScroll();
+      lenisRef.current = lenis;
+      const sync = () => setScrollY(lenis.scroll);
+      lenis.on("scroll", sync);
+      sync();
+      ScrollTrigger.refresh();
+      return () => {
+        lenisRef.current = null;
+        lenis.destroy();
+      };
+    }
+
+    const onScroll = () => setScrollY(window.scrollY);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const value: LenisApi = { scrollY, scrollToTop };
+
+  return <LenisScrollContext.Provider value={value}>{children}</LenisScrollContext.Provider>;
 }

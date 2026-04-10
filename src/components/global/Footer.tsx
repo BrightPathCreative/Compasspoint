@@ -17,11 +17,11 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="section-brand-plum text-[var(--text-primary)]">
-      <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 py-16 md:px-14 lg:px-20">
+    <footer className="site-footer text-[var(--text-primary)]">
+      <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20">
         <div className="grid gap-12 md:grid-cols-3">
           <div className="space-y-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="footer-emblem-glow flex flex-col gap-3 sm:flex-row sm:items-center">
               <BrandLockup variant="onPlum" clickable={false} />
             </div>
             <p className="max-w-sm font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-secondary)]">
@@ -98,11 +98,11 @@ export function Footer() {
                 id="footer-email"
                 type="email"
                 placeholder="Your email"
-                className="min-h-11 flex-1 rounded-md border border-white/15 bg-white/[0.07] px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--brand-gold)] focus:outline-none"
+                className="min-h-11 flex-1 rounded-md border border-white/15 bg-[rgba(10,10,10,0.35)] px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--soft-ivory)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
               />
               <button
                 type="submit"
-                className="rounded-md border border-[var(--brand-gold)] bg-transparent px-4 py-2 font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] transition-colors hover:bg-[var(--brand-gold)] hover:text-[var(--brand-plum)]"
+                className="rounded-md border border-[var(--metallic-gold)] bg-[var(--metallic-gold)] px-4 py-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] transition-colors hover:bg-[var(--bright-gold)]"
               >
                 Subscribe
               </button>
@@ -110,11 +110,11 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/[0.12] py-4 text-center text-xs text-[var(--text-secondary)]">
+      <div className="border-t border-white/[0.12] py-8 text-center text-xs text-[var(--text-secondary)]">
         <p className="font-[family-name:var(--font-montserrat)]">
           © {new Date().getFullYear()} CompassPoint Advisory Pty Ltd. All rights reserved.
         </p>
-        <p className="mt-2 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
+        <p className="mt-2 font-[family-name:var(--font-montserrat)] text-[12px] text-[var(--soft-ivory)]/40">
           Built and maintained by{" "}
           <a
             href={BRIGHT_PATH_CONTACT_URL}

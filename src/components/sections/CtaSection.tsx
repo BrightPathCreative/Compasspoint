@@ -39,25 +39,44 @@ export function CtaSection() {
   );
 
   return (
-    <section id="cta" ref={containerRef} className="cta-section section-brand-plum relative overflow-hidden">
+    <section
+      id="cta"
+      ref={containerRef}
+      className="cta-section section-brand-plum relative overflow-hidden py-24 md:py-32"
+    >
       <div
-        className="cta-bg-fill pointer-events-none absolute inset-y-0 left-0 w-full bg-[var(--brand-plum-deep)]/80"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(62,15,52,0.55)_100%)]"
         aria-hidden
       />
-      <div className="cta-content relative z-10 mx-auto w-full max-w-[min(100%,1920px)] px-8 py-28 text-center md:px-14 md:py-36 lg:px-20">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        aria-hidden
+        style={{
+          backgroundImage: `url("/brand-icon.svg")`,
+          backgroundPosition: "50% 50%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "min(520px, 85vw)",
+          transform: "rotate(10deg)",
+        }}
+      />
+      <div
+        className="cta-bg-fill pointer-events-none absolute inset-y-0 left-0 w-full bg-[var(--plum-dark)]/75"
+        aria-hidden
+      />
+      <div className="cta-content relative z-10 mx-auto w-full max-w-[min(100%,1920px)] px-8 text-center md:px-14 lg:px-20">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--metallic-gold)] md:text-5xl">
             Ready to Grow Your Business with Confidence?
           </h2>
-          <p className="mt-6 font-[family-name:var(--font-lato)] text-lg leading-relaxed text-[color-mix(in_srgb,var(--brand-ivory)_94%,transparent)] md:text-xl">
+          <p className="mt-6 font-[family-name:var(--font-lato)] text-lg leading-relaxed text-[color-mix(in_srgb,var(--soft-ivory)_94%,transparent)] md:text-xl">
             Whether you&apos;re navigating a growth inflection point, looking to sharpen your strategy, or exploring
             how AI can future-proof your operations — CompassPoint Advisory is your trusted partner.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-4">
+          <div className="mt-10 flex flex-col items-center gap-4">
             <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               Book Your Free Discovery Call →
             </Button>
-            <p className="max-w-md font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.08em] text-[var(--text-tertiary)]">
+            <p className="max-w-lg font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--soft-ivory)]/60">
               Confidential. No sales pressure. Just straight-talking strategic advice.
             </p>
           </div>

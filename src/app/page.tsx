@@ -7,7 +7,6 @@ import { HomeDifferentiatorsSection } from "@/components/sections/HomeDifferenti
 import { HomeIntroSection } from "@/components/sections/HomeIntroSection";
 import { HomeMethodologyPreviewSection } from "@/components/sections/HomeMethodologyPreviewSection";
 import { HomeServicesOverviewSection } from "@/components/sections/HomeServicesOverviewSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessJsonLd } from "@/lib/seo-schemas";
 
@@ -36,7 +35,6 @@ export default function Home() {
       <HomeServicesOverviewSection />
       <HomeMethodologyPreviewSection />
       <HomeDifferentiatorsSection />
-      <TestimonialsSection />
       <CtaSection />
     </SiteShell>
   );

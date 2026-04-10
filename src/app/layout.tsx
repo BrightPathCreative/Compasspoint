@@ -3,7 +3,9 @@ import { Analytics } from "@vercel/analytics/react";
 import { Cinzel, Cormorant_Garamond, Lato, Montserrat } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
+import { GrainOverlay } from "@/components/GrainOverlay";
 import { LenisProvider } from "@/components/global/LenisProvider";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationJsonLd } from "@/lib/seo-schemas";
 import { SITE_URL } from "@/lib/site";
@@ -11,7 +13,7 @@ import { SITE_URL } from "@/lib/site";
 const lato = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "700"],
 });
 
 const cormorant = Cormorant_Garamond({
@@ -61,8 +63,18 @@ export default function RootLayout({
       className={`${lato.variable} ${cormorant.variable} ${cinzel.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[var(--bg-primary)]">
+        <GrainOverlay />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10000] focus:rounded-sm focus:bg-[var(--metallic-gold)] focus:px-4 focus:py-2 focus:font-[family-name:var(--font-montserrat)] focus:text-sm focus:font-semibold focus:text-[var(--royal-plum)] focus:outline-none focus:ring-2 focus:ring-[var(--metallic-gold)] focus:ring-offset-2 focus:ring-offset-[var(--bg-primary)]"
+        >
+          Skip to content
+        </a>
         <JsonLd data={organizationJsonLd()} />
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <ScrollToTop />
+          {children}
+        </LenisProvider>
         <Analytics />
       </body>
     </html>

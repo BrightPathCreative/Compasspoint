@@ -1,3 +1,9 @@
+/** First full sentence for previews (avoids mid-word truncation). */
+export function firstSentence(text: string): string {
+  const m = text.match(/^(.+?[.!?])(\s|$)/);
+  return m ? m[1].trim() : text;
+}
+
 export const METHODOLOGY_STEPS = [
   {
     title: "Discovery and Audit",

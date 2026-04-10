@@ -20,19 +20,13 @@ type AnchorProps = Shared &
 export function Button(props: ButtonProps | AnchorProps) {
   const { variant = "primary", className = "", children, ...rest } = props;
 
-  const base =
-    "inline-flex items-center justify-center rounded-md px-6 py-3 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-[0.08em] transition-all duration-300 md:text-base";
-
   const variants = {
-    primary:
-      "bg-[var(--brand-gold)] text-[var(--brand-plum)] hover:bg-[var(--brand-gold-bright)] hover:scale-[1.02] active:scale-100",
-    secondary:
-      "border-[1.5px] border-[var(--brand-gold)] bg-transparent text-[var(--brand-gold)] hover:bg-[var(--brand-gold)] hover:text-[var(--brand-plum)]",
-    ghost:
-      "border-0 bg-transparent text-[var(--brand-gold)] underline-offset-4 hover:underline",
+    primary: "btn-primary",
+    secondary: "btn-secondary",
+    ghost: "border-0 bg-transparent font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-[0.08em] text-[var(--metallic-gold)] underline-offset-4 transition-colors hover:underline",
   };
 
-  const cls = `${base} ${variants[variant]} ${className}`;
+  const cls = `${variants[variant]} ${className}`.trim();
 
   if ("href" in rest && rest.href) {
     const { href, onClick, ...aRest } = rest as AnchorProps;

@@ -19,11 +19,12 @@ const links = [
 export function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
-  const scrollY = useLenisScroll();
+  const { scrollY } = useLenisScroll();
+  const scrolled = scrollY > 60;
 
   useEffect(() => {
-    navRef.current?.classList.toggle("nav-scrolled", scrollY > 80);
-  }, [scrollY]);
+    navRef.current?.classList.toggle("nav-scrolled", scrolled);
+  }, [scrolled]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -36,7 +37,7 @@ export function Navbar() {
     <>
       <header
         ref={navRef}
-        className="fixed inset-x-0 top-0 z-50 flex min-h-[5.25rem] items-center border-b border-transparent transition-colors duration-300 md:min-h-[6rem]"
+        className={`fixed inset-x-0 top-0 z-50 flex min-h-[5.25rem] items-center border-b border-transparent transition-all duration-300 ease-out md:min-h-[6rem] ${scrolled ? "py-3 md:py-3" : "py-5 md:py-6"}`}
       >
         <div className="mx-auto flex w-full max-w-[min(100%,1920px)] items-center justify-between px-8 md:px-14 lg:px-20">
           <NavbarLogo />
@@ -49,7 +50,7 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="relative text-[15px] font-normal text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--brand-gold)] after:transition-transform hover:after:scale-x-100"
+                className="relative text-[15px] font-normal text-[var(--soft-ivory)] transition-colors hover:text-[var(--metallic-gold)] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--metallic-gold)] after:transition-transform hover:after:scale-x-100"
               >
                 {l.label}
               </a>
@@ -57,7 +58,12 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="!py-2.5 !text-sm">
+            <Button
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary btn-primary--header"
+            >
               Book a Free Discovery Call
             </Button>
           </div>
@@ -86,11 +92,11 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         />
         <div
-          className={`absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[var(--brand-plum)] shadow-2xl transition-transform duration-300 ease-out ${
+          className={`absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-[var(--plum-dark)] shadow-2xl transition-transform duration-300 ease-out ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between border-b border-[var(--brand-gold)]/20 px-6 py-6">
+          <div className="flex items-center justify-between border-b border-[var(--metallic-gold)]/25 px-6 py-6">
             <NavbarLogo />
             <button
               type="button"
@@ -101,19 +107,19 @@ export function Navbar() {
               <X className="h-6 w-6" />
             </button>
           </div>
-          <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 py-8 font-[family-name:var(--font-lato)]">
+          <nav className="flex flex-1 flex-col gap-0 overflow-y-auto px-6 py-8 font-[family-name:var(--font-cormorant)]">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-[var(--brand-gold)]/15 py-4 text-lg text-[var(--text-primary)] transition-colors hover:text-[var(--brand-gold)]"
+                className="border-b border-[var(--metallic-gold)]/20 py-5 text-[1.75rem] leading-tight text-[var(--soft-ivory)] transition-colors hover:text-[var(--metallic-gold)]"
               >
                 {l.label}
               </a>
             ))}
           </nav>
-          <div className="border-t border-[var(--brand-gold)]/20 p-6">
+          <div className="border-t border-[var(--metallic-gold)]/25 p-6">
             <Button
               href={CALENDLY_URL}
               target="_blank"
