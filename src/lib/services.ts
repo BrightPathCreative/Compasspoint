@@ -134,6 +134,11 @@ export const SERVICES: Service[] = [
   },
 ];
 
+/** Public hero image for each service — `public/service-{slug}.jpg`. */
+export function getServiceImagePath(slug: string): `/service-${string}.jpg` {
+  return `/service-${slug}.jpg`;
+}
+
 export function getServiceBySlug(slug: string): Service | undefined {
   return SERVICES.find((s) => s.slug === slug);
 }

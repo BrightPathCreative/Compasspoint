@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/global/SiteShell";
@@ -8,7 +9,7 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { serviceJsonLd } from "@/lib/seo-schemas";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
-import { getRelatedServices, getServiceBySlug, SERVICES } from "@/lib/services";
+import { getRelatedServices, getServiceBySlug, getServiceImagePath, SERVICES } from "@/lib/services";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -44,7 +45,20 @@ export default async function ServiceDetailPage({ params }: Props) {
       <JsonLd data={serviceJsonLd({ name: service.title, description: service.description })} />
       <PageHero title={service.title} subtitle={`Service ${String(service.order).padStart(2, "0")}`} />
 
-      <article className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-16 md:px-14 md:pb-28 md:pt-20 lg:px-20">
+      <div className="relative mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20">
+        <div className="relative -mt-6 aspect-[21/9] max-h-[min(52vh,420px)] min-h-[180px] overflow-hidden rounded-sm border border-[var(--metallic-gold)]/20 md:-mt-10">
+          <Image
+            src={getServiceImagePath(service.slug)}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      <article className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-10 md:px-14 md:pb-28 md:pt-12 lg:px-20">
         <p className="mx-auto max-w-3xl text-center font-[family-name:var(--font-cormorant)] text-xl italic leading-snug text-[var(--metallic-gold)] md:text-2xl">
           {service.question}
         </p>

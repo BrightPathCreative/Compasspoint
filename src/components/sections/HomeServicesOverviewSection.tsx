@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import GoldDivider from "@/components/GoldDivider";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerReveal from "@/components/StaggerReveal";
-import { SERVICES } from "@/lib/services";
+import { getServiceImagePath, SERVICES } from "@/lib/services";
 
 export function HomeServicesOverviewSection() {
   return (
@@ -23,7 +24,18 @@ export function HomeServicesOverviewSection() {
 
         <StaggerReveal className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <article key={s.slug} className="service-card flex flex-col">
+            <article key={s.slug} className="service-card service-card--has-image flex flex-col overflow-hidden">
+              <div className="relative aspect-[16/10] w-full shrink-0">
+                <Image
+                  src={getServiceImagePath(s.slug)}
+                  alt={s.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  priority={s.order <= 3}
+                />
+              </div>
+              <div className="service-card__body flex flex-1 flex-col px-7 pb-8 pt-6">
               <span className="service-number">{String(s.order).padStart(2, "0")}</span>
               <h3>{s.title}</h3>
               <p className="mt-2 flex-1 font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--charcoal)]/90">
@@ -32,6 +44,7 @@ export function HomeServicesOverviewSection() {
               <Link href={`/services/${s.slug}`} className="learn-more mt-6 inline-flex">
                 Learn more →
               </Link>
+              </div>
             </article>
           ))}
         </StaggerReveal>
