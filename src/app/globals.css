@@ -121,9 +121,79 @@ nav a,
   }
 }
 
-.hero-compass-emblem {
+@keyframes hero-compass-point-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: rotate(var(--compass-glow-rotate)) translateY(calc(-1 * var(--compass-glow-radius)))
+      scale(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: rotate(var(--compass-glow-rotate)) translateY(calc(-1 * var(--compass-glow-radius))) scale(1.05);
+  }
+}
+
+.hero-compass-visual {
+  --compass-glow-radius: 44px;
   animation: hero-compass-sway 10s ease-in-out infinite;
   will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .hero-compass-visual {
+    --compass-glow-radius: 52px;
+  }
+}
+
+.hero-compass-point-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: 38%;
+  margin: -19% 0 0 -19%;
+  border-radius: 50%;
+  transform: rotate(var(--compass-glow-rotate)) translateY(calc(-1 * var(--compass-glow-radius)));
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.55) 0%,
+    rgba(255, 215, 120, 0.22) 38%,
+    rgba(212, 175, 55, 0) 72%
+  );
+  filter: blur(1px);
+  animation: hero-compass-point-pulse 3.6s ease-in-out infinite;
+  animation-delay: var(--compass-glow-delay, 0s);
+  pointer-events: none;
+}
+
+.hero-compass-point-glow--south {
+  width: 48%;
+  height: 48%;
+  margin: -24% 0 0 -24%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 228, 160, 0.65) 0%,
+    rgba(212, 175, 55, 0.35) 42%,
+    rgba(212, 175, 55, 0) 75%
+  );
+  filter: blur(1.5px);
+}
+
+.hero-compass-emblem {
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.25));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-compass-visual {
+    animation: none;
+  }
+
+  .hero-compass-point-glow,
+  .hero-compass-point-glow--south {
+    animation: none;
+    opacity: 0.5;
+  }
 }
 
 @keyframes goldShimmer {
