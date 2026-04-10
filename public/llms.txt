@@ -17,7 +17,7 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm purpose-bui
 - Location: Melbourne, Victoria, Australia
 - Serves businesses across Australia (Sydney, Brisbane, Perth, Hobart, Adelaide)
 - Target clients: SMEs generating $5M–$20M annual revenue
-- Offers free 30-minute discovery call via Calendly
+- Offers free 30-minute discovery call (book at /book; Calendly embed)
 - Website: https://www.compasspointadvisory.com.au
 - Contact: amelia.ghofrany@gmail.com
 
@@ -27,5 +27,5 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm purpose-bui
 - [Services](https://www.compasspointadvisory.com.au/services)
 - [How We Work](https://www.compasspointadvisory.com.au/methodology)
 - [FAQ](https://www.compasspointadvisory.com.au/faq)
-- [Contact](https://www.compasspointadvisory.com.au/contact)
-- [Book a Discovery Call](https://calendly.com/ameliaghofrany)
+- [Contact (written enquiries)](https://www.compasspointadvisory.com.au/contact)
+- [Book a Discovery Call](https://www.compasspointadvisory.com.au/book)

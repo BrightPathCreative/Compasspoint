@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { LINKEDIN_URL } from "@/lib/contact";
 import { personAmeliaJsonLd } from "@/lib/seo-schemas";
-import { CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About CompassPoint Advisory — Melbourne Business Consultants",
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-12">
-          <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+          <Button href={BOOK_DISCOVERY_PATH}>
             Book a Free Discovery Call
           </Button>
         </div>

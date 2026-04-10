@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { serviceJsonLd } from "@/lib/seo-schemas";
-import { CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import { getRelatedServices, getServiceBySlug, SERVICES } from "@/lib/services";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
 
         <div className="mt-14">
-          <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+          <Button href={BOOK_DISCOVERY_PATH}>
             Book a Discovery Call
           </Button>
         </div>

@@ -3,7 +3,7 @@
 import "@/lib/gsap-config";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import { NavbarLogo } from "./NavbarLogo";
 import { Button } from "./Button";
 import { useLenisScroll } from "./LenisProvider";
@@ -58,12 +58,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary btn-primary--header"
-            >
+            <Button href={BOOK_DISCOVERY_PATH} className="btn-primary btn-primary--header">
               Book a Free Discovery Call
             </Button>
           </div>
@@ -120,13 +115,7 @@ export function Navbar() {
             ))}
           </nav>
           <div className="border-t border-[var(--metallic-gold)]/25 p-6">
-            <Button
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-              onClick={() => setOpen(false)}
-            >
+            <Button href={BOOK_DISCOVERY_PATH} className="w-full" onClick={() => setOpen(false)}>
               Book a Free Discovery Call
             </Button>
           </div>

@@ -4,7 +4,7 @@ import { Button } from "@/components/global/Button";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { MethodologyFullTimeline } from "@/components/sections/MethodologyFullTimeline";
 import { PageHero } from "@/components/sections/PageHero";
-import { CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "How We Work — CompassPoint Advisory's Consulting Process",
@@ -29,7 +29,7 @@ export default function MethodologyPage() {
         <MethodologyFullTimeline />
 
         <div className="mt-16">
-          <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+          <Button href={BOOK_DISCOVERY_PATH}>
             Book a Free Discovery Call
           </Button>
         </div>

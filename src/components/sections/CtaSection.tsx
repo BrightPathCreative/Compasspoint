@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import "@/lib/gsap-config";
 import { Button } from "../global/Button";
 
@@ -73,7 +73,7 @@ export function CtaSection() {
             how AI can future-proof your operations — CompassPoint Advisory is your trusted partner.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4">
-            <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <Button href={BOOK_DISCOVERY_PATH}>
               Book Your Free Discovery Call →
             </Button>
             <p className="max-w-lg font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--soft-ivory)]/60">

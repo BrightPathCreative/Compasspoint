@@ -2,7 +2,7 @@
 
 import { Mail } from "lucide-react";
 import { LINKEDIN_URL } from "@/lib/contact";
-import { BRIGHT_PATH_CONTACT_URL, CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH, BRIGHT_PATH_CONTACT_URL } from "@/lib/site";
 import { BrandLockup } from "./BrandLockup";
 
 const footerLinks = [
@@ -28,9 +28,7 @@ export function Footer() {
               Strategic consulting for Australian SMEs and startups—Melbourne-based, nationally active.
             </p>
             <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={BOOK_DISCOVERY_PATH}
               className="inline-block font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] underline-offset-2 hover:underline"
             >
               Book a free discovery call
@@ -82,9 +80,7 @@ export function Footer() {
             </p>
             <p className="mt-3">
               <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={BOOK_DISCOVERY_PATH}
                 className="inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--brand-gold)] underline-offset-4 hover:underline"
               >
                 Book a discovery call

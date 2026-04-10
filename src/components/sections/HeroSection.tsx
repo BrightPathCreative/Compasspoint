@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { CALENDLY_URL } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import "@/lib/gsap-config";
 import { Button } from "../global/Button";
 
@@ -104,7 +104,7 @@ export function HeroSection() {
         </p>
 
         <div className="hero-cta mt-10 flex w-full max-w-lg flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
-          <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="hero-cta w-full sm:w-auto">
+          <Button href={BOOK_DISCOVERY_PATH} className="hero-cta w-full sm:w-auto">
             Book a Free Discovery Call
           </Button>
           <Button variant="secondary" href="/services" className="hero-cta w-full sm:w-auto">
