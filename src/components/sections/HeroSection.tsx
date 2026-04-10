@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { ChevronDown } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/site";
 import "@/lib/gsap-config";
 import { Button } from "../global/Button";
@@ -61,14 +60,6 @@ export function HeroSection() {
             duration: 0.55,
           },
           "-=0.35",
-        )
-        .from(
-          ".hero-scroll-indicator",
-          {
-            opacity: 0,
-            duration: 0.45,
-          },
-          "-=0.2",
         );
     },
     { scope: containerRef },
@@ -137,11 +128,6 @@ export function HeroSection() {
             Explore Our Services
           </Button>
         </div>
-      </div>
-
-      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 font-[family-name:var(--font-montserrat)] text-[var(--text-secondary)]">
-        <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
-        <ChevronDown className="h-6 w-6 animate-bounce" aria-hidden />
       </div>
     </section>
   );
