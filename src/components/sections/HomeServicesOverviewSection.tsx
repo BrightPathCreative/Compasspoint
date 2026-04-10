@@ -17,7 +17,7 @@ export function HomeServicesOverviewSection() {
           {SERVICES.map((s) => (
             <article
               key={s.slug}
-              className="flex flex-col rounded-lg border-t-[3px] border-[var(--brand-gold)] bg-[#FAF6EE] p-6 shadow-[0_4px_24px_rgba(91,24,76,0.08)]"
+              className="flex flex-col rounded-lg border-t-[3px] border-[var(--brand-gold)] bg-[var(--brand-ivory)] p-6 shadow-[0_4px_24px_rgba(56,7,41,0.08)]"
             >
               <span className="font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.08em] text-[var(--brand-plum)]">
                 {String(s.order).padStart(2, "0")}

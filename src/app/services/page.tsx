@@ -22,48 +22,53 @@ export default function ServicesPage() {
           below—including who it&apos;s best for—and book a free discovery call when you&apos;re ready to talk.
         </p>
 
-        <div className="mt-16 space-y-16">
+        <div className="mt-16 divide-y divide-[var(--brand-gold)]/15">
           {SERVICES.map((s) => (
             <section
               key={s.slug}
-              className="scroll-mt-28 rounded-2xl border border-[var(--brand-gold)]/15 bg-[var(--bg-secondary)]/60 p-8 md:p-10"
+              className="scroll-mt-28 grid gap-8 pb-16 pt-2 first:pt-0 md:grid-cols-[minmax(0,4.5rem)_1fr] md:gap-10 md:pb-20"
               id={s.slug}
             >
-              <div className="flex flex-wrap items-baseline gap-3">
-                <span className="font-[family-name:var(--font-montserrat)] text-sm font-bold text-[var(--brand-gold)]">
-                  {String(s.order).padStart(2, "0")}
-                </span>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)] md:text-3xl">
-                  {s.title}
-                </h2>
-              </div>
-              <p className="mt-4 font-[family-name:var(--font-cormorant)] text-lg italic text-[var(--text-secondary)] md:text-xl">
-                {s.question}
-              </p>
-              <p className="mt-6 font-[family-name:var(--font-lato)] leading-[1.7] text-[var(--text-secondary)]">
-                {s.description}
-              </p>
-              <div className="mt-6">
-                <p className="font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-wide text-[var(--brand-gold)]">
-                  Best for
-                </p>
-                <ul className="mt-2 flex flex-wrap gap-2">
-                  {s.bestFor.map((tag) => (
-                    <li
-                      key={tag}
-                      className="rounded-full border border-[var(--brand-gold)]/30 bg-[var(--brand-plum)]/20 px-3 py-1 font-[family-name:var(--font-lato)] text-sm text-[var(--text-primary)]"
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Link
-                href={`/services/${s.slug}`}
-                className="mt-8 inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--brand-gold)] hover:underline"
+              <div
+                className="font-[family-name:var(--font-cinzel)] text-4xl font-bold leading-none text-[var(--brand-gold)]/25 md:text-5xl"
+                aria-hidden
               >
-                Full service detail →
-              </Link>
+                {String(s.order).padStart(2, "0")}
+              </div>
+              <div>
+                <div className="border-l-2 border-[var(--brand-gold)]/45 pl-6 md:pl-8">
+                  <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)] md:text-3xl">
+                    {s.title}
+                  </h2>
+                  <p className="mt-4 font-[family-name:var(--font-cormorant)] text-lg italic text-[var(--text-secondary)] md:text-xl">
+                    {s.question}
+                  </p>
+                  <p className="mt-6 font-[family-name:var(--font-lato)] leading-[1.7] text-[var(--text-secondary)]">
+                    {s.description}
+                  </p>
+                  <div className="mt-8">
+                    <p className="font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.12em] text-[var(--brand-gold)]">
+                      Best for
+                    </p>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {s.bestFor.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-sm border border-[var(--brand-gold)]/25 bg-[var(--brand-ivory)]/[0.04] px-3 py-1.5 font-[family-name:var(--font-lato)] text-sm text-[var(--text-primary)]"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="mt-8 inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--brand-gold)] underline-offset-4 hover:underline"
+                  >
+                    Full service detail →
+                  </Link>
+                </div>
+              </div>
             </section>
           ))}
         </div>

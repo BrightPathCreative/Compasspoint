@@ -82,7 +82,7 @@ export function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[var(--brand-plum)] px-8 pt-28 md:px-14 md:pt-36 lg:px-20"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_15%,var(--brand-plum-mid)_0%,var(--brand-plum)_45%,var(--brand-plum-deep)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_15%,rgba(56,7,41,0.45)_0%,var(--brand-plum)_42%,rgba(0,0,0,0.5)_100%)]"
         aria-hidden
       />
       <div

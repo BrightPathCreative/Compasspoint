@@ -93,7 +93,7 @@ export function Footer() {
                 id="footer-email"
                 type="email"
                 placeholder="Your email"
-                className="min-h-11 flex-1 rounded-md border border-white/20 bg-black/20 px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--brand-gold)] focus:outline-none"
+                className="min-h-11 flex-1 rounded-md border border-white/15 bg-white/[0.07] px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--brand-gold)] focus:outline-none"
               />
               <button
                 type="submit"
@@ -105,7 +105,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-black/25 bg-[var(--brand-plum-deep)] py-4 text-center text-xs text-[var(--text-secondary)]">
+      <div className="border-t border-white/[0.12] py-4 text-center text-xs text-[var(--text-secondary)]">
         <p className="font-[family-name:var(--font-montserrat)]">
           © {new Date().getFullYear()} CompassPoint Advisory Pty Ltd. All rights reserved.
         </p>

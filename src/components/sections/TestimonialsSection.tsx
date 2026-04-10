@@ -8,9 +8,9 @@ import "@/lib/gsap-config";
 import { SectionWrapper } from "../global/SectionWrapper";
 
 const placeholders = [
-  { title: "Client testimonial", subtitle: "To be supplied" },
-  { title: "Client testimonial", subtitle: "To be supplied" },
-  { title: "Client testimonial", subtitle: "To be supplied" },
+  { kicker: "Case study", line: "Representative client story and measurable outcome will appear here." },
+  { kicker: "Quote", line: "Short endorsement with name and role — content to be supplied." },
+  { kicker: "Engagement", line: "Project snapshot: challenge, approach, and result — to be supplied." },
 ];
 
 export function TestimonialsSection() {
@@ -43,20 +43,29 @@ export function TestimonialsSection() {
         Representative feedback will appear here — content to be supplied.
       </p>
 
-      <div className="testimonials-grid mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
+      <div className="testimonials-grid mt-14 grid gap-8 md:grid-cols-3 md:gap-6">
         {placeholders.map((p, i) => (
           <article
             key={i}
-            className="testimonial-card flex min-h-[220px] flex-col rounded-2xl border border-dashed border-[var(--brand-gold)]/35 bg-[var(--bg-secondary)]/40 p-8 ring-1 ring-white/[0.04]"
+            className="testimonial-card group relative flex min-h-[200px] flex-col overflow-hidden rounded-sm border border-[var(--brand-gold)]/18 bg-gradient-to-b from-[var(--brand-ivory)]/[0.06] to-transparent px-6 pb-8 pt-10 shadow-[inset_0_1px_0_0_rgba(199,154,68,0.12)] before:pointer-events-none before:absolute before:left-0 before:top-0 before:h-[3px] before:w-full before:bg-[var(--brand-gold)]/35"
           >
-            <Quote className="h-8 w-8 text-[var(--brand-gold)]/50" strokeWidth={1.5} aria-hidden />
-            <p className="mt-6 flex-1 font-[family-name:var(--font-lato)] text-lg italic text-[var(--text-secondary)]">
-              {p.title}
+            <Quote
+              className="h-6 w-6 text-[var(--brand-gold)]/40 transition-colors group-hover:text-[var(--brand-gold)]/55"
+              strokeWidth={1.5}
+              aria-hidden
+            />
+            <p className="mt-1 font-[family-name:var(--font-montserrat)] text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--brand-gold)]/80">
+              {p.kicker}
             </p>
-            <footer className="mt-6 border-t border-white/[0.08] pt-6">
-              <p className="font-[family-name:var(--font-montserrat)] text-sm font-medium uppercase tracking-wide text-[var(--text-tertiary)]">
-                {p.subtitle}
-              </p>
+            <p className="mt-4 flex-1 font-[family-name:var(--font-lato)] text-[15px] leading-relaxed text-[var(--text-secondary)]">
+              {p.line}
+            </p>
+            <footer className="mt-6 flex items-center gap-2 border-t border-[var(--brand-gold)]/12 pt-5">
+              <span className="h-px flex-1 bg-[var(--brand-gold)]/20" aria-hidden />
+              <span className="font-[family-name:var(--font-montserrat)] text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--text-tertiary)]">
+                Pending
+              </span>
+              <span className="h-px flex-1 bg-[var(--brand-gold)]/20" aria-hidden />
             </footer>
           </article>
         ))}

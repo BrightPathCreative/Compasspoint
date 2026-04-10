@@ -7,7 +7,7 @@ import { ArrowRight, type LucideIcon } from "lucide-react";
 import "@/lib/gsap-config";
 
 const shell =
-  "group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--brand-charcoal)] bg-[var(--bg-secondary)]/95 shadow-[0_24px_55px_-22px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.04] transition-shadow duration-500 hover:border-[var(--brand-gold)]/35 hover:shadow-[0_28px_60px_-24px_rgba(212,175,55,0.12)]";
+  "group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--brand-charcoal)] bg-[var(--bg-secondary)]/95 shadow-[0_24px_55px_-22px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.04] transition-shadow duration-500 hover:border-[var(--brand-gold)]/35 hover:shadow-[0_28px_60px_-24px_rgba(199,154,68,0.12)]";
 
 type ServiceCardProps = {
   icon: LucideIcon;

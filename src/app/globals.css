@@ -1,37 +1,38 @@
 @import "tailwindcss";
 
-/* CompassPoint Advisory — Brand Guide (Visual Edition) tokens */
+/* CompassPoint Advisory — brand tokens */
 :root {
-  --brand-plum: #5b184c;
-  --brand-plum-deep: #3d1034;
-  --brand-plum-mid: #4a1539;
-  --brand-gold: #d4af37;
-  --brand-gold-bright: #ffd700;
-  --brand-gold-antique: #b8860b;
+  --brand-plum: #380729;
+  --brand-plum-mid: #380729;
+  --brand-plum-deep: #380729;
+  --brand-gold: #c79a44;
+  --brand-gold-bright: color-mix(in srgb, var(--brand-gold) 72%, #ffffff);
+  --brand-gold-antique: color-mix(in srgb, var(--brand-gold) 78%, #000000);
   --brand-charcoal: #2e2e2e;
   --brand-ivory: #f6f1e7;
-  --brand-black: #0a0a0a;
+  /* Near-black reserved for nav ring offsets / true contrast — page canvas uses plum-warmed tones */
+  --brand-black: #0c080b;
 
-  --bg-primary: var(--brand-black);
-  --bg-secondary: #161314;
+  --bg-primary: #151018;
+  --bg-secondary: #1f181f;
   --bg-brand-plum: var(--brand-plum);
   --bg-accent: var(--brand-plum);
   --bg-accent-deep: var(--brand-plum-deep);
-  --hero-plum-tint: #2a0f24;
+  --hero-plum-tint: #380729;
 
   --accent-gold: var(--brand-gold);
-  --accent-gold-light: #e8d4a8;
-  --accent-gold-hover: #e4c657;
+  --accent-gold-light: color-mix(in srgb, var(--brand-gold) 42%, var(--brand-ivory));
+  --accent-gold-hover: color-mix(in srgb, var(--brand-gold) 88%, #ffffff);
 
   --text-primary: var(--brand-ivory);
   --text-secondary: rgba(246, 241, 231, 0.68);
   --text-tertiary: rgba(246, 241, 231, 0.45);
 
   --border-subtle: rgba(46, 46, 46, 0.85);
-  --border-gold-soft: rgba(212, 175, 55, 0.28);
+  --border-gold-soft: rgba(199, 154, 68, 0.28);
 
-  --neon-gold: rgba(212, 175, 55, 0.4);
-  --neon-gold-bright: rgba(255, 215, 0, 0.22);
+  --neon-gold: rgba(199, 154, 68, 0.4);
+  --neon-gold-bright: rgba(199, 154, 68, 0.22);
   --neon-ivory: rgba(246, 241, 231, 0.2);
 }
 
@@ -54,7 +55,7 @@ body {
 }
 
 .nav-scrolled {
-  background: rgba(10, 10, 10, 0.88);
+  background: rgba(21, 16, 24, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border-subtle) !important;
@@ -67,7 +68,7 @@ body {
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.35);
+  background: rgba(199, 154, 68, 0.35);
   color: var(--text-primary);
 }
 
