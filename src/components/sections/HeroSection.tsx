@@ -1,11 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import "@/lib/gsap-config";
 import { Button } from "../global/Button";
+
+/** Degrees from north (0° = top); 180° = south point for a stronger glow. */
+const COMPASS_POINT_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315] as const;
 
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -14,7 +17,7 @@ export function HeroSection() {
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      gsap.set([".hero-compass", ".hero-brand-name", ".hero-headline", ".hero-subheadline", ".hero-cta"], {
+      gsap.set([".hero-compass", ".hero-brand-logo", ".hero-headline", ".hero-subheadline", ".hero-cta"], {
         opacity: 0,
         y: 30,
       });
@@ -29,7 +32,7 @@ export function HeroSection() {
         ease: "power2.out",
       })
         .to(
-          ".hero-brand-name",
+          ".hero-brand-logo",
           {
             opacity: 1,
             y: 0,
@@ -76,19 +79,42 @@ export function HeroSection() {
     >
       <div className="hero-content flex max-w-4xl flex-col items-center">
         <div className="hero-compass mb-10 md:mb-12">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand-icon.svg"
-            alt=""
-            width={150}
-            height={150}
-            className="hero-compass-emblem mx-auto h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
-          />
+          <div className="hero-compass-visual relative mx-auto flex h-[100px] w-[100px] items-center justify-center md:h-[120px] md:w-[120px]">
+            <div className="pointer-events-none absolute inset-[-18%] z-0" aria-hidden>
+              {COMPASS_POINT_ANGLES.map((deg, i) => (
+                <span
+                  key={deg}
+                  className={`hero-compass-point-glow ${deg === 180 ? "hero-compass-point-glow--south" : ""}`}
+                  style={
+                    {
+                      "--compass-glow-rotate": `${deg}deg`,
+                      "--compass-glow-delay": `${i * 0.38}s`,
+                    } as CSSProperties
+                  }
+                />
+              ))}
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand-icon.svg"
+              alt=""
+              width={150}
+              height={150}
+              className="hero-compass-emblem relative z-[1] h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
+            />
+          </div>
         </div>
 
-        <p className="hero-brand-name mb-12 max-w-xl font-[family-name:var(--font-cinzel)] text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--metallic-gold)] md:text-sm">
-          CompassPoint Advisory
-        </p>
+        <div className="hero-brand-logo mb-12 flex w-full justify-center px-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/compasspoint-logotext.svg"
+            alt="CompassPoint Advisory"
+            width={360}
+            height={72}
+            className="h-auto w-auto max-w-[min(300px,88vw)] object-contain md:max-w-[340px]"
+          />
+        </div>
 
         <h1
           className="hero-headline max-w-[22ch] font-[family-name:var(--font-cinzel)] text-[clamp(2.5rem,5vw,3.75rem)] font-bold uppercase leading-[1.12] tracking-[0.04em]"
