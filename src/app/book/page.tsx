@@ -5,12 +5,12 @@ import { PageHero } from "@/components/sections/PageHero";
 import { CALENDLY_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a Free Discovery Call — CompassPoint Advisory",
+  title: "Book a Free Discovery Call - CompassPoint Advisory",
   description:
-    "Schedule a confidential 30-minute discovery call with CompassPoint Advisory. No obligation — Melbourne-based, serving SMEs across Australia.",
+    "Schedule a confidential 30-minute discovery call with CompassPoint Advisory. No obligation - Melbourne-based, serving SMEs across Australia.",
   alternates: { canonical: "/book" },
   openGraph: {
-    title: "Book a Free Discovery Call — CompassPoint Advisory",
+    title: "Book a Free Discovery Call - CompassPoint Advisory",
     description: "Schedule a confidential 30-minute discovery call. No obligation.",
     url: "/book",
   },
@@ -21,7 +21,7 @@ export default function BookDiscoveryPage() {
     <SiteShell>
       <PageHero
         title="Book a discovery call"
-        subtitle="30 minutes, confidential, no sales pressure — pick a time that suits you."
+        subtitle="30 minutes, confidential, no sales pressure - pick a time that suits you."
       />
 
       <div className="mx-auto w-full max-w-[min(100%,920px)] px-8 pb-24 pt-10 md:px-14 md:pb-28 lg:px-20">

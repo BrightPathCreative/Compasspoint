@@ -70,7 +70,7 @@ export function CtaSection() {
           </h2>
           <p className="mt-6 font-[family-name:var(--font-lato)] text-lg leading-relaxed text-[color-mix(in_srgb,var(--soft-ivory)_94%,transparent)] md:text-xl">
             Whether you&apos;re navigating a growth inflection point, looking to sharpen your strategy, or exploring
-            how AI can future-proof your operations — CompassPoint Advisory is your trusted partner.
+            how AI can future-proof your operations - CompassPoint Advisory is your trusted partner.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4">
             <Button href={BOOK_DISCOVERY_PATH}>

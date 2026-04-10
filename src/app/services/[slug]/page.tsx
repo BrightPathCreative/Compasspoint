@@ -7,8 +7,10 @@ import { Button } from "@/components/global/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
-import { serviceJsonLd } from "@/lib/seo-schemas";
+import { faqJsonLdFromItems, serviceJsonLd } from "@/lib/seo-schemas";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
+import { getServiceFaqItems } from "@/lib/faq";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { getRelatedServices, getServiceBySlug, getServiceImagePath, SERVICES } from "@/lib/services";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -39,10 +41,12 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound();
 
   const related = getRelatedServices(slug, 3);
+  const serviceFaqs = getServiceFaqItems(slug);
 
   return (
     <SiteShell>
       <JsonLd data={serviceJsonLd({ name: service.title, description: service.description })} />
+      {serviceFaqs.length > 0 ? <JsonLd data={faqJsonLdFromItems(serviceFaqs)} /> : null}
       <PageHero title={service.title} subtitle={`Service ${String(service.order).padStart(2, "0")}`} />
 
       <div className="relative mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20">
@@ -97,7 +101,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               priorities, owners, and measurable outcomes.
             </li>
             <li>
-              During execution, we stay close — advising, coaching, and course-correcting as the plan meets reality.
+              During execution, we stay close - advising, coaching, and course-correcting as the plan meets reality.
             </li>
             <li>
               Read our full <Link href="/methodology" className="text-[var(--metallic-gold)] underline-offset-2 hover:underline">methodology</Link>{" "}
@@ -111,6 +115,24 @@ export default async function ServiceDetailPage({ params }: Props) {
             Book a Discovery Call
           </Button>
         </div>
+
+        {serviceFaqs.length > 0 ? (
+          <section className="mx-auto mt-20 max-w-3xl border-t border-[var(--metallic-gold)]/20 pt-14">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)]">
+              Common questions
+            </h2>
+            <p className="mt-3 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
+              Answers drawn from our{' '}
+              <Link href="/faq" className="text-[var(--metallic-gold)] underline-offset-2 hover:underline">
+                full FAQ
+              </Link>
+              .
+            </p>
+            <div className="mt-8">
+              <FaqAccordion items={serviceFaqs} variant="minimal" initialOpenIndex={null} />
+            </div>
+          </section>
+        ) : null}
 
         <aside className="mx-auto mt-20 max-w-3xl border-t border-[var(--metallic-gold)]/20 pt-14">
           <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)]">
@@ -138,7 +160,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               href="/methodology"
               className="font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--metallic-gold)]"
             >
-              How we work — our methodology →
+              How we work - our methodology →
             </Link>
           </p>
         </aside>

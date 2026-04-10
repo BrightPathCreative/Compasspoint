@@ -52,7 +52,7 @@ export function HomeMethodologyPreviewSection() {
             <GoldDivider />
           </div>
           <p className="mx-auto mt-8 max-w-2xl font-[family-name:var(--font-lato)] text-[var(--text-secondary)] md:text-lg">
-            A disciplined, collaborative process — from first conversation to sustained momentum.
+            A disciplined, collaborative process - from first conversation to sustained momentum.
           </p>
         </ScrollReveal>
 

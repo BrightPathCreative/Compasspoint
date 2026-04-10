@@ -1,5 +1,6 @@
-import { SITE_URL } from "./site";
+import type { FaqItem } from "./faq";
 import { FAQ_ITEMS } from "./faq";
+import { SITE_URL } from "./site";
 
 const orgId = `${SITE_URL}/#organization`;
 
@@ -48,18 +49,31 @@ export function localBusinessJsonLd() {
   };
 }
 
+function faqMainEntityFromItems(items: FaqItem[]) {
+  return items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }));
+}
+
 export function faqPageJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ_ITEMS.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
+    mainEntity: faqMainEntityFromItems(FAQ_ITEMS),
+  };
+}
+
+/** FAQ structured data for a subset of questions (e.g. service detail pages). */
+export function faqJsonLdFromItems(items: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqMainEntityFromItems(items),
   };
 }
 

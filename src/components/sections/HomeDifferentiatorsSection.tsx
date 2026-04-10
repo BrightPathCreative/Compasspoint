@@ -11,7 +11,7 @@ const items = [
   {
     icon: Clock,
     title: "Results-First, Not Hours-First",
-    body: "Every project scoped around your outcomes — not billing targets.",
+    body: "Every project scoped around your outcomes - not billing targets.",
   },
   {
     icon: Brain,
@@ -40,7 +40,7 @@ export function HomeDifferentiatorsSection() {
           </h2>
           <p className="mx-auto mt-8 max-w-3xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
             We&apos;re not a generalist consulting firm. We&apos;re not a freelance marketplace. And we&apos;re not a
-            coaching program that hands you a workbook and wishes you luck. We are a dedicated strategic partner —
+            coaching program that hands you a workbook and wishes you luck. We are a dedicated strategic partner  - 
             one that rolls up its sleeves, learns your business deeply, and works alongside you to drive real,
             measurable outcomes.
           </p>

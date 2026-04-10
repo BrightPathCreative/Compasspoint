@@ -155,7 +155,7 @@ export function AboutSection() {
               </div>
             </div>
             <p className="w-full max-w-[min(100%,380px)] shrink-0 text-center font-[family-name:var(--font-montserrat)] text-sm text-[var(--text-tertiary)] lg:text-right">
-              Amelia Ghofrany — Compass Point Advisory.
+              Amelia Ghofrany - Compass Point Advisory.
             </p>
           </div>
         </div>

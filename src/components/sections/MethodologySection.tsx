@@ -38,7 +38,7 @@ export function MethodologySection() {
               How We Work
             </h2>
             <p className="mt-6 max-w-xl font-[family-name:var(--font-lato)] text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">
-              A disciplined, collaborative process—from first conversation to sustained momentum.
+              A disciplined, collaborative process - from first conversation to sustained momentum.
             </p>
           </div>
 

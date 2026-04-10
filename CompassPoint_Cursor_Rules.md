@@ -1,6 +1,6 @@
-# CompassPoint Advisory — Cursor Rules (Multipage Website)
+# CompassPoint Advisory - Cursor Rules (Multipage Website)
 
-> **Project:** CompassPoint Advisory — compasspointadvisory.com.au
+> **Project:** CompassPoint Advisory - compasspointadvisory.com.au
 > **Client:** Amelia Ghofrany
 > **Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS, Framer Motion
 > **Last Updated:** April 2026
@@ -9,7 +9,7 @@
 
 ## 1. Project Overview
 
-CompassPoint Advisory is a Melbourne-based strategic consulting firm for Australian SMEs and startups ($5M–$20M revenue). The website must project **premium authority**, **warmth**, and **strategic clarity** — positioning the firm as a Fortune 500-grade partner purpose-built for growing businesses.
+CompassPoint Advisory is a Melbourne-based strategic consulting firm for Australian SMEs and startups ($5M–$20M revenue). The website must project **premium authority**, **warmth**, and **strategic clarity** - positioning the firm as a Fortune 500-grade partner purpose-built for growing businesses.
 
 **Tagline:** *Guiding Businesses Toward Clarity, Growth, and Transformation*
 **Hero Headline:** *Big Business Thinking. Built for Yours.*
@@ -23,12 +23,12 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm for Austral
 ```css
 :root {
   /* Core */
-  --royal-plum: #5B184C;         /* Primary — backgrounds, banners, hero sections */
-  --metallic-gold: #D4AF37;      /* Accent — logo, highlights, headings */
-  --bright-gold: #FFD700;        /* Highlight — gradient highlight in gold texture */
-  --antique-gold: #B8860B;       /* Shadow — gradient depth, embossed finish */
-  --charcoal: #2E2E2E;           /* Secondary — body text, icons */
-  --soft-ivory: #F6F1E7;         /* Neutral — backgrounds, contrast sections */
+  --royal-plum: #5B184C;         /* Primary - backgrounds, banners, hero sections */
+  --metallic-gold: #D4AF37;      /* Accent - logo, highlights, headings */
+  --bright-gold: #FFD700;        /* Highlight - gradient highlight in gold texture */
+  --antique-gold: #B8860B;       /* Shadow - gradient depth, embossed finish */
+  --charcoal: #2E2E2E;           /* Secondary - body text, icons */
+  --soft-ivory: #F6F1E7;         /* Neutral - backgrounds, contrast sections */
 
   /* Extended (for UI elements) */
   --plum-light: #7A2868;         /* Hover states on plum */
@@ -42,7 +42,7 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm for Austral
 **Rules:**
 - Hero and feature sections use `--royal-plum` background with `--metallic-gold` or `--soft-ivory` text.
 - Body/content sections use `--soft-ivory` or `--white` background with `--charcoal` text.
-- Gold is used for accents, dividers, icons, and CTAs — never as a large background fill.
+- Gold is used for accents, dividers, icons, and CTAs - never as a large background fill.
 - Maintain WCAG AA contrast minimum (4.5:1 for body text, 3:1 for large text/headings).
 - Plum-on-ivory and ivory-on-plum are the two primary section treatments. Alternate them for rhythm.
 
@@ -89,7 +89,7 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm for Austral
 
 ### 2.4 Imagery & Photography
 
-- Warm-toned, soft highlights — avoid cold/blue-tinted stock.
+- Warm-toned, soft highlights - avoid cold/blue-tinted stock.
 - Subjects: directional metaphors (compass, horizon, road ahead, skyline).
 - People: confident, approachable, mid-action. Not staged or overly corporate.
 - Optional filters: subtle gold tint or plum overlay at 20–30% opacity.
@@ -165,10 +165,10 @@ Ghost CTA → no border, gold text with arrow →, underline on hover
 2. **Intro / Value Proposition**
    - Ivory background
    - Medium headline: "Strategic Clarity. Sustainable Growth."
-   - Body: "CompassPoint Advisory partners with Australian small and medium businesses and startups to unlock the strategy, structure, and systems that ambitious founders need — without the corporate price tag."
+   - Body: "CompassPoint Advisory partners with Australian small and medium businesses and startups to unlock the strategy, structure, and systems that ambitious founders need - without the corporate price tag."
 
 3. **About Snapshot**
-   - H2: "About CompassPoint Advisory — Melbourne-Based Business Consultants for Australian SMEs"
+   - H2: "About CompassPoint Advisory - Melbourne-Based Business Consultants for Australian SMEs"
    - Condensed version of about page content (2–3 paragraphs max)
    - CTA: "Learn More About Us →"
 
@@ -185,22 +185,22 @@ Ghost CTA → no border, gold text with arrow →, underline on hover
 
 6. **Why CompassPoint (Differentiators)**
    - H2: "Why Australian SMEs Choose CompassPoint Advisory"
-   - Intro paragraph: "We're not a generalist consulting firm. We're not a freelance marketplace. And we're not a coaching program that hands you a workbook and wishes you luck. We are a dedicated strategic partner — one that rolls up its sleeves, learns your business deeply, and works alongside you to drive real, measurable outcomes."
+   - Intro paragraph: "We're not a generalist consulting firm. We're not a freelance marketplace. And we're not a coaching program that hands you a workbook and wishes you luck. We are a dedicated strategic partner - one that rolls up its sleeves, learns your business deeply, and works alongside you to drive real, measurable outcomes."
    - 5 differentiators displayed as icon + title + description:
-     1. Enterprise Experience, SME Focus — 20+ years of senior corporate expertise, now exclusively for SMEs
-     2. Results-First, Not Hours-First — Every project scoped around your outcomes, not billing targets
-     3. AI-Ready Advisory — We stay at the leading edge of AI and digital transformation so you don't have to
-     4. Built for the $5M–$20M Business — Designed around the specific challenges of this growth stage
-     5. Melbourne-Based, Nationally Active — In-person, remote, or hybrid across Australia
+     1. Enterprise Experience, SME Focus - 20+ years of senior corporate expertise, now exclusively for SMEs
+     2. Results-First, Not Hours-First - Every project scoped around your outcomes, not billing targets
+     3. AI-Ready Advisory - We stay at the leading edge of AI and digital transformation so you don't have to
+     4. Built for the $5M–$20M Business - Designed around the specific challenges of this growth stage
+     5. Melbourne-Based, Nationally Active - In-person, remote, or hybrid across Australia
 
 7. **Testimonials** (placeholder)
    - H2: "What Our Clients Say"
-   - Design the section with placeholder cards (TBA — client will supply)
+   - Design the section with placeholder cards (TBA - client will supply)
 
 8. **Closing CTA**
    - Plum background section
    - H2: "Ready to Grow Your Business with Confidence?"
-   - Body: "Whether you're navigating a growth inflection point, looking to sharpen your strategy, or exploring how AI can future-proof your operations — CompassPoint Advisory is your trusted partner."
+   - Body: "Whether you're navigating a growth inflection point, looking to sharpen your strategy, or exploring how AI can future-proof your operations - CompassPoint Advisory is your trusted partner."
    - CTA: "Book Your Free Discovery Call →"
    - Subtext: "Confidential. No sales pressure. Just straight-talking strategic advice."
 
@@ -220,7 +220,7 @@ Ghost CTA → no border, gold text with arrow →, underline on hover
 - H1: "About CompassPoint Advisory"
 - Full about copy (see Section 1.2 from content doc)
 - Founder bio section with photo placeholder for Amelia Ghofrany
-- Credentials: IBM, Fujitsu, DXC Technology, Bupa — 20+ years
+- Credentials: IBM, Fujitsu, DXC Technology, Bupa - 20+ years
 - Vision and Mission statements
 - "Scaling a business shouldn't mean sacrificing control" section
 - CTA to book discovery call
@@ -253,39 +253,39 @@ Each service page should include:
 
 **Service Content:**
 
-**01 — Business Strategy Consulting**
-- Question: "Is your business growing — but without a clear plan for where it's heading?"
+**01 - Business Strategy Consulting**
+- Question: "Is your business growing - but without a clear plan for where it's heading?"
 - Body: "We work with SME founders and leadership teams to build future-ready strategies grounded in market insight, competitive positioning, and financial discipline. From annual planning to three-year growth roadmaps, we help you define where you're going and exactly how to get there."
 - Best for: Founders preparing to scale | Businesses entering new markets | Leadership teams needing alignment
 
-**02 — Operations and Process Optimisation**
+**02 - Operations and Process Optimisation**
 - Question: "Are inefficiencies quietly costing your business time and money?"
-- Body: "We map, assess, and redesign your core business processes to eliminate waste, reduce cost, and create the operational foundations your business needs to scale. We also identify where AI and automation can replace manual effort — freeing your team for higher-value work."
+- Body: "We map, assess, and redesign your core business processes to eliminate waste, reduce cost, and create the operational foundations your business needs to scale. We also identify where AI and automation can replace manual effort - freeing your team for higher-value work."
 - Best for: Businesses experiencing growing pains | Teams stretched too thin | Owners preparing for growth or sale
 
-**03 — Change Leadership and Culture Transformation**
+**03 - Change Leadership and Culture Transformation**
 - Question: "Is your team struggling to keep up with the pace of change?"
-- Body: "Change fails when people are left behind. We guide SME leaders through complex transformations — restructures, technology rollouts, culture shifts — with a human-centred approach that delivers measurable results and builds lasting capability."
+- Body: "Change fails when people are left behind. We guide SME leaders through complex transformations - restructures, technology rollouts, culture shifts - with a human-centred approach that delivers measurable results and builds lasting capability."
 - Best for: Businesses implementing new technology | Post-merger integration | Rebuilding team culture
 
-**04 — AI and Digital Transformation Consulting**
-- Question: "Not sure how AI fits into your business — or where to start?"
-- Body: "AI is no longer just for large enterprises. We help Australian SMEs identify practical, high-impact AI opportunities — from automating routine tasks to using data for smarter decision-making. We build a digital transformation roadmap that's right-sized for your business and budget."
+**04 - AI and Digital Transformation Consulting**
+- Question: "Not sure how AI fits into your business - or where to start?"
+- Body: "AI is no longer just for large enterprises. We help Australian SMEs identify practical, high-impact AI opportunities - from automating routine tasks to using data for smarter decision-making. We build a digital transformation roadmap that's right-sized for your business and budget."
 - Best for: SMEs exploring AI adoption | Businesses modernising legacy systems | Founders wanting competitive edge
 
-**05 — Executive Coaching for Senior Leaders**
+**05 - Executive Coaching for Senior Leaders**
 - Question: "Are you performing at the level your business needs you to?"
 - Body: "Designed for ambitious founders, CEOs, and senior female leaders navigating complex organisations and male-dominated industries, our executive coaching program provides clarity, strategy, and accountability to accelerate your leadership impact."
 - Best for: Founders and CEOs | Senior women in leadership | Leaders managing teams through change
 
-**06 — On-Demand Advisory**
+**06 - On-Demand Advisory**
 - Question: "Need expert support without a long-term commitment?"
-- Body: "Access senior consulting expertise by the hour — when you need a trusted sounding board, a second opinion on a major decision, or specialist support on a pressing challenge. No retainer. No lock-in."
+- Body: "Access senior consulting expertise by the hour - when you need a trusted sounding board, a second opinion on a major decision, or specialist support on a pressing challenge. No retainer. No lock-in."
 - Best for: Founders who need occasional expert input | Leaders between engagements | Specific challenges
 
-**07 — Growth Accelerator Workshop**
-- Question: "Ready to get serious about growth — but not sure where to start?"
-- Body: "The Growth Accelerator is CompassPoint Advisory's signature workshop experience — a focused, high-impact engagement designed to cut through the noise and build a clear, actionable growth plan for your business. In a single facilitated session, we work with you and your leadership team to diagnose what's holding the business back, identify your biggest growth opportunities, and map out exactly what needs to happen over the next 12 months to get there."
+**07 - Growth Accelerator Workshop**
+- Question: "Ready to get serious about growth - but not sure where to start?"
+- Body: "The Growth Accelerator is CompassPoint Advisory's signature workshop experience - a focused, high-impact engagement designed to cut through the noise and build a clear, actionable growth plan for your business. In a single facilitated session, we work with you and your leadership team to diagnose what's holding the business back, identify your biggest growth opportunities, and map out exactly what needs to happen over the next 12 months to get there."
 - Best for: Founders ready to get serious about growth | Businesses at a strategic crossroads | Leadership teams who need clarity and alignment
 
 ---
@@ -293,45 +293,45 @@ Each service page should include:
 ### 4.5 Methodology Page (`/methodology`)
 
 - H1: "How We Work"
-- Intro: "A disciplined, collaborative process — from first conversation to sustained momentum. We take a data-driven approach to consulting, and our approach is highly customisable to meet the unique needs of each business."
+- Intro: "A disciplined, collaborative process - from first conversation to sustained momentum. We take a data-driven approach to consulting, and our approach is highly customisable to meet the unique needs of each business."
 - 4 steps displayed as a vertical timeline or horizontal stepper:
-  1. **Discovery and Audit** — "We begin every engagement with a structured discovery process. We examine your business model, your market position, your team, your financials, and your goals. This gives us a clear, unbiased picture of where you are and what is standing between you and where you want to be."
-  2. **Strategic Roadmap** — "From the discovery findings, we build a clear, prioritised strategic roadmap. This is not a theoretical document; it is a practical guide that your team can execute against, with defined milestones, owners, and success metrics."
-  3. **Execution and Alignment** — "Strategy without execution is just planning. We work alongside your team during the implementation phase, providing guidance, accountability, and course corrections as the plan meets reality. We help you build the internal capability to execute with confidence."
-  4. **Ongoing Optimisation** — "The best strategies evolve. We maintain an ongoing advisory relationship with our clients, reviewing progress, adapting the roadmap as conditions change, and ensuring that the momentum built in the early phases is sustained over the long term."
+  1. **Discovery and Audit** - "We begin every engagement with a structured discovery process. We examine your business model, your market position, your team, your financials, and your goals. This gives us a clear, unbiased picture of where you are and what is standing between you and where you want to be."
+  2. **Strategic Roadmap** - "From the discovery findings, we build a clear, prioritised strategic roadmap. This is not a theoretical document; it is a practical guide that your team can execute against, with defined milestones, owners, and success metrics."
+  3. **Execution and Alignment** - "Strategy without execution is just planning. We work alongside your team during the implementation phase, providing guidance, accountability, and course corrections as the plan meets reality. We help you build the internal capability to execute with confidence."
+  4. **Ongoing Optimisation** - "The best strategies evolve. We maintain an ongoing advisory relationship with our clients, reviewing progress, adapting the roadmap as conditions change, and ensuring that the momentum built in the early phases is sustained over the long term."
 - CTA to book discovery call
 
 ---
 
 ### 4.6 FAQ Page (`/faq`)
 
-- H1: "Frequently Asked Questions — Business Consulting for Australian SMEs"
+- H1: "Frequently Asked Questions - Business Consulting for Australian SMEs"
 - Accordion-style Q&A
 - Questions and answers:
 
 **Q: What is a business consultant and what do they do for SMEs?**
-A: A business consultant works alongside SME owners and leadership teams to solve strategic, operational, and organisational challenges. At CompassPoint Advisory, we help Australian small and medium businesses build growth strategies, improve their operations, manage change, and adopt AI and digital tools — giving them access to expert thinking previously available only to large corporations.
+A: A business consultant works alongside SME owners and leadership teams to solve strategic, operational, and organisational challenges. At CompassPoint Advisory, we help Australian small and medium businesses build growth strategies, improve their operations, manage change, and adopt AI and digital tools - giving them access to expert thinking previously available only to large corporations.
 
-**Q: I already have an Accountant — why do I need a business consultant?**
-A: Your accountant manages financial health — compliance, tax, reporting. A business consultant focuses on growth: identifying strategies, initiatives, and operational improvements to scale your business, enter new markets, and build long-term value. Think of your accountant as keeping score — and your business consultant as helping you win the game.
+**Q: I already have an Accountant - why do I need a business consultant?**
+A: Your accountant manages financial health - compliance, tax, reporting. A business consultant focuses on growth: identifying strategies, initiatives, and operational improvements to scale your business, enter new markets, and build long-term value. Think of your accountant as keeping score - and your business consultant as helping you win the game.
 
 **Q: How much does business consulting cost for a small business in Australia?**
-A: Fees vary depending on scope, duration, and engagement type. CompassPoint Advisory offers flexible models — from project-based engagements to on-demand hourly advisory — so SMEs can access support without a large upfront commitment. We offer a free discovery call to understand your needs and provide a tailored proposal. Consider consulting fees as an investment — the right advice at the right time can unlock revenue, reduce waste, and accelerate decisions.
+A: Fees vary depending on scope, duration, and engagement type. CompassPoint Advisory offers flexible models - from project-based engagements to on-demand hourly advisory - so SMEs can access support without a large upfront commitment. We offer a free discovery call to understand your needs and provide a tailored proposal. Consider consulting fees as an investment - the right advice at the right time can unlock revenue, reduce waste, and accelerate decisions.
 
 **Q: How do I know if my business needs a consultant?**
-A: If you're experiencing rapid growth without systems to support it, a clear ambition but no strategic roadmap, operational inefficiencies eating into margins, a major change underway, or leadership challenges affecting team performance — consulting support could be transformative.
+A: If you're experiencing rapid growth without systems to support it, a clear ambition but no strategic roadmap, operational inefficiencies eating into margins, a major change underway, or leadership challenges affecting team performance - consulting support could be transformative.
 
 **Q: What size businesses does CompassPoint Advisory work with?**
-A: We primarily work with Australian SMEs generating between $5M and $20M in annual revenue — businesses past the startup phase and actively looking to scale, optimise, or transform.
+A: We primarily work with Australian SMEs generating between $5M and $20M in annual revenue - businesses past the startup phase and actively looking to scale, optimise, or transform.
 
 **Q: Does CompassPoint Advisory offer AI consulting for small businesses?**
-A: Yes. We help SMEs understand where AI can genuinely improve their business — from automating repetitive tasks to using data for smarter decisions and building AI-enabled customer experiences. We cut through the hype and focus on practical, high-ROI applications.
+A: Yes. We help SMEs understand where AI can genuinely improve their business - from automating repetitive tasks to using data for smarter decisions and building AI-enabled customer experiences. We cut through the hype and focus on practical, high-ROI applications.
 
 **Q: Where is CompassPoint Advisory based?**
-A: We are headquartered in Melbourne, Victoria, and work with businesses across Australia — including Sydney, Brisbane, Perth, Hobart and Adelaide — both in-person and remotely.
+A: We are headquartered in Melbourne, Victoria, and work with businesses across Australia - including Sydney, Brisbane, Perth, Hobart and Adelaide - both in-person and remotely.
 
 **Q: How do I get started with CompassPoint Advisory?**
-A: The first step is a free, confidential discovery call with our founder, Amelia Ghofrany. In 30 minutes, we'll explore your goals, your challenges, and whether we're the right partner. Book directly via our Calendly link — no commitment required.
+A: The first step is a free, confidential discovery call with our founder, Amelia Ghofrany. In 30 minutes, we'll explore your goals, your challenges, and whether we're the right partner. Book directly via our Calendly link - no commitment required.
 
 ---
 
@@ -363,29 +363,29 @@ A: The first step is a free, confidential discovery call with our founder, Ameli
 - **Mobile-first:** Fully responsive, all interactive elements touch-friendly (min 44px tap targets).
 - **Core Web Vitals:** LCP < 2.5s, FID < 100ms, CLS < 0.1.
 - **HTTPS:** Enforced site-wide.
-- **Trailing slashes:** Consistent — pick one convention and enforce it.
+- **Trailing slashes:** Consistent - pick one convention and enforce it.
 
 ### 5.2 Page-Level SEO Metadata
 
 | Page | Title | Meta Description |
 |------|-------|------------------|
-| Home | CompassPoint Advisory — Strategic Business Consulting for Australian SMEs | CompassPoint Advisory partners with Australian SMEs and startups to deliver growth strategy, operational excellence, AI consulting, and executive coaching. Melbourne-based, nationally active. |
-| About | About CompassPoint Advisory — Melbourne Business Consultants | Founded by Amelia Ghofrany with 20+ years at IBM, Fujitsu, DXC and Bupa. Strategic consulting purpose-built for Australian SMEs turning $5M–$20M. |
-| Services | Business Consulting Services for Australian SMEs — CompassPoint Advisory | From strategy and operations to AI transformation and executive coaching. Explore CompassPoint Advisory's tailored consulting services for growing Australian businesses. |
-| Business Strategy | Business Strategy Consulting for SMEs — CompassPoint Advisory | Build future-ready growth strategies with CompassPoint Advisory. Market insight, competitive positioning, and financial discipline for Australian SMEs. |
-| Operations | Operations & Process Optimisation — CompassPoint Advisory | Eliminate waste, reduce costs, and build scalable operations. Process optimisation and AI automation consulting for Australian SMEs. |
-| Change Leadership | Change Leadership & Culture Transformation — CompassPoint Advisory | Navigate restructures, technology rollouts, and culture shifts with human-centred change management for Australian SMEs. |
-| AI & Digital | AI and Digital Transformation Consulting — CompassPoint Advisory | Practical AI adoption for Australian SMEs. Automate tasks, unlock data insights, and build a digital transformation roadmap right-sized for your business. |
-| Executive Coaching | Executive Coaching for Founders & Senior Leaders — CompassPoint Advisory | Clarity, strategy, and accountability for ambitious founders, CEOs, and senior female leaders navigating complex organisations. |
-| On-Demand Advisory | On-Demand Business Advisory — CompassPoint Advisory | Access senior consulting expertise by the hour. No retainer, no lock-in — just expert support when you need it. |
-| Growth Accelerator | Growth Accelerator Workshop — CompassPoint Advisory | A focused, high-impact workshop to diagnose what's holding your business back and build a 12-month growth plan. |
-| Methodology | How We Work — CompassPoint Advisory's Consulting Process | Discovery, strategy, execution, and optimisation. A disciplined, collaborative consulting process for Australian SMEs. |
-| FAQ | Business Consulting FAQ — CompassPoint Advisory | Answers to common questions about business consulting for Australian SMEs, including costs, AI consulting, and how to get started. |
-| Contact | Contact CompassPoint Advisory — Book a Free Discovery Call | Get in touch with CompassPoint Advisory. Book a free, confidential discovery call with founder Amelia Ghofrany. Melbourne-based, serving all of Australia. |
+| Home | CompassPoint Advisory - Strategic Business Consulting for Australian SMEs | CompassPoint Advisory partners with Australian SMEs and startups to deliver growth strategy, operational excellence, AI consulting, and executive coaching. Melbourne-based, nationally active. |
+| About | About CompassPoint Advisory - Melbourne Business Consultants | Founded by Amelia Ghofrany with 20+ years at IBM, Fujitsu, DXC and Bupa. Strategic consulting purpose-built for Australian SMEs turning $5M–$20M. |
+| Services | Business Consulting Services for Australian SMEs - CompassPoint Advisory | From strategy and operations to AI transformation and executive coaching. Explore CompassPoint Advisory's tailored consulting services for growing Australian businesses. |
+| Business Strategy | Business Strategy Consulting for SMEs - CompassPoint Advisory | Build future-ready growth strategies with CompassPoint Advisory. Market insight, competitive positioning, and financial discipline for Australian SMEs. |
+| Operations | Operations & Process Optimisation - CompassPoint Advisory | Eliminate waste, reduce costs, and build scalable operations. Process optimisation and AI automation consulting for Australian SMEs. |
+| Change Leadership | Change Leadership & Culture Transformation - CompassPoint Advisory | Navigate restructures, technology rollouts, and culture shifts with human-centred change management for Australian SMEs. |
+| AI & Digital | AI and Digital Transformation Consulting - CompassPoint Advisory | Practical AI adoption for Australian SMEs. Automate tasks, unlock data insights, and build a digital transformation roadmap right-sized for your business. |
+| Executive Coaching | Executive Coaching for Founders & Senior Leaders - CompassPoint Advisory | Clarity, strategy, and accountability for ambitious founders, CEOs, and senior female leaders navigating complex organisations. |
+| On-Demand Advisory | On-Demand Business Advisory - CompassPoint Advisory | Access senior consulting expertise by the hour. No retainer, no lock-in - just expert support when you need it. |
+| Growth Accelerator | Growth Accelerator Workshop - CompassPoint Advisory | A focused, high-impact workshop to diagnose what's holding your business back and build a 12-month growth plan. |
+| Methodology | How We Work - CompassPoint Advisory's Consulting Process | Discovery, strategy, execution, and optimisation. A disciplined, collaborative consulting process for Australian SMEs. |
+| FAQ | Business Consulting FAQ - CompassPoint Advisory | Answers to common questions about business consulting for Australian SMEs, including costs, AI consulting, and how to get started. |
+| Contact | Contact CompassPoint Advisory - Book a Free Discovery Call | Get in touch with CompassPoint Advisory. Book a free, confidential discovery call with founder Amelia Ghofrany. Melbourne-based, serving all of Australia. |
 
 ### 5.3 Structured Data (JSON-LD)
 
-**Every page — Organization:**
+**Every page - Organization:**
 ```json
 {
   "@context": "https://schema.org",
@@ -412,7 +412,7 @@ A: The first step is a free, confidential discovery call with our founder, Ameli
 }
 ```
 
-**Home page — LocalBusiness:**
+**Home page - LocalBusiness:**
 ```json
 {
   "@context": "https://schema.org",
@@ -432,7 +432,7 @@ A: The first step is a free, confidential discovery call with our founder, Ameli
 }
 ```
 
-**Services pages — Service schema:**
+**Services pages - Service schema:**
 ```json
 {
   "@context": "https://schema.org",
@@ -450,7 +450,7 @@ A: The first step is a free, confidential discovery call with our founder, Ameli
 }
 ```
 
-**FAQ page — FAQPage schema:**
+**FAQ page - FAQPage schema:**
 ```json
 {
   "@context": "https://schema.org",
@@ -468,7 +468,7 @@ A: The first step is a free, confidential discovery call with our founder, Ameli
 }
 ```
 
-**About page — Person schema for Amelia:**
+**About page - Person schema for Amelia:**
 ```json
 {
   "@context": "https://schema.org",
@@ -489,7 +489,7 @@ A: The first step is a free, confidential discovery call with our founder, Ameli
 - FAQ answers link to relevant service pages where applicable.
 - All pages include a footer CTA linking to `/contact` or the Calendly URL.
 - Blog posts (future) should interlink with relevant services pages.
-- Use descriptive anchor text — avoid "click here" or "learn more" in isolation.
+- Use descriptive anchor text - avoid "click here" or "learn more" in isolation.
 
 ### 5.5 Heading Hierarchy
 
@@ -554,8 +554,8 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm purpose-bui
 
 ### 6.3 Structured Data for AI
 
-- JSON-LD on every page (see Section 5.3) — LLMs parse structured data.
-- FAQ schema is especially valuable — LLMs love pulling from FAQ structured data.
+- JSON-LD on every page (see Section 5.3) - LLMs parse structured data.
+- FAQ schema is especially valuable - LLMs love pulling from FAQ structured data.
 - Keep `<meta name="description">` factual and entity-rich, not marketing-fluffy.
 
 ### 6.4 robots.txt for AI Crawlers
@@ -670,10 +670,10 @@ src/
 
 ## 10. Analytics & Tracking
 
-- Google Analytics 4 (GA4) — page views, scroll depth, CTA clicks.
+- Google Analytics 4 (GA4) - page views, scroll depth, CTA clicks.
 - Google Tag Manager for event tracking.
 - Track: "Book Discovery Call" clicks, Calendly opens, service page views, FAQ expansions.
-- Google Search Console — verify ownership, monitor indexing.
+- Google Search Console - verify ownership, monitor indexing.
 - Microsoft Clarity or Hotjar (optional) for heatmaps.
 
 ---
@@ -696,7 +696,7 @@ src/
 - Use "we" for CompassPoint, "you" for the reader.
 - Avoid: jargon without explanation, passive voice where active is clearer, filler phrases.
 - Numbers: spell out one through nine, use numerals for 10+. Exception: "$5M–$20M" always uses numerals.
-- Em dashes (—) with no spaces on either side.
+- Avoid em dashes; use commas or a hyphen with spaces for pauses and asides (e.g. “idea - detail”).
 
 ---
 

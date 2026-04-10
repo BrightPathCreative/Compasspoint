@@ -2,7 +2,7 @@ import Link from "next/link";
 import GoldDivider from "@/components/GoldDivider";
 import ScrollReveal from "@/components/ScrollReveal";
 
-/** Intro / value proposition — ivory background per site spec */
+/** Intro / value proposition - ivory background per site spec */
 export function HomeIntroSection() {
   return (
     <section
@@ -19,7 +19,7 @@ export function HomeIntroSection() {
           </div>
           <p className="mt-10 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
             CompassPoint Advisory partners with Australian small and medium businesses and startups to unlock
-            the strategy, structure, and systems that ambitious founders need — without the corporate price tag.
+            the strategy, structure, and systems that ambitious founders need - without the corporate price tag.
           </p>
           <Link
             href="/about"

@@ -1,4 +1,4 @@
-# CompassPoint Advisory — Animation & Design Inspiration Guide
+# CompassPoint Advisory - Animation & Design Inspiration Guide
 
 > **Purpose:** Creative direction, animation techniques, and reference links for building an Awwwards-quality consulting website.
 > **Stack:** Next.js 16 (App Router) · GSAP + `@gsap/react` · Lenis · Tailwind CSS. The repo is GSAP-first; add Framer Motion only if you introduce it.
@@ -7,7 +7,7 @@
 
 ## Brand colours (source of truth)
 
-Use **`src/app/globals.css`** — do not paste legacy gold/plum/cream hexes into new code.
+Use **`src/app/globals.css`** - do not paste legacy gold/plum/cream hexes into new code.
 
 | Role | Hex | Token |
 |------|-----|--------|
@@ -31,16 +31,16 @@ Treat this guide as an extension of what ships today, not a from-scratch rewrite
 
 ## 1. Creative Direction: "Refined Opulence"
 
-The aesthetic for CompassPoint should feel like walking into a private members' club — that moment where everything is quietly, unmistakably expensive. Not flashy. Not loud. Just *certain*.
+The aesthetic for CompassPoint should feel like walking into a private members' club - that moment where everything is quietly, unmistakably expensive. Not flashy. Not loud. Just *certain*.
 
 **Design pillars:**
 
-- **Cinematic pacing** — Sections reveal like chapters in a story, not a brochure
-- **Metallic warmth** — Gold that feels forged, not filtered. Plum that feels deep, not dark
-- **Quiet confidence** — Animations that feel inevitable, not eager
-- **Tactile depth** — Textures, shadows, and layering that make a flat screen feel three-dimensional
+- **Cinematic pacing** - Sections reveal like chapters in a story, not a brochure
+- **Metallic warmth** - Gold that feels forged, not filtered. Plum that feels deep, not dark
+- **Quiet confidence** - Animations that feel inevitable, not eager
+- **Tactile depth** - Textures, shadows, and layering that make a flat screen feel three-dimensional
 
-**The one thing someone will remember:** The compass emblem. It should feel alive — subtly rotating on scroll, glowing with a warm shimmer, like a living brand mark woven throughout the experience.
+**The one thing someone will remember:** The compass emblem. It should feel alive - subtly rotating on scroll, glowing with a warm shimmer, like a living brand mark woven throughout the experience.
 
 ---
 
@@ -54,10 +54,10 @@ npm install gsap @gsap/react lenis
 
 **GSAP plugins to register:**
 
-- `ScrollTrigger` — Scroll-linked animations (free)
-- `SplitText` — Character/word/line text reveals (Club GSAP — paid, worth it)
-- `CustomEase` — Bespoke easing curves
-- `ScrollSmoother` — Alternative to Lenis (pick one, not both)
+- `ScrollTrigger` - Scroll-linked animations (free)
+- `SplitText` - Character/word/line text reveals (Club GSAP - paid, worth it)
+- `CustomEase` - Bespoke easing curves
+- `ScrollSmoother` - Alternative to Lenis (pick one, not both)
 
 **Lenis + GSAP sync (recommended approach):**
 
@@ -138,10 +138,10 @@ Generic `ease-in-out` screams template. Custom eases feel designed:
 import { CustomEase } from "gsap/CustomEase";
 gsap.registerPlugin(CustomEase);
 
-// "Compass ease" — sharp entry, gentle settle. Feels authoritative.
+// "Compass ease" - sharp entry, gentle settle. Feels authoritative.
 CustomEase.create("compass", "0.625, 0.05, 0, 1");
 
-// "Regal ease" — slow start, confident finish.
+// "Regal ease" - slow start, confident finish.
 CustomEase.create("regal", "0.22, 0.61, 0.36, 1");
 
 // Usage
@@ -150,7 +150,7 @@ gsap.to(element, { y: 0, duration: 1.2, ease: "compass" });
 
 ---
 
-## 3. Hero Section — The Money Shot
+## 3. Hero Section - The Money Shot
 
 This is the single most important section. It needs to stop someone mid-scroll and make them think: "These people are serious."
 
@@ -158,13 +158,13 @@ This is the single most important section. It needs to stop someone mid-scroll a
 
 **Timeline (total ~2.8s):**
 
-1. **0.0s** — Plum (`#380729`) background fades in from the page black
-2. **0.3s** — Compass emblem draws in (SVG stroke animation) then fills with gold (`#C79A44` / `var(--brand-gold)`)
-3. **0.8s** — "Big Business Thinking." reveals word-by-word from below (masked reveal with SplitText)
-4. **1.4s** — "Built for Yours." fades up with slight scale
-5. **1.8s** — Subheadline fades in
-6. **2.2s** — CTA buttons slide up with stagger
-7. **2.5s** — Subtle gold particle/shimmer effect begins (CSS animation, infinite loop)
+1. **0.0s** - Plum (`#380729`) background fades in from the page black
+2. **0.3s** - Compass emblem draws in (SVG stroke animation) then fills with gold (`#C79A44` / `var(--brand-gold)`)
+3. **0.8s** - "Big Business Thinking." reveals word-by-word from below (masked reveal with SplitText)
+4. **1.4s** - "Built for Yours." fades up with slight scale
+5. **1.8s** - Subheadline fades in
+6. **2.2s** - CTA buttons slide up with stagger
+7. **2.5s** - Subtle gold particle/shimmer effect begins (CSS animation, infinite loop)
 
 ### 3.2 Compass SVG Draw Animation
 
@@ -202,7 +202,7 @@ gsap.to(".compass-svg path", {
 
 ### 3.3 SplitText Masked Headline Reveal
 
-This is the technique used by top luxury/fashion sites — text slides up from behind a mask:
+This is the technique used by top luxury/fashion sites - text slides up from behind a mask:
 
 ```typescript
 import { SplitText } from "gsap/SplitText";
@@ -225,7 +225,7 @@ gsap.from(split.words, {
 });
 ```
 
-Confirm `SplitText.create` options (`mask`, `type`, class names) against **your installed GSAP version** — Club plugin APIs evolve.
+Confirm `SplitText.create` options (`mask`, `type`, class names) against **your installed GSAP version** - Club plugin APIs evolve.
 
 **CSS required for masked reveal:**
 
@@ -237,10 +237,10 @@ Confirm `SplitText.create` options (`mask`, `type`, class names) against **your 
 
 ### 3.4 Gold Shimmer CSS Effect (for headings)
 
-Adapted from CodePen techniques — a subtle moving light across gold text:
+Adapted from CodePen techniques - a subtle moving light across gold text:
 
 ```css
-/* Use brand gold + cream only — no legacy yellows */
+/* Use brand gold + cream only - no legacy yellows */
 .gold-shimmer {
   background: linear-gradient(
     90deg,
@@ -262,9 +262,9 @@ Adapted from CodePen techniques — a subtle moving light across gold text:
 }
 ```
 
-**Important:** Use this sparingly — on the hero headline and maybe one other accent. Overuse kills the magic.
+**Important:** Use this sparingly - on the hero headline and maybe one other accent. Overuse kills the magic.
 
-### 3.5 Compass Emblem — Scroll-Linked Slow Rotation
+### 3.5 Compass Emblem - Scroll-Linked Slow Rotation
 
 As the user scrolls down the page, the compass subtly rotates. It should feel almost subliminal:
 
@@ -276,7 +276,7 @@ gsap.to(".compass-watermark", {
     trigger: "body",
     start: "top top",
     end: "bottom bottom",
-    scrub: 3,   // 3-second smoothing — feels glacial, intentional
+    scrub: 3,   // 3-second smoothing - feels glacial, intentional
   },
 });
 ```
@@ -323,7 +323,7 @@ function createSectionReveal(trigger: string) {
 }
 ```
 
-### 4.2 Service Cards — Staggered Cascade
+### 4.2 Service Cards - Staggered Cascade
 
 Cards shouldn't all appear at once. They cascade in, each slightly after the last:
 
@@ -379,7 +379,7 @@ gsap.from(".service-card", {
 }
 ```
 
-### 4.3 Methodology Steps — Pinned Horizontal Scroll or Vertical Timeline
+### 4.3 Methodology Steps - Pinned Horizontal Scroll or Vertical Timeline
 
 **Option A: Pinned stepper (more dramatic)**
 
@@ -430,7 +430,7 @@ gsap.to(".timeline-line", {
 });
 ```
 
-### 4.4 Differentiators — Counter/Number Animation
+### 4.4 Differentiators - Counter/Number Animation
 
 For the "20+ years" and "$5M–$20M" stats, animate the numbers counting up:
 
@@ -447,7 +447,7 @@ gsap.from(".stat-number", {
 });
 ```
 
-### 4.5 FAQ Accordion — Smooth Height Animation
+### 4.5 FAQ Accordion - Smooth Height Animation
 
 Don't use `display: none`. Animate `max-height` or use GSAP Flip for smooth open/close:
 
@@ -476,7 +476,7 @@ function toggleAccordion(item: HTMLElement) {
 
 **Exception to the “no layout animation” rule:** accordions often animate `height` (above) or use **GSAP Flip** / `max-height` for open/close. Prefer that over animating arbitrary layout props elsewhere.
 
-### 4.6 Closing CTA — Parallax Background + Floating Compass
+### 4.6 Closing CTA - Parallax Background + Floating Compass
 
 ```typescript
 // Subtle parallax on the plum CTA section
@@ -558,7 +558,7 @@ Luxury sites almost always have a subtle film grain. It adds depth and prevents 
 
 **Stacking:** A global grain at `z-index: 9999` can sit above modals and cookie banners. Prefer **section-local** grain (as on `.section-brand-plum` / hero) unless you intentionally want film grain over everything.
 
-**Alternative — CSS-only grain using SVG filter:**
+**Alternative - CSS-only grain using SVG filter:**
 
 ```css
 .grain-overlay::before {
@@ -590,7 +590,7 @@ A gentle darkening around the edges of the hero adds cinematic depth:
 }
 ```
 
-### 5.4 Cursor Follower (Optional — Desktop Only)
+### 5.4 Cursor Follower (Optional - Desktop Only)
 
 A subtle gold dot that follows the cursor adds premium feel. Use sparingly:
 
@@ -694,7 +694,7 @@ header.scrolled {
 
 | Technique                                  | Link                                                                                         |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------- |
-| GSAP SplitText — masked line reveal (Osmo) | [https://codepen.io/osmosupply/pen/pvvKezw](https://codepen.io/osmosupply/pen/pvvKezw)       |
+| GSAP SplitText - masked line reveal (Osmo) | [https://codepen.io/osmosupply/pen/pvvKezw](https://codepen.io/osmosupply/pen/pvvKezw)       |
 | SplitText word reveal with stagger         | [https://codepen.io/shshaw/pen/KXwawQ](https://codepen.io/shshaw/pen/KXwawQ)                 |
 | SplitText line reveal (official)           | [https://codepen.io/GreenSock/pen/ExLqopj](https://codepen.io/GreenSock/pen/ExLqopj)         |
 | Text reveal with rotation + stagger        | [https://codepen.io/BrunoMarcorio/pen/yLOOdKe](https://codepen.io/BrunoMarcorio/pen/yLOOdKe) |
@@ -754,7 +754,7 @@ const prefersReducedMotion = window.matchMedia(
 if (prefersReducedMotion) {
   ScrollTrigger.getAll().forEach((st) => st.kill());
   // Set hero/section elements to their final visible state, or skip registering timelines.
-  // Do not rely on undocumented shortcuts — be explicit about final CSS/GSAP state.
+  // Do not rely on undocumented shortcuts - be explicit about final CSS/GSAP state.
 }
 
 // Optional: skip Lenis when reduced motion is preferred (some teams prefer native scroll).
@@ -783,7 +783,7 @@ if (prefersReducedMotion) {
 - Lenis `lerp` of 0.08–0.1 provides luxury smoothness without feeling laggy
 - Kill ScrollTriggers on route change in Next.js (use `gsap.context()`)
 - Lazy load everything below the fold
-- Test on mobile — disable smooth scroll on touch devices if performance suffers:
+- Test on mobile - disable smooth scroll on touch devices if performance suffers:
 
 ```typescript
 const isTouchDevice = "ontouchstart" in window;
@@ -794,7 +794,7 @@ if (!isTouchDevice) {
 
 ### 7.3 Mobile Considerations
 
-- Pinned sections can be problematic on iOS — test thoroughly or convert to simple fade reveals on mobile
+- Pinned sections can be problematic on iOS - test thoroughly or convert to simple fade reveals on mobile
 - `matchMedia` for responsive GSAP:
 
 ```typescript
@@ -827,7 +827,7 @@ Aligned with the repo as of last edit (bump patch versions as needed):
 
 Framer Motion is **not** a dependency today; add only if you introduce it.
 
-**Note on GSAP licensing:** SplitText, CustomEase, ScrollSmoother, and MorphSVG require a Club GSAP membership (~$99/year). ScrollTrigger is free. For a client site of this calibre, Club GSAP is worth it — SplitText alone transforms the text animations from "nice" to "luxury editorial."
+**Note on GSAP licensing:** SplitText, CustomEase, ScrollSmoother, and MorphSVG require a Club GSAP membership (~$99/year). ScrollTrigger is free. For a client site of this calibre, Club GSAP is worth it - SplitText alone transforms the text animations from "nice" to "luxury editorial."
 
 ---
 
@@ -835,14 +835,14 @@ Framer Motion is **not** a dependency today; add only if you introduce it.
 
 Build these in order for maximum impact with least risk:
 
-1. **Lenis smooth scroll** — Instant upgrade, minimal code
-2. **Hero sequence** — Compass draw + headline reveal + CTA stagger
-3. **Section fade-up reveals** — Consistent pattern across all pages
-4. **Gold divider animations** — Small detail, big polish
-5. **Service card stagger + hover effects** — Interactive engagement
-6. **Sticky header with blur** — Professional UX pattern
-7. **Methodology stepper** — Choose pinned or timeline approach
-8. **Gold shimmer on key headings** — Selective use only
-9. **Film grain overlay** — The finishing touch
-10. **Custom cursor** — Last — only if everything else is solid first
+1. **Lenis smooth scroll** - Instant upgrade, minimal code
+2. **Hero sequence** - Compass draw + headline reveal + CTA stagger
+3. **Section fade-up reveals** - Consistent pattern across all pages
+4. **Gold divider animations** - Small detail, big polish
+5. **Service card stagger + hover effects** - Interactive engagement
+6. **Sticky header with blur** - Professional UX pattern
+7. **Methodology stepper** - Choose pinned or timeline approach
+8. **Gold shimmer on key headings** - Selective use only
+9. **Film grain overlay** - The finishing touch
+10. **Custom cursor** - Last - only if everything else is solid first
 

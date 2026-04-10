@@ -9,7 +9,7 @@ import { personAmeliaJsonLd } from "@/lib/seo-schemas";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About CompassPoint Advisory — Melbourne Business Consultants",
+  title: "About CompassPoint Advisory - Melbourne Business Consultants",
   description:
     "Founded by Amelia Ghofrany with 20+ years at IBM, Fujitsu, DXC and Bupa. Strategic consulting purpose-built for Australian SMEs turning $5M–$20M.",
   alternates: { canonical: "/about" },
@@ -41,7 +41,7 @@ export default function AboutPage() {
               Founder &amp; Principal Consultant
             </p>
             <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
-              20+ years across IBM, Fujitsu, DXC Technology, and Bupa — now focused exclusively on helping Australian
+              20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian
               SMEs grow with clarity and control.
             </p>
             <a
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="prose-custom mx-auto mt-16 max-w-3xl space-y-6 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:text-lg">
           <p>
             CompassPoint Advisory is a Melbourne-based strategic consulting firm for Australian SMEs and
-            startups—typically businesses in the $5M–$20M revenue range—that want Fortune 500–grade thinking without
+            startups - typically businesses in the $5M–$20M revenue range - that want Fortune 500–grade thinking without
             the corporate overhead.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
               Vision
             </h3>
             <p className="mt-4 font-[family-name:var(--font-lato)] leading-[1.7] text-[var(--charcoal)]">
-              To give growing Australian businesses access to the same strategic rigour large enterprises rely on—
+              To give growing Australian businesses access to the same strategic rigour large enterprises rely on -
               delivered in a way that respects pace, budget, and founder realities.
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
             </h3>
             <p className="mt-4 font-[family-name:var(--font-lato)] leading-[1.7] text-[var(--charcoal)]">
               We partner with leadership teams to unlock clarity in strategy, strength in operations, and confidence
-              through change—including practical adoption of AI where it earns its place.
+              through change - including practical adoption of AI where it earns its place.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
         <div className="prose-custom mx-auto mt-12 max-w-3xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:text-lg">
           <p>
-            We work alongside you—not above you—so decisions stay yours, momentum builds, and your team grows
+            We work alongside you - not above you - so decisions stay yours, momentum builds, and your team grows
             stronger through the process.
           </p>
         </div>

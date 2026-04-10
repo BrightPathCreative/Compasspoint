@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       access_key: key,
-      subject: "CompassPoint Advisory — website inquiry",
+      subject: "CompassPoint Advisory - website inquiry",
       name,
       email,
       phone: phone || "",

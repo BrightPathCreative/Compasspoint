@@ -6,12 +6,12 @@ import { SiteShell } from "@/components/global/SiteShell";
 import { BOOK_DISCOVERY_PATH, FOUNDER_WEBSITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact CompassPoint Advisory — Send an Enquiry",
+  title: "Contact CompassPoint Advisory - Send an Enquiry",
   description:
-    "Send a message to CompassPoint Advisory — general enquiries, introductions, and questions. Melbourne-based, serving Australian SMEs nationally.",
+    "Send a message to CompassPoint Advisory - general enquiries, introductions, and questions. Melbourne-based, serving Australian SMEs nationally.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact CompassPoint Advisory — Send an Enquiry",
+    title: "Contact CompassPoint Advisory - Send an Enquiry",
     description: "Written enquiries and questions. We read every message.",
     url: "/contact",
   },
@@ -30,7 +30,7 @@ export default function ContactPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-xl font-[family-name:var(--font-lato)] text-lg leading-relaxed text-[var(--text-secondary)]">
             Use this page for <strong className="font-medium text-[var(--text-primary)]">written messages</strong>{" "}
-            — scope questions, introductions, or anything that isn&apos;t urgent. We typically reply within two
+            - scope questions, introductions, or anything that isn&apos;t urgent. We typically reply within two
             business days.
           </p>
         </div>
@@ -45,14 +45,14 @@ export default function ContactPage() {
             Want a discovery call instead?
           </h2>
           <p className="mx-auto mt-4 max-w-md font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
-            If you&apos;d rather speak live first, book a free 30-minute call — confidential, no obligation — on our
+            If you&apos;d rather speak live first, book a free 30-minute call - confidential, no obligation - on our
             scheduling page.
           </p>
           <div className="mt-8">
             <Button href={BOOK_DISCOVERY_PATH}>Book a free discovery call</Button>
           </div>
           <p className="mt-5 font-[family-name:var(--font-lato)] text-sm text-[var(--text-tertiary)]">
-            Next, you&apos;ll open our scheduling page with the live calendar — still on this website.
+            Next, you&apos;ll open our scheduling page with the live calendar - still on this website.
           </p>
         </section>
 

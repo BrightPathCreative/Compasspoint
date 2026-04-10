@@ -8,12 +8,12 @@ export function HomeAboutSnapshotSection() {
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-20 lg:items-start">
           <ScrollReveal>
             <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl lg:text-[2.5rem]">
-              About CompassPoint Advisory — Melbourne-Based Business Consultants for Australian SMEs
+              About CompassPoint Advisory - Melbourne-Based Business Consultants for Australian SMEs
             </h2>
             <p className="mt-8 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
               CompassPoint Advisory is a Melbourne-based strategic consulting firm purpose-built for Australian
               SMEs and startups in the $5M–$20M revenue range. We combine enterprise-grade rigour with practical,
-              founder-friendly delivery — so you get clarity and momentum without the overhead of a big-four
+              founder-friendly delivery - so you get clarity and momentum without the overhead of a big-four
               engagement.
             </p>
           </ScrollReveal>

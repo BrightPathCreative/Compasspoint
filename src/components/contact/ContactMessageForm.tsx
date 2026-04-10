@@ -17,7 +17,7 @@ export function ContactMessageForm() {
     const body = [`From: ${name}`, `Email: ${email}`, phone ? `Phone: ${phone}` : "", "", message]
       .filter(Boolean)
       .join("\n");
-    const href = `mailto:${CONTACT_EMAIL_PUBLIC}?subject=${encodeURIComponent(`Website enquiry — ${name}`)}&body=${encodeURIComponent(body)}`;
+    const href = `mailto:${CONTACT_EMAIL_PUBLIC}?subject=${encodeURIComponent(`Website enquiry - ${name}`)}&body=${encodeURIComponent(body)}`;
     window.location.href = href;
     setStatus("Your email app should open. If it does not, copy your message and email us directly.");
   }

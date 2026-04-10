@@ -98,7 +98,7 @@ export function ContactForm() {
 
       {status === "success" ? (
         <p className="font-[family-name:var(--font-lato)] text-sm text-[var(--metallic-gold)]" role="status">
-          Thank you — your message has been sent.
+          Thank you - your message has been sent.
         </p>
       ) : null}
       {status === "error" ? (
@@ -108,7 +108,7 @@ export function ContactForm() {
       ) : null}
       {status === "config" ? (
         <p className="font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]" role="status">
-          Email delivery isn&apos;t configured yet. Please book a discovery call — that&apos;s the fastest way to
+          Email delivery isn&apos;t configured yet. Please book a discovery call - that&apos;s the fastest way to
           reach us.
         </p>
       ) : null}

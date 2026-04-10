@@ -6,7 +6,7 @@ export function NavbarLogo({ className = "" }: { className?: string }) {
     <Link
       href="/"
       className={`inline-flex shrink-0 rounded-xl p-1 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-black)] ${className}`}
-      aria-label="Compass Point Advisory — home"
+      aria-label="Compass Point Advisory - home"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

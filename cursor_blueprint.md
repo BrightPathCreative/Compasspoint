@@ -180,11 +180,11 @@ The best strategies evolve. We maintain an ongoing advisory relationship with ou
 
 *Note: Placeholder copy below. Replace with real client testimonials before launch.*
 
-**Quote 1:** "Amelia helped us see our business with fresh eyes. Within six months of working with CompassPoint, we had a clear investment thesis, a refined pitch, and our first term sheet. The clarity she brought was transformative." — Sarah M., Founder, [Tech Startup]
+**Quote 1:** "Amelia helped us see our business with fresh eyes. Within six months of working with CompassPoint, we had a clear investment thesis, a refined pitch, and our first term sheet. The clarity she brought was transformative." - Sarah M., Founder, [Tech Startup]
 
-**Quote 2:** "The strategic roadmap Amelia built for us became the operating document for our entire leadership team. It was the first time we all felt aligned on where we were going and how we were going to get there." — James T., CEO, [Professional Services Firm]
+**Quote 2:** "The strategic roadmap Amelia built for us became the operating document for our entire leadership team. It was the first time we all felt aligned on where we were going and how we were going to get there." - James T., CEO, [Professional Services Firm]
 
-**Quote 3:** "I came to Amelia feeling overwhelmed and leaving every session feeling equipped. Her coaching is direct, practical, and deeply informed by real experience. She doesn't tell you what you want to hear; she tells you what you need to hear." — Priya K., Founder, [Consumer Brand]
+**Quote 3:** "I came to Amelia feeling overwhelmed and leaving every session feeling equipped. Her coaching is direct, practical, and deeply informed by real experience. She doesn't tell you what you want to hear; she tells you what you need to hear." - Priya K., Founder, [Consumer Brand]
 
 ### Section 7: Final CTA
 
@@ -433,7 +433,7 @@ useGSAP(() => {
 ### 5.9. Service Cards: Hover Micro-Interaction
 
 ```typescript
-// In ServiceCard.tsx — using contextSafe for interaction-triggered animations
+// In ServiceCard.tsx - using contextSafe for interaction-triggered animations
 const { contextSafe } = useGSAP({ scope: cardRef });
 
 const onMouseEnter = contextSafe(() => {

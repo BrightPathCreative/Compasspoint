@@ -25,14 +25,8 @@ export function Footer() {
               <BrandLockup variant="onPlum" clickable={false} />
             </div>
             <p className="max-w-sm font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-secondary)]">
-              Strategic consulting for Australian SMEs and startups—Melbourne-based, nationally active.
+              Strategic consulting for Australian SMEs and startups - Melbourne-based, nationally active.
             </p>
-            <a
-              href={BOOK_DISCOVERY_PATH}
-              className="inline-block font-[family-name:var(--font-montserrat)] text-sm font-medium text-[var(--brand-gold)] underline-offset-2 hover:underline"
-            >
-              Book a free discovery call
-            </a>
             <div className="flex gap-4">
               <a
                 href={LINKEDIN_URL}
@@ -103,6 +97,10 @@ export function Footer() {
                 Subscribe
               </button>
             </form>
+            <p className="mt-3 max-w-md font-[family-name:var(--font-lato)] text-[11px] leading-relaxed text-[var(--text-tertiary)]">
+              We won&apos;t spam you. Expect only occasional emails with practical insights, educational content, and
+              CompassPoint Advisory updates - unsubscribe any time.
+            </p>
           </div>
         </div>
       </div>

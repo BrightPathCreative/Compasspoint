@@ -7,7 +7,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "How We Work — CompassPoint Advisory's Consulting Process",
+  title: "How We Work - CompassPoint Advisory's Consulting Process",
   description:
     "Discovery, strategy, execution, and optimisation. A disciplined, collaborative consulting process for Australian SMEs.",
   alternates: { canonical: "/methodology" },
@@ -18,7 +18,7 @@ export default function MethodologyPage() {
     <SiteShell>
       <PageHero
         title="How We Work"
-        subtitle="A disciplined, collaborative process — from first conversation to sustained momentum."
+        subtitle="A disciplined, collaborative process - from first conversation to sustained momentum."
       />
       <article className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-16 md:px-14 md:pb-28 md:pt-20 lg:px-20">
         <p className="mx-auto max-w-3xl font-[family-name:var(--font-lato)] text-lg leading-[1.7] text-[var(--text-secondary)]">

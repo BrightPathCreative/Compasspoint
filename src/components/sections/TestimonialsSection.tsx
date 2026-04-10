@@ -9,8 +9,8 @@ import { SectionWrapper } from "../global/SectionWrapper";
 
 const placeholders = [
   { kicker: "Case study", line: "Representative client story and measurable outcome will appear here." },
-  { kicker: "Quote", line: "Short endorsement with name and role — content to be supplied." },
-  { kicker: "Engagement", line: "Project snapshot: challenge, approach, and result — to be supplied." },
+  { kicker: "Quote", line: "Short endorsement with name and role - content to be supplied." },
+  { kicker: "Engagement", line: "Project snapshot: challenge, approach, and result - to be supplied." },
 ];
 
 export function TestimonialsSection() {
@@ -40,7 +40,7 @@ export function TestimonialsSection() {
         What Our Clients Say
       </h2>
       <p className="mx-auto mt-6 max-w-3xl text-center font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
-        Representative feedback will appear here — content to be supplied.
+        Representative feedback will appear here - content to be supplied.
       </p>
 
       <div className="testimonials-grid mt-14 grid gap-8 md:grid-cols-3 md:gap-6">

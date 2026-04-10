@@ -17,7 +17,7 @@ export const SERVICES: Service[] = [
     title: "Business Strategy Consulting",
     shortSummary:
       "Future-ready strategies grounded in market insight, positioning, and financial discipline.",
-    question: "Is your business growing — but without a clear plan for where it's heading?",
+    question: "Is your business growing - but without a clear plan for where it's heading?",
     description:
       "We work with SME founders and leadership teams to build future-ready strategies grounded in market insight, competitive positioning, and financial discipline. From annual planning to three-year growth roadmaps, we help you define where you're going and exactly how to get there.",
     bestFor: [
@@ -25,7 +25,7 @@ export const SERVICES: Service[] = [
       "Businesses entering new markets",
       "Leadership teams needing alignment",
     ],
-    metaTitle: "Business Strategy Consulting for SMEs — CompassPoint Advisory",
+    metaTitle: "Business Strategy Consulting for SMEs - CompassPoint Advisory",
     metaDescription:
       "Build future-ready growth strategies with CompassPoint Advisory. Market insight, competitive positioning, and financial discipline for Australian SMEs.",
   },
@@ -33,16 +33,16 @@ export const SERVICES: Service[] = [
     slug: "operations-process-optimisation",
     order: 2,
     title: "Operations and Process Optimisation",
-    shortSummary: "Map, assess, and redesign core processes—plus practical AI and automation opportunities.",
+    shortSummary: "Map, assess, and redesign core processes - plus practical AI and automation opportunities.",
     question: "Are inefficiencies quietly costing your business time and money?",
     description:
-      "We map, assess, and redesign your core business processes to eliminate waste, reduce cost, and create the operational foundations your business needs to scale. We also identify where AI and automation can replace manual effort — freeing your team for higher-value work.",
+      "We map, assess, and redesign your core business processes to eliminate waste, reduce cost, and create the operational foundations your business needs to scale. We also identify where AI and automation can replace manual effort - freeing your team for higher-value work.",
     bestFor: [
       "Businesses experiencing growing pains",
       "Teams stretched too thin",
       "Owners preparing for growth or sale",
     ],
-    metaTitle: "Operations & Process Optimisation — CompassPoint Advisory",
+    metaTitle: "Operations & Process Optimisation - CompassPoint Advisory",
     metaDescription:
       "Eliminate waste, reduce costs, and build scalable operations. Process optimisation and AI automation consulting for Australian SMEs.",
   },
@@ -53,13 +53,13 @@ export const SERVICES: Service[] = [
     shortSummary: "Human-centred change for restructures, technology rollouts, and culture shifts.",
     question: "Is your team struggling to keep up with the pace of change?",
     description:
-      "Change fails when people are left behind. We guide SME leaders through complex transformations — restructures, technology rollouts, culture shifts — with a human-centred approach that delivers measurable results and builds lasting capability.",
+      "Change fails when people are left behind. We guide SME leaders through complex transformations - restructures, technology rollouts, culture shifts - with a human-centred approach that delivers measurable results and builds lasting capability.",
     bestFor: [
       "Businesses implementing new technology",
       "Post-merger integration",
       "Rebuilding team culture",
     ],
-    metaTitle: "Change Leadership & Culture Transformation — CompassPoint Advisory",
+    metaTitle: "Change Leadership & Culture Transformation - CompassPoint Advisory",
     metaDescription:
       "Navigate restructures, technology rollouts, and culture shifts with human-centred change management for Australian SMEs.",
   },
@@ -68,15 +68,15 @@ export const SERVICES: Service[] = [
     order: 4,
     title: "AI and Digital Transformation Consulting",
     shortSummary: "Practical, high-impact AI opportunities and a roadmap right-sized for your business.",
-    question: "Not sure how AI fits into your business — or where to start?",
+    question: "Not sure how AI fits into your business - or where to start?",
     description:
-      "AI is no longer just for large enterprises. We help Australian SMEs identify practical, high-impact AI opportunities — from automating routine tasks to using data for smarter decision-making. We build a digital transformation roadmap that's right-sized for your business and budget.",
+      "AI is no longer just for large enterprises. We help Australian SMEs identify practical, high-impact AI opportunities - from automating routine tasks to using data for smarter decision-making. We build a digital transformation roadmap that's right-sized for your business and budget.",
     bestFor: [
       "SMEs exploring AI adoption",
       "Businesses modernising legacy systems",
       "Founders wanting competitive edge",
     ],
-    metaTitle: "AI and Digital Transformation Consulting — CompassPoint Advisory",
+    metaTitle: "AI and Digital Transformation Consulting - CompassPoint Advisory",
     metaDescription:
       "Practical AI adoption for Australian SMEs. Automate tasks, unlock data insights, and build a digital transformation roadmap right-sized for your business.",
   },
@@ -93,7 +93,7 @@ export const SERVICES: Service[] = [
       "Senior women in leadership",
       "Leaders managing teams through change",
     ],
-    metaTitle: "Executive Coaching for Founders & Senior Leaders — CompassPoint Advisory",
+    metaTitle: "Executive Coaching for Founders & Senior Leaders - CompassPoint Advisory",
     metaDescription:
       "Clarity, strategy, and accountability for ambitious founders, CEOs, and senior female leaders navigating complex organisations.",
   },
@@ -101,18 +101,18 @@ export const SERVICES: Service[] = [
     slug: "on-demand-advisory",
     order: 6,
     title: "On-Demand Advisory",
-    shortSummary: "Senior consulting expertise by the hour—no retainer, no lock-in.",
+    shortSummary: "Senior consulting expertise by the hour - no retainer, no lock-in.",
     question: "Need expert support without a long-term commitment?",
     description:
-      "Access senior consulting expertise by the hour — when you need a trusted sounding board, a second opinion on a major decision, or specialist support on a pressing challenge. No retainer. No lock-in.",
+      "Access senior consulting expertise by the hour - when you need a trusted sounding board, a second opinion on a major decision, or specialist support on a pressing challenge. No retainer. No lock-in.",
     bestFor: [
       "Founders who need occasional expert input",
       "Leaders between engagements",
       "Specific challenges",
     ],
-    metaTitle: "On-Demand Business Advisory — CompassPoint Advisory",
+    metaTitle: "On-Demand Business Advisory - CompassPoint Advisory",
     metaDescription:
-      "Access senior consulting expertise by the hour. No retainer, no lock-in — just expert support when you need it.",
+      "Access senior consulting expertise by the hour. No retainer, no lock-in - just expert support when you need it.",
   },
   {
     slug: "growth-accelerator-workshop",
@@ -120,21 +120,21 @@ export const SERVICES: Service[] = [
     title: "Growth Accelerator Workshop",
     shortSummary:
       "Signature facilitated session to diagnose blockers and map a clear 12-month growth plan.",
-    question: "Ready to get serious about growth — but not sure where to start?",
+    question: "Ready to get serious about growth - but not sure where to start?",
     description:
-      "The Growth Accelerator is CompassPoint Advisory's signature workshop experience — a focused, high-impact engagement designed to cut through the noise and build a clear, actionable growth plan for your business. In a single facilitated session, we work with you and your leadership team to diagnose what's holding the business back, identify your biggest growth opportunities, and map out exactly what needs to happen over the next 12 months to get there.",
+      "The Growth Accelerator is CompassPoint Advisory's signature workshop experience - a focused, high-impact engagement designed to cut through the noise and build a clear, actionable growth plan for your business. In a single facilitated session, we work with you and your leadership team to diagnose what's holding the business back, identify your biggest growth opportunities, and map out exactly what needs to happen over the next 12 months to get there.",
     bestFor: [
       "Founders ready to get serious about growth",
       "Businesses at a strategic crossroads",
       "Leadership teams who need clarity and alignment",
     ],
-    metaTitle: "Growth Accelerator Workshop — CompassPoint Advisory",
+    metaTitle: "Growth Accelerator Workshop - CompassPoint Advisory",
     metaDescription:
       "A focused, high-impact workshop to diagnose what's holding your business back and build a 12-month growth plan.",
   },
 ];
 
-/** Public hero image for each service — `public/service-{slug}.jpg`. */
+/** Public hero image for each service - `public/service-{slug}.jpg`. */
 export function getServiceImagePath(slug: string): `/service-${string}.jpg` {
   return `/service-${slug}.jpg`;
 }

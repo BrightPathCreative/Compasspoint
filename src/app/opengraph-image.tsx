@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "CompassPoint Advisory — strategic consulting for Australian SMEs";
+export const alt = "CompassPoint Advisory - strategic consulting for Australian SMEs";
 
 export const size = {
   width: 1200,

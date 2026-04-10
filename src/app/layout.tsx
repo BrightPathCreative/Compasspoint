@@ -37,7 +37,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CompassPoint Advisory — Strategic Business Consulting for Australian SMEs",
+    default: "CompassPoint Advisory - Strategic Business Consulting for Australian SMEs",
     template: "%s | CompassPoint Advisory",
   },
   description:
