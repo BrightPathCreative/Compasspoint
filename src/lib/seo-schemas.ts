@@ -1,5 +1,4 @@
 import { SITE_URL } from "./site";
-import { CONTACT_EMAIL_PUBLIC } from "./contact";
 import { FAQ_ITEMS } from "./faq";
 
 const orgId = `${SITE_URL}/#organization`;
@@ -39,7 +38,6 @@ export function localBusinessJsonLd() {
     name: "CompassPoint Advisory",
     description: "Melbourne-based strategic consulting firm for Australian SMEs and startups.",
     url: SITE_URL,
-    email: CONTACT_EMAIL_PUBLIC,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Melbourne",

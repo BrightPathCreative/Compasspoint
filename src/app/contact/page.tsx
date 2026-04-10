@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { ContactMessageForm } from "@/components/contact/ContactMessageForm";
 import { SiteShell } from "@/components/global/SiteShell";
-import { CONTACT_EMAIL_PUBLIC } from "@/lib/contact";
+import { Button } from "@/components/global/Button";
 import { CALENDLY_URL, FOUNDER_WEBSITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export default function ContactPage() {
           Get in Touch
         </h1>
         <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-lg text-[var(--text-secondary)]">
-          Book a free 30-minute discovery call, or send a message using the form below.
+          Book a free 30-minute discovery call to start the conversation.
         </p>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
@@ -53,15 +52,9 @@ export default function ContactPage() {
 
           <div>
             <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)]">
-              Contact details
+              Other ways to connect
             </h2>
             <ul className="mt-6 space-y-3 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
-              <li>
-                <span className="font-semibold text-[var(--text-primary)]">Email: </span>
-                <a href={`mailto:${CONTACT_EMAIL_PUBLIC}`} className="text-[var(--brand-gold)] hover:underline">
-                  {CONTACT_EMAIL_PUBLIC}
-                </a>
-              </li>
               <li>
                 <span className="font-semibold text-[var(--text-primary)]">Website: </span>
                 <a
@@ -79,13 +72,20 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            <h2 className="mt-12 font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)]">
-              Send a message
-            </h2>
-            <ContactMessageForm />
-            <p className="mt-4 font-[family-name:var(--font-lato)] text-xs text-[var(--text-tertiary)]">
-              Submit opens your email client. For a guaranteed response, book a discovery call.
-            </p>
+            <div className="mt-10 rounded-xl border border-[var(--brand-gold)]/25 bg-[var(--bg-secondary)]/60 p-8">
+              <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-bold text-[var(--text-primary)]">
+                Send a message
+              </h3>
+              <p className="mt-3 font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-secondary)]">
+                A contact form will be available here soon. In the meantime, the fastest way to reach us is to book a
+                discovery call.
+              </p>
+              <div className="mt-6">
+                <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  Book a discovery call
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

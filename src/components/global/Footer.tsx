@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail } from "lucide-react";
-import { CONTACT_EMAIL, LINKEDIN_URL, mailtoHref } from "@/lib/contact";
+import { LINKEDIN_URL } from "@/lib/contact";
 import { BRIGHT_PATH_CONTACT_URL, CALENDLY_URL } from "@/lib/site";
 import { BrandLockup } from "./BrandLockup";
 
@@ -46,9 +46,9 @@ export function Footer() {
                 <LinkedInGlyph className="h-5 w-5" />
               </a>
               <a
-                href={mailtoHref}
+                href="/contact"
                 className="rounded-full border border-white/20 p-2 transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]"
-                aria-label={`Email ${CONTACT_EMAIL}`}
+                aria-label="Contact us"
               >
                 <Mail className="h-5 w-5" />
               </a>
@@ -78,12 +78,17 @@ export function Footer() {
               Contact
             </h3>
             <p className="font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]">
-              <a href={mailtoHref} className="hover:underline">
-                {CONTACT_EMAIL}
-              </a>
-            </p>
-            <p className="mt-2 font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]">
               Melbourne, Victoria, Australia
+            </p>
+            <p className="mt-3">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--brand-gold)] underline-offset-4 hover:underline"
+              >
+                Book a discovery call
+              </a>
             </p>
             <form className="mt-6 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="footer-email" className="sr-only">

@@ -1,7 +1,31 @@
 # CompassPoint Advisory — Animation & Design Inspiration Guide
 
 > **Purpose:** Creative direction, animation techniques, and reference links for building an Awwwards-quality consulting website.
-> **Stack:** Next.js 14+ · GSAP (ScrollTrigger, SplitText) · Lenis Smooth Scroll · Framer Motion · Tailwind CSS
+> **Stack:** Next.js 16 (App Router) · GSAP + `@gsap/react` · Lenis · Tailwind CSS. The repo is GSAP-first; add Framer Motion only if you introduce it.
+
+---
+
+## Brand colours (source of truth)
+
+Use **`src/app/globals.css`** — do not paste legacy gold/plum/cream hexes into new code.
+
+| Role | Hex | Token |
+|------|-----|--------|
+| Plum | `#380729` | `var(--brand-plum)` |
+| Gold | `#C79A44` | `var(--brand-gold)` |
+| Cream | `#F6F1E7` | `var(--brand-ivory)` |
+
+Neutrals (**page black**, **card charcoal**, **subtle borders**) stay on `--bg-primary`, `--bg-secondary`, `--brand-charcoal`, etc. Gold **tints** in CSS may use `color-mix(in srgb, var(--brand-gold) …)` or `rgba(199, 154, 68, …)` (RGB of `#C79A44`).
+
+---
+
+## Already implemented (snapshot)
+
+- Lenis + ScrollTrigger integrated with the app shell.
+- Hero: GSAP timeline, plum `#380729`, radial wash + fractal noise (grain).
+- Alternating **cream** and **plum** section treatments; gold accents via tokens.
+
+Treat this guide as an extension of what ships today, not a from-scratch rewrite.
 
 ---
 
@@ -104,6 +128,8 @@ export function AnimatedSection() {
 }
 ```
 
+**Prefer `@gsap/react` in this project:** use `useGSAP(() => { ... }, { scope: containerRef })` so animations match the codebase (`HeroSection`, `TestimonialsSection`, etc.) and cleanup stays consistent with Next.js. The pattern above is valid; `useGSAP` wraps the same `gsap.context` lifecycle.
+
 ### 2.3 Custom Easing (The Secret Sauce)
 
 Generic `ease-in-out` screams template. Custom eases feel designed:
@@ -132,9 +158,9 @@ This is the single most important section. It needs to stop someone mid-scroll a
 
 **Timeline (total ~2.8s):**
 
-1. **0.0s** — Plum background fades in from black
-2. **0.3s** — Compass emblem draws in (SVG stroke animation) then fills with gold gradient
-3. **0.8s** — "BIG BUSINESS THINKING." reveals word-by-word from below (masked reveal with SplitText)
+1. **0.0s** — Plum (`#380729`) background fades in from the page black
+2. **0.3s** — Compass emblem draws in (SVG stroke animation) then fills with gold (`#C79A44` / `var(--brand-gold)`)
+3. **0.8s** — "Big Business Thinking." reveals word-by-word from below (masked reveal with SplitText)
 4. **1.4s** — "Built for Yours." fades up with slight scale
 5. **1.8s** — Subheadline fades in
 6. **2.2s** — CTA buttons slide up with stagger
@@ -152,7 +178,7 @@ compassPaths.forEach((path) => {
     strokeDasharray: length,
     strokeDashoffset: length,
     fill: "transparent",
-    stroke: "#D4AF37",
+    stroke: "var(--brand-gold)",
     strokeWidth: 1.5,
   });
 });
@@ -165,7 +191,7 @@ gsap.to(".compass-svg path", {
   onComplete: () => {
     // Fill in with gold after drawing
     gsap.to(".compass-svg path", {
-      fill: "#D4AF37",
+      fill: "var(--brand-gold)",
       stroke: "transparent",
       duration: 0.8,
       ease: "power1.inOut",
@@ -199,6 +225,8 @@ gsap.from(split.words, {
 });
 ```
 
+Confirm `SplitText.create` options (`mask`, `type`, class names) against **your installed GSAP version** — Club plugin APIs evolve.
+
 **CSS required for masked reveal:**
 
 ```css
@@ -212,16 +240,15 @@ gsap.from(split.words, {
 Adapted from CodePen techniques — a subtle moving light across gold text:
 
 ```css
+/* Use brand gold + cream only — no legacy yellows */
 .gold-shimmer {
   background: linear-gradient(
     90deg,
-    #B8860B 0%,
-    #D4AF37 20%,
-    #B8860B 39%,
-    #FFD700 50%,
-    #B8860B 60%,
-    #D4AF37 80%,
-    #B8860B 100%
+    #c79a44 0%,
+    #f6f1e7 35%,
+    #c79a44 50%,
+    #f6f1e7 65%,
+    #c79a44 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -328,8 +355,8 @@ gsap.from(".service-card", {
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow:
-    0 20px 60px rgba(91, 24, 76, 0.12),
-    0 4px 16px rgba(212, 175, 55, 0.08);
+    0 20px 60px rgba(56, 7, 41, 0.12),
+    0 4px 16px rgba(199, 154, 68, 0.08);
 }
 
 /* Gold top border expands on hover */
@@ -340,7 +367,7 @@ gsap.from(".service-card", {
   left: 50%;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #D4AF37, #FFD700, #D4AF37);
+  background: linear-gradient(90deg, #c79a44, #f6f1e7, #c79a44);
   transform: translateX(-50%);
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -447,6 +474,8 @@ function toggleAccordion(item: HTMLElement) {
 }
 ```
 
+**Exception to the “no layout animation” rule:** accordions often animate `height` (above) or use **GSAP Flip** / `max-height` for open/close. Prefer that over animating arbitrary layout props elsewhere.
+
 ### 4.6 Closing CTA — Parallax Background + Floating Compass
 
 ```typescript
@@ -487,9 +516,9 @@ Between sections, a thin gold line draws across:
   background: linear-gradient(
     90deg,
     transparent,
-    #D4AF37 20%,
-    #FFD700 50%,
-    #D4AF37 80%,
+    #c79a44 25%,
+    #f6f1e7 50%,
+    #c79a44 75%,
     transparent
   );
   transform-origin: left center;
@@ -527,6 +556,8 @@ Luxury sites almost always have a subtle film grain. It adds depth and prevents 
 }
 ```
 
+**Stacking:** A global grain at `z-index: 9999` can sit above modals and cookie banners. Prefer **section-local** grain (as on `.section-brand-plum` / hero) unless you intentionally want film grain over everything.
+
 **Alternative — CSS-only grain using SVG filter:**
 
 ```css
@@ -553,7 +584,7 @@ A gentle darkening around the edges of the hero adds cinematic depth:
   background: radial-gradient(
     ellipse at center,
     transparent 50%,
-    rgba(59, 15, 52, 0.4) 100%
+    rgba(56, 7, 41, 0.4) 100%
   );
   pointer-events: none;
 }
@@ -591,7 +622,7 @@ document.querySelectorAll("a, button").forEach((el) => {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #D4AF37;
+  background: #c79a44;
   position: fixed;
   top: 0;
   left: 0;
@@ -635,10 +666,10 @@ header {
 }
 
 header.scrolled {
-  background: rgba(91, 24, 76, 0.85);
+  background: rgba(56, 7, 41, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(199, 154, 68, 0.15);
 }
 ```
 
@@ -694,6 +725,7 @@ header.scrolled {
 | Casper's Caviar (Awwwards HM)       | Luxury product with gold accents                                                       |
 | Paul Fredrick (Awwwards)            | Heritage brand, editorial photography                                                  |
 
+*Search Awwwards by site name if a direct URL is not listed; listings move over time.*
 
 ### CSS Technique References
 
@@ -720,11 +752,12 @@ const prefersReducedMotion = window.matchMedia(
 ).matches;
 
 if (prefersReducedMotion) {
-  // Skip all scroll animations — just show everything
-  gsap.globalTimeline.timeScale(100); // Instant
-  // Or selectively disable
   ScrollTrigger.getAll().forEach((st) => st.kill());
+  // Set hero/section elements to their final visible state, or skip registering timelines.
+  // Do not rely on undocumented shortcuts — be explicit about final CSS/GSAP state.
 }
+
+// Optional: skip Lenis when reduced motion is preferred (some teams prefer native scroll).
 ```
 
 **In CSS:**
@@ -744,7 +777,8 @@ if (prefersReducedMotion) {
 ### 7.2 Performance Rules
 
 - All GSAP animations should target `transform` and `opacity` only (GPU-composited)
-- Never animate `width`, `height`, `top`, `left`, `margin`, or `padding`
+- Avoid animating `width`, `height`, `top`, `left`, `margin`, or `padding` except where intentional (e.g. FAQ accordion in §4.5, or FLIP techniques)
+- Keep the **LCP** path light: avoid hiding hero text until heavy JS runs; prefer progressive enhancement
 - Use `will-change: transform` sparingly and only on elements about to animate
 - Lenis `lerp` of 0.08–0.1 provides luxury smoothness without feeling laggy
 - Kill ScrollTriggers on route change in Next.js (use `gsap.context()`)
@@ -778,14 +812,20 @@ ScrollTrigger.matchMedia({
 
 ## 8. Recommended Package Versions
 
+Aligned with the repo as of last edit (bump patch versions as needed):
+
 ```json
 {
-  "gsap": "^3.13.0",
-  "lenis": "^1.3.21",
-  "framer-motion": "^11.x",
-  "@gsap/react": "^2.x"
+  "next": "16.2.1",
+  "react": "19.2.4",
+  "react-dom": "19.2.4",
+  "gsap": "^3.14.2",
+  "lenis": "^1.3.20",
+  "@gsap/react": "^2.1.2"
 }
 ```
+
+Framer Motion is **not** a dependency today; add only if you introduce it.
 
 **Note on GSAP licensing:** SplitText, CustomEase, ScrollSmoother, and MorphSVG require a Club GSAP membership (~$99/year). ScrollTrigger is free. For a client site of this calibre, Club GSAP is worth it — SplitText alone transforms the text animations from "nice" to "luxury editorial."
 

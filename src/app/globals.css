@@ -10,11 +10,10 @@
   --brand-gold-antique: color-mix(in srgb, var(--brand-gold) 78%, #000000);
   --brand-charcoal: #2e2e2e;
   --brand-ivory: #f6f1e7;
-  /* Near-black reserved for nav ring offsets / true contrast — page canvas uses plum-warmed tones */
-  --brand-black: #0c080b;
+  --brand-black: #0a0a0a;
 
-  --bg-primary: #151018;
-  --bg-secondary: #1f181f;
+  --bg-primary: var(--brand-black);
+  --bg-secondary: #161314;
   --bg-brand-plum: var(--brand-plum);
   --bg-accent: var(--brand-plum);
   --bg-accent-deep: var(--brand-plum-deep);
@@ -55,7 +54,7 @@ body {
 }
 
 .nav-scrolled {
-  background: rgba(21, 16, 24, 0.9);
+  background: rgba(10, 10, 10, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border-subtle) !important;

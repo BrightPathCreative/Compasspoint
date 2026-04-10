@@ -81,7 +81,7 @@ export function Navbar() {
       >
         <button
           type="button"
-          className={`absolute inset-0 bg-[color-mix(in_srgb,var(--brand-plum)_55%,#000)] transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
           aria-label="Close menu"
           onClick={() => setOpen(false)}
         />
