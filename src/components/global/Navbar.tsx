@@ -43,7 +43,7 @@ export function Navbar() {
         className={`fixed inset-x-0 top-0 z-50 flex min-h-[5.25rem] items-center border-b border-transparent transition-all duration-300 ease-out md:min-h-[6rem] ${scrolled ? "py-3 md:py-3" : "py-5 md:py-6"}`}
       >
         <div className="mx-auto flex w-full max-w-[min(100%,1920px)] items-center justify-between px-8 md:px-14 lg:px-20">
-          <NavbarLogo />
+          <NavbarLogo onNavigate={() => setOpen(false)} />
 
           <nav
             className="hidden flex-1 items-center justify-center gap-10 font-[family-name:var(--font-lato)] md:flex lg:gap-12"
@@ -147,7 +147,7 @@ export function Navbar() {
           }`}
         >
           <div className="flex items-center justify-between border-b border-[var(--metallic-gold)]/25 px-6 py-6">
-            <NavbarLogo />
+            <NavbarLogo onNavigate={() => setOpen(false)} />
             <button
               type="button"
               className="rounded-md p-2 text-[var(--text-primary)]"

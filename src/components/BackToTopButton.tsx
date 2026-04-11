@@ -10,7 +10,7 @@ const RING_MASK =
   "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px))";
 
 /** Max distance from top before showing; capped by page length so short pages still qualify. */
-const SHOW_AFTER_CAP = 360;
+const SHOW_AFTER_CAP = 200;
 
 type BackToTopButtonProps = {
   /** Renders centered in the document flow (e.g. under the contact form) instead of fixed to the viewport. */
@@ -19,12 +19,13 @@ type BackToTopButtonProps = {
 
 export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
   const { scrollY, scrollToTopSmooth } = useLenisScroll();
-  const [docMax, setDocMax] = useState(1);
+  const [docMax, setDocMax] = useState<number | null>(null);
+  /** Lenis context can lag one frame; window scroll matches what users actually scrolled. */
+  const [nativeScrollY, setNativeScrollY] = useState(0);
 
   useEffect(() => {
     const measure = () => {
       const el = document.documentElement;
-      // Keep 0 when the page has no scroll range (do not clamp to 1 — that broke thresholds).
       setDocMax(Math.max(0, el.scrollHeight - el.clientHeight));
     };
     measure();
@@ -37,13 +38,26 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
     };
   }, []);
 
-  const progress = docMax <= 0 ? 0 : Math.min(1, Math.max(0, scrollY / docMax));
-  // Long pages: show after up to 360px. Short pages: fraction of range. No overflow: always show.
+  useEffect(() => {
+    const read = () =>
+      setNativeScrollY(window.scrollY || document.documentElement.scrollTop || 0);
+    read();
+    window.addEventListener("scroll", read, { passive: true });
+    return () => window.removeEventListener("scroll", read);
+  }, []);
+
+  const y = Math.max(scrollY, nativeScrollY);
+
+  const progress =
+    docMax === null || docMax <= 0 ? 0 : Math.min(1, Math.max(0, y / docMax));
   const showAfter =
-    docMax <= 0
-      ? 0
-      : Math.min(SHOW_AFTER_CAP, Math.max(8, Math.floor(docMax * 0.35)));
-  const visible = docMax <= 0 || scrollY > showAfter;
+    docMax === null
+      ? SHOW_AFTER_CAP
+      : docMax <= 0
+        ? 0
+        : Math.min(SHOW_AFTER_CAP, Math.max(8, Math.floor(docMax * 0.35)));
+  const visible =
+    docMax === null ? y > SHOW_AFTER_CAP : docMax <= 0 || y > showAfter;
   const progressDeg = progress * 360;
 
   const positionClass = inline
@@ -52,7 +66,7 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
           ? "mt-10 max-h-[4rem] translate-y-0 opacity-100 md:mt-12"
           : "mt-0 max-h-0 -translate-y-1 opacity-0"
       }`
-    : `pointer-events-none fixed bottom-6 right-6 z-[70] md:bottom-10 md:right-10 ${visible ? "opacity-100" : "opacity-0"} transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-opacity ${visible ? "translate-y-0" : "translate-y-3"}`;
+    : `pointer-events-none fixed bottom-6 right-6 z-[10200] md:bottom-10 md:right-10 ${visible ? "opacity-100" : "opacity-0"} transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-opacity ${visible ? "translate-y-0" : "translate-y-3"}`;
 
   return (
     <div className={positionClass} aria-hidden={!visible}>

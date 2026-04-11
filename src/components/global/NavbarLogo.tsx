@@ -1,12 +1,33 @@
-import Link from "next/link";
+"use client";
 
-/** Header: compass icon only (wordmark lives in the hero). */
-export function NavbarLogo({ className = "" }: { className?: string }) {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useLenisScroll } from "@/components/global/LenisProvider";
+
+type NavbarLogoProps = {
+  className?: string;
+  /** e.g. close mobile drawer after navigation */
+  onNavigate?: () => void;
+};
+
+/** Header: compass icon only (wordmark lives in the hero). Always acts as Home. */
+export function NavbarLogo({ className = "", onNavigate }: NavbarLogoProps) {
+  const pathname = usePathname();
+  const { scrollToTopSmooth } = useLenisScroll();
+  const isHome = pathname === "/" || pathname === "";
+
   return (
     <Link
       href="/"
       className={`inline-flex shrink-0 rounded-xl p-1 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-black)] ${className}`}
-      aria-label="Compass Point Advisory - home"
+      aria-label="Home"
+      onClick={(e) => {
+        if (isHome) {
+          e.preventDefault();
+          scrollToTopSmooth();
+        }
+        onNavigate?.();
+      }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
