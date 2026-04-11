@@ -1,10 +1,8 @@
 "use client";
 
-import { gsap } from "gsap";
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLenisScroll } from "@/components/global/LenisProvider";
-import "@/lib/gsap-config";
 
 /** ~2/3 of previous 64px control; ring mask matches thin stroke */
 const OUTER_PX = 43;
@@ -12,7 +10,7 @@ const RING_MASK =
   "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px))";
 
 /** Max distance from top before showing; capped by page length so short pages still qualify. */
-const SHOW_AFTER_CAP = 140;
+const SHOW_AFTER_CAP = 200;
 
 type BackToTopButtonProps = {
   /** Renders centered in the document flow (e.g. under the contact form) instead of fixed to the viewport. */
@@ -40,19 +38,12 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
     };
   }, []);
 
-  // Lenis drives scroll via the same GSAP ticker; `scroll` events can lag or batch. Read every frame.
   useEffect(() => {
-    const read = () => {
-      const next =
-        window.scrollY ||
-        document.documentElement.scrollTop ||
-        document.scrollingElement?.scrollTop ||
-        0;
-      setNativeScrollY((prev) => (Math.abs(prev - next) < 0.25 ? prev : next));
-    };
+    const read = () =>
+      setNativeScrollY(window.scrollY || document.documentElement.scrollTop || 0);
     read();
-    gsap.ticker.add(read);
-    return () => gsap.ticker.remove(read);
+    window.addEventListener("scroll", read, { passive: true });
+    return () => window.removeEventListener("scroll", read);
   }, []);
 
   const y = Math.max(scrollY, nativeScrollY);
@@ -64,7 +55,7 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
       ? SHOW_AFTER_CAP
       : docMax <= 0
         ? 0
-        : Math.min(SHOW_AFTER_CAP, Math.max(24, Math.floor(docMax * 0.18)));
+        : Math.min(SHOW_AFTER_CAP, Math.max(8, Math.floor(docMax * 0.35)));
   const visible =
     docMax === null ? y > SHOW_AFTER_CAP : docMax <= 0 || y > showAfter;
   const progressDeg = progress * 360;
