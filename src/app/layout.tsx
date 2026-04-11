@@ -4,6 +4,7 @@ import { Cinzel, Cormorant_Garamond, Lato, Montserrat } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { GrainOverlay } from "@/components/GrainOverlay";
+import { BackToTopButton } from "@/components/BackToTopButton";
 import { LenisProvider } from "@/components/global/LenisProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -73,6 +74,7 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd()} />
         <LenisProvider>
           <ScrollToTop />
+          <BackToTopButton />
           {children}
         </LenisProvider>
         <Analytics />

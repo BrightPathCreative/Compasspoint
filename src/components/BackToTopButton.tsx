@@ -24,7 +24,8 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
   useEffect(() => {
     const measure = () => {
       const el = document.documentElement;
-      setDocMax(Math.max(1, el.scrollHeight - el.clientHeight));
+      // Keep 0 when the page has no scroll range (do not clamp to 1 — that broke thresholds).
+      setDocMax(Math.max(0, el.scrollHeight - el.clientHeight));
     };
     measure();
     window.addEventListener("resize", measure, { passive: true });
@@ -36,13 +37,13 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
     };
   }, []);
 
-  const progress = Math.min(1, Math.max(0, scrollY / docMax));
-  // Cap at 360px on long pages; on short pages use a fraction of scroll range so the control can still appear.
+  const progress = docMax <= 0 ? 0 : Math.min(1, Math.max(0, scrollY / docMax));
+  // Long pages: show after up to 360px. Short pages: fraction of range. No overflow: always show.
   const showAfter =
-    docMax < 2
-      ? SHOW_AFTER_CAP
+    docMax <= 0
+      ? 0
       : Math.min(SHOW_AFTER_CAP, Math.max(8, Math.floor(docMax * 0.35)));
-  const visible = scrollY > showAfter;
+  const visible = docMax <= 0 || scrollY > showAfter;
   const progressDeg = progress * 360;
 
   const positionClass = inline

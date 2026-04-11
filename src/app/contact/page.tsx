@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BackToTopButton } from "@/components/BackToTopButton";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/global/Button";
 import { SiteShell } from "@/components/global/SiteShell";
@@ -67,7 +66,6 @@ export default function ContactPage() {
           <div className="mt-8 rounded-xl border border-[var(--metallic-gold)]/25 bg-[var(--bg-secondary)]/80 p-8 md:p-10">
             <ContactForm />
           </div>
-          <BackToTopButton inline />
         </section>
 
         <ul className="mt-14 space-y-3 border-t border-[var(--metallic-gold)]/15 pt-10 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
