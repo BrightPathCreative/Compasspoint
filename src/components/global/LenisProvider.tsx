@@ -16,12 +16,15 @@ import { initSmoothScroll } from "@/lib/smooth-scroll";
 
 type LenisApi = {
   scrollY: number;
+  /** Maximum scroll distance Lenis/native scrolling allows (may be below DOM-derived max). */
+  maxScrollY: number;
   scrollToTop: () => void;
   scrollToTopSmooth: () => void;
 };
 
 const LenisScrollContext = createContext<LenisApi>({
   scrollY: 0,
+  maxScrollY: 0,
   scrollToTop: () => {},
   scrollToTopSmooth: () => {},
 });
@@ -30,8 +33,14 @@ export function useLenisScroll() {
   return useContext(LenisScrollContext);
 }
 
+function measureDomMaxScroll() {
+  const el = document.documentElement;
+  return Math.max(0, el.scrollHeight - el.clientHeight);
+}
+
 export function LenisProvider({ children }: { children: ReactNode }) {
   const [scrollY, setScrollY] = useState(0);
+  const [maxScrollY, setMaxScrollY] = useState(0);
   const lenisRef = useRef<Lenis | null>(null);
 
   const scrollToTop = useCallback(() => {
@@ -56,7 +65,10 @@ export function LenisProvider({ children }: { children: ReactNode }) {
     if (!isTouchDevice) {
       const lenis = initSmoothScroll();
       lenisRef.current = lenis;
-      const sync = () => setScrollY(lenis.scroll);
+      const sync = () => {
+        setScrollY(lenis.scroll);
+        setMaxScrollY(lenis.limit);
+      };
       lenis.on("scroll", sync);
       sync();
       ScrollTrigger.refresh();
@@ -66,13 +78,21 @@ export function LenisProvider({ children }: { children: ReactNode }) {
       };
     }
 
-    const onScroll = () => setScrollY(window.scrollY);
+    const onScroll = () => {
+      setScrollY(window.scrollY);
+      setMaxScrollY(measureDomMaxScroll());
+    };
+    const onResize = () => setMaxScrollY(measureDomMaxScroll());
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
-  const value: LenisApi = { scrollY, scrollToTop, scrollToTopSmooth };
+  const value: LenisApi = { scrollY, maxScrollY, scrollToTop, scrollToTopSmooth };
 
   return <LenisScrollContext.Provider value={value}>{children}</LenisScrollContext.Provider>;
 }

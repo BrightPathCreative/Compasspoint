@@ -1,8 +1,17 @@
 "use client";
 
 import { ChevronUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLenisScroll } from "@/components/global/LenisProvider";
+
+function subscribeWindowScroll(cb: () => void) {
+  window.addEventListener("scroll", cb, { passive: true });
+  return () => window.removeEventListener("scroll", cb);
+}
+
+function getWindowScrollY() {
+  return window.scrollY || document.documentElement.scrollTop || 0;
+}
 
 /** ~2/3 of previous 64px control; ring mask matches thin stroke */
 const OUTER_PX = 43;
@@ -18,10 +27,10 @@ type BackToTopButtonProps = {
 };
 
 export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
-  const { scrollY, scrollToTopSmooth } = useLenisScroll();
+  const { scrollY, maxScrollY, scrollToTopSmooth } = useLenisScroll();
   const [docMax, setDocMax] = useState<number | null>(null);
-  /** Lenis context can lag one frame; window scroll matches what users actually scrolled. */
-  const [nativeScrollY, setNativeScrollY] = useState(0);
+  /** Subscribes to native scroll so we re-render even if context batching misses a frame. */
+  const windowScrollY = useSyncExternalStore(subscribeWindowScroll, getWindowScrollY, () => 0);
 
   useEffect(() => {
     const measure = () => {
@@ -38,26 +47,30 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
     };
   }, []);
 
-  useEffect(() => {
-    const read = () =>
-      setNativeScrollY(window.scrollY || document.documentElement.scrollTop || 0);
-    read();
-    window.addEventListener("scroll", read, { passive: true });
-    return () => window.removeEventListener("scroll", read);
-  }, []);
+  const y = Math.max(scrollY, windowScrollY);
 
-  const y = Math.max(scrollY, nativeScrollY);
+  /** DOM scroll range can exceed what Lenis allows; clamp so the reveal threshold is always reachable. */
+  const scrollRange =
+    docMax === null
+      ? null
+      : maxScrollY > 0
+        ? Math.min(docMax, maxScrollY)
+        : docMax;
 
   const progress =
-    docMax === null || docMax <= 0 ? 0 : Math.min(1, Math.max(0, y / docMax));
+    scrollRange === null || scrollRange <= 0 ? 0 : Math.min(1, Math.max(0, y / scrollRange));
   const showAfter =
-    docMax === null
+    scrollRange === null
       ? SHOW_AFTER_CAP
-      : docMax <= 0
+      : scrollRange <= 0
         ? 0
-        : Math.min(SHOW_AFTER_CAP, Math.max(8, Math.floor(docMax * 0.35)));
+        : Math.min(
+            SHOW_AFTER_CAP,
+            Math.max(8, Math.floor(scrollRange * 0.35)),
+            Math.max(0, scrollRange - 1),
+          );
   const visible =
-    docMax === null ? y > SHOW_AFTER_CAP : docMax <= 0 || y > showAfter;
+    scrollRange === null ? y > SHOW_AFTER_CAP : scrollRange <= 0 || y > showAfter;
   const progressDeg = progress * 360;
 
   const positionClass = inline
