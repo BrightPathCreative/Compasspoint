@@ -9,7 +9,8 @@ const OUTER_PX = 43;
 const RING_MASK =
   "radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px))";
 
-const SHOW_AFTER = 360;
+/** Max distance from top before showing; capped by page length so short pages still qualify. */
+const SHOW_AFTER_CAP = 360;
 
 type BackToTopButtonProps = {
   /** Renders centered in the document flow (e.g. under the contact form) instead of fixed to the viewport. */
@@ -36,7 +37,12 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
   }, []);
 
   const progress = Math.min(1, Math.max(0, scrollY / docMax));
-  const visible = scrollY > SHOW_AFTER;
+  // Cap at 360px on long pages; on short pages use a fraction of scroll range so the control can still appear.
+  const showAfter =
+    docMax < 2
+      ? SHOW_AFTER_CAP
+      : Math.min(SHOW_AFTER_CAP, Math.max(8, Math.floor(docMax * 0.35)));
+  const visible = scrollY > showAfter;
   const progressDeg = progress * 360;
 
   const positionClass = inline
@@ -54,7 +60,7 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
         style={{ width: OUTER_PX, height: OUTER_PX }}
       >
         <div
-          className="absolute inset-0 rounded-full border border-[color-mix(in_srgb,var(--metallic-gold)_18%,transparent)]"
+          className="absolute inset-0 rounded-full border border-[color-mix(in_srgb,var(--metallic-gold)_26%,transparent)]"
           aria-hidden
         />
         <div
@@ -63,7 +69,7 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
             WebkitMaskImage: RING_MASK,
             maskImage: RING_MASK,
             background: `conic-gradient(from -90deg, var(--metallic-gold) 0deg ${progressDeg}deg, transparent ${progressDeg}deg)`,
-            opacity: 0.62,
+            opacity: 0.78,
           }}
           aria-hidden
         />
