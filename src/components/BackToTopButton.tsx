@@ -9,7 +9,12 @@ const RING_MASK =
 
 const SHOW_AFTER = 360;
 
-export function BackToTopButton() {
+type BackToTopButtonProps = {
+  /** Renders centered in the document flow (e.g. under the contact form) instead of fixed to the viewport. */
+  inline?: boolean;
+};
+
+export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
   const { scrollY, scrollToTopSmooth } = useLenisScroll();
   const [docMax, setDocMax] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -44,11 +49,16 @@ export function BackToTopButton() {
   const visible = scrollY > SHOW_AFTER;
   const progressDeg = progress * 360;
 
+  const positionClass = inline
+    ? `pointer-events-none relative z-10 flex w-full justify-center overflow-hidden transition-[opacity,max-height,margin,transform] duration-500 ease-out motion-reduce:transition-opacity ${
+        visible
+          ? "mt-10 max-h-[5.5rem] translate-y-0 opacity-100 md:mt-12"
+          : "mt-0 max-h-0 -translate-y-1 opacity-0"
+      }`
+    : `pointer-events-none fixed bottom-6 right-6 z-[70] md:bottom-10 md:right-10 ${visible ? "opacity-100" : "opacity-0"} transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-opacity ${visible ? "translate-y-0" : "translate-y-3"}`;
+
   return (
-    <div
-      className={`pointer-events-none fixed bottom-6 right-6 z-[70] md:bottom-10 md:right-10 ${visible ? "opacity-100" : "opacity-0"} transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-opacity ${visible ? "translate-y-0" : "translate-y-3"}`}
-      aria-hidden={!visible}
-    >
+    <div className={positionClass} aria-hidden={!visible}>
       <div className={`relative size-16 ${visible ? "pointer-events-auto" : "pointer-events-none"}`}>
         <div
           className="absolute inset-0 rounded-full border-2 border-[color-mix(in_srgb,var(--metallic-gold)_22%,transparent)]"

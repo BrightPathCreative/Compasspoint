@@ -5,7 +5,6 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { LenisProvider } from "@/components/global/LenisProvider";
-import { BackToTopButton } from "@/components/BackToTopButton";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationJsonLd } from "@/lib/seo-schemas";
@@ -74,7 +73,6 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd()} />
         <LenisProvider>
           <ScrollToTop />
-          <BackToTopButton />
           {children}
         </LenisProvider>
         <Analytics />

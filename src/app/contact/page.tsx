@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BackToTopButton } from "@/components/BackToTopButton";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/global/Button";
 import { SiteShell } from "@/components/global/SiteShell";
@@ -56,15 +57,7 @@ export default function ContactPage() {
           </p>
         </section>
 
-        <div className="relative my-14 flex items-center gap-4">
-          <span className="h-px flex-1 bg-[var(--metallic-gold)]/20" aria-hidden />
-          <span className="font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-tertiary)]">
-            Or write to us
-          </span>
-          <span className="h-px flex-1 bg-[var(--metallic-gold)]/20" aria-hidden />
-        </div>
-
-        <section aria-labelledby="form-heading">
+        <section aria-labelledby="form-heading" className="mt-16 md:mt-20">
           <h2 id="form-heading" className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)]">
             Message form
           </h2>
@@ -74,6 +67,7 @@ export default function ContactPage() {
           <div className="mt-8 rounded-xl border border-[var(--metallic-gold)]/25 bg-[var(--bg-secondary)]/80 p-8 md:p-10">
             <ContactForm />
           </div>
+          <BackToTopButton inline />
         </section>
 
         <ul className="mt-14 space-y-3 border-t border-[var(--metallic-gold)]/15 pt-10 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
