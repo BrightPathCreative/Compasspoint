@@ -36,7 +36,6 @@ export function HomeServicesOverviewSection() {
                 />
               </div>
               <div className="service-card__body flex flex-1 flex-col px-7 pb-8 pt-6">
-              <span className="service-number">{String(s.order).padStart(2, "0")}</span>
               <h3>{s.title}</h3>
               <p className="mt-2 flex-1 font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--charcoal)]/90">
                 {s.shortSummary}

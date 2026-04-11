@@ -47,7 +47,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     <SiteShell>
       <JsonLd data={serviceJsonLd({ name: service.title, description: service.description })} />
       {serviceFaqs.length > 0 ? <JsonLd data={faqJsonLdFromItems(serviceFaqs)} /> : null}
-      <PageHero title={service.title} subtitle={`Service ${String(service.order).padStart(2, "0")}`} />
+      <PageHero title={service.title} subtitle={service.shortSummary} />
 
       <div className="relative mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20">
         <div className="relative -mt-6 aspect-[21/9] max-h-[min(52vh,420px)] min-h-[180px] overflow-hidden rounded-sm border border-[var(--metallic-gold)]/20 md:-mt-10">
@@ -143,11 +143,8 @@ export default async function ServiceDetailPage({ params }: Props) {
               <li key={r.slug}>
                 <Link
                   href={`/services/${r.slug}`}
-                  className="flex items-baseline gap-4 rounded-sm border border-[var(--metallic-gold)]/15 bg-[var(--bg-secondary)]/40 px-4 py-4 transition-colors hover:border-[var(--metallic-gold)]/35"
+                  className="block rounded-sm border border-[var(--metallic-gold)]/15 bg-[var(--bg-secondary)]/40 px-4 py-4 transition-colors hover:border-[var(--metallic-gold)]/35"
                 >
-                  <span className="font-[family-name:var(--font-cinzel)] text-lg font-bold text-[var(--metallic-gold)]/35">
-                    {String(r.order).padStart(2, "0")}
-                  </span>
                   <span className="font-[family-name:var(--font-cormorant)] text-lg font-semibold text-[var(--text-primary)]">
                     {r.title}
                   </span>

@@ -377,20 +377,6 @@ nav a,
   transform: translateX(0);
 }
 
-.service-number {
-  font-family: var(--font-cinzel), serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: rgba(212, 175, 55, 0.2);
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
-.service-card:hover .service-number {
-  color: rgba(212, 175, 55, 0.5);
-  transition: color 0.3s ease;
-}
-
 .service-card h3 {
   font-family: var(--font-cormorant), serif;
   font-size: 1.3rem;
