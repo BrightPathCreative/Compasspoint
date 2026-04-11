@@ -146,3 +146,13 @@ export function getServiceBySlug(slug: string): Service | undefined {
 export function getRelatedServices(slug: string, limit = 3): Service[] {
   return SERVICES.filter((s) => s.slug !== slug).slice(0, limit);
 }
+
+/** First one or two sentences for home previews (full `description` stays on detail pages). */
+export function getServiceHomeTeaserParagraph(description: string): string {
+  const text = description.replace(/\s+/g, " ").trim();
+  const parts = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const joined = parts.slice(0, 2).join(" ");
+  if (joined.length <= 400) return joined;
+  if (parts[0] && parts[0].length <= 400) return parts[0];
+  return `${parts[0]!.slice(0, 297).trimEnd()}…`;
+}
