@@ -311,6 +311,23 @@ nav a,
   left: 100%;
 }
 
+/* Projected gold rim / glow behind primary CTAs on dark sections (e.g. About quote block) */
+.cta-gold-halo {
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.42),
+    0 0 20px 2px rgba(212, 175, 55, 0.28),
+    0 0 44px 10px rgba(255, 215, 120, 0.14);
+}
+
+.cta-gold-halo:focus-within {
+  box-shadow:
+    0 0 0 2px rgba(212, 175, 55, 0.55),
+    0 0 24px 4px rgba(212, 175, 55, 0.32),
+    0 0 52px 12px rgba(255, 215, 120, 0.18);
+}
+
 .btn-secondary {
   display: inline-flex;
   align-items: center;

@@ -88,26 +88,26 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <blockquote className="mx-auto mt-20 max-w-3xl text-center">
-          <p className="font-[family-name:var(--font-cormorant)] text-2xl italic leading-snug text-[var(--royal-plum)] md:text-3xl">
-            <span className="text-[var(--metallic-gold)]">&ldquo;</span>
-            Scaling a business shouldn&apos;t mean sacrificing control.
-            <span className="text-[var(--metallic-gold)]">&rdquo;</span>
-          </p>
-        </blockquote>
+        <section className="mx-auto mt-20 flex max-w-3xl flex-col items-center text-center">
+          <blockquote className="w-full">
+            <p className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold italic leading-snug text-[var(--soft-ivory)] md:text-3xl">
+              <span className="text-[var(--metallic-gold)]">&ldquo;</span>
+              Scaling a business shouldn&apos;t mean sacrificing control.
+              <span className="text-[var(--metallic-gold)]">&rdquo;</span>
+            </p>
+          </blockquote>
 
-        <div className="prose-custom mx-auto mt-12 max-w-3xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:text-lg">
-          <p>
-            We work alongside you - not above you - so decisions stay yours, momentum builds, and your team grows
+          <p className="mt-8 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.75] text-[var(--soft-ivory)]/88 md:text-lg">
+            We work alongside you, not above you, so decisions stay yours, momentum builds, and your team grows
             stronger through the process.
           </p>
-        </div>
 
-        <div className="mt-12">
-          <Button href={BOOK_DISCOVERY_PATH}>
-            Book a Free Discovery Call
-          </Button>
-        </div>
+          <div className="mt-10 flex justify-center">
+            <div className="cta-gold-halo inline-flex rounded-sm">
+              <Button href={BOOK_DISCOVERY_PATH}>Book a Free Discovery Call</Button>
+            </div>
+          </div>
+        </section>
       </article>
       <CtaSection />
     </SiteShell>
