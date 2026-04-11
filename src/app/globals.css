@@ -121,67 +121,57 @@ nav a,
   }
 }
 
-@keyframes hero-compass-point-pulse {
+@keyframes hero-compass-torch-pulse {
   0%,
   100% {
-    opacity: 0.35;
-    transform: rotate(var(--compass-glow-rotate)) translateY(calc(-1 * var(--compass-glow-radius)))
-      scale(0.92);
+    opacity: 0.72;
   }
   50% {
-    opacity: 0.85;
-    transform: rotate(var(--compass-glow-rotate)) translateY(calc(-1 * var(--compass-glow-radius))) scale(1.05);
+    opacity: 0.95;
   }
 }
 
 .hero-compass-visual {
-  --compass-glow-radius: 44px;
+  --torch-h: 88px;
+  --torch-w: 26px;
+  --torch-top: 54%;
   animation: hero-compass-sway 10s ease-in-out infinite;
   will-change: transform;
 }
 
 @media (min-width: 768px) {
   .hero-compass-visual {
-    --compass-glow-radius: 52px;
+    --torch-h: 104px;
+    --torch-w: 30px;
+    --torch-top: 54%;
   }
 }
 
-.hero-compass-point-glow {
-  position: absolute;
+/**
+ * Single soft “torch” cone from the south cardinal point only (no ring haze).
+ * Narrow at the compass edge, widens and fades downward.
+ */
+.hero-compass-torch-beam {
   left: 50%;
-  top: 50%;
-  width: 38%;
-  height: 38%;
-  margin: -19% 0 0 -19%;
-  border-radius: 50%;
-  transform: rotate(var(--compass-glow-rotate)) translateY(calc(-1 * var(--compass-glow-radius)));
-  background: radial-gradient(
-    circle,
-    rgba(212, 175, 55, 0.55) 0%,
-    rgba(255, 215, 120, 0.22) 38%,
-    rgba(212, 175, 55, 0) 72%
+  top: var(--torch-top);
+  width: var(--torch-w);
+  height: var(--torch-h);
+  margin-left: calc(var(--torch-w) / -2);
+  transform-origin: 50% 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 242, 210, 0.38) 0%,
+    rgba(212, 175, 55, 0.22) 32%,
+    rgba(212, 175, 55, 0.07) 58%,
+    transparent 100%
   );
-  filter: blur(1px);
-  animation: hero-compass-point-pulse 3.6s ease-in-out infinite;
-  animation-delay: var(--compass-glow-delay, 0s);
-  pointer-events: none;
-}
-
-.hero-compass-point-glow--south {
-  width: 48%;
-  height: 48%;
-  margin: -24% 0 0 -24%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 228, 160, 0.65) 0%,
-    rgba(212, 175, 55, 0.35) 42%,
-    rgba(212, 175, 55, 0) 75%
-  );
-  filter: blur(1.5px);
+  clip-path: polygon(16% 0, 84% 0, 100% 100%, 0 100%);
+  filter: blur(3.5px);
+  animation: hero-compass-torch-pulse 4.2s ease-in-out infinite;
 }
 
 .hero-compass-emblem {
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.25));
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.14));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -189,10 +179,9 @@ nav a,
     animation: none;
   }
 
-  .hero-compass-point-glow,
-  .hero-compass-point-glow--south {
+  .hero-compass-torch-beam {
     animation: none;
-    opacity: 0.5;
+    opacity: 0.78;
   }
 }
 
@@ -248,19 +237,6 @@ nav a,
   background: radial-gradient(ellipse at center, transparent 40%, rgba(62, 15, 52, 0.5) 100%);
   pointer-events: none;
   z-index: 1;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero-content {

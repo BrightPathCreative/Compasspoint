@@ -17,9 +17,14 @@ import { initSmoothScroll } from "@/lib/smooth-scroll";
 type LenisApi = {
   scrollY: number;
   scrollToTop: () => void;
+  scrollToTopSmooth: () => void;
 };
 
-const LenisScrollContext = createContext<LenisApi>({ scrollY: 0, scrollToTop: () => {} });
+const LenisScrollContext = createContext<LenisApi>({
+  scrollY: 0,
+  scrollToTop: () => {},
+  scrollToTopSmooth: () => {},
+});
 
 export function useLenisScroll() {
   return useContext(LenisScrollContext);
@@ -34,6 +39,14 @@ export function LenisProvider({ children }: { children: ReactNode }) {
       lenisRef.current.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
+    }
+  }, []);
+
+  const scrollToTopSmooth = useCallback(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { duration: 1.35 });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, []);
 
@@ -59,7 +72,7 @@ export function LenisProvider({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const value: LenisApi = { scrollY, scrollToTop };
+  const value: LenisApi = { scrollY, scrollToTop, scrollToTopSmooth };
 
   return <LenisScrollContext.Provider value={value}>{children}</LenisScrollContext.Provider>;
 }

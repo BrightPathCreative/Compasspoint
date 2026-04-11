@@ -1,14 +1,11 @@
 "use client";
 
-import { useRef, type CSSProperties } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import "@/lib/gsap-config";
 import { Button } from "../global/Button";
-
-/** Degrees from north (0° = top); 180° = south point for a stronger glow. */
-const COMPASS_POINT_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315] as const;
 
 export function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -80,20 +77,7 @@ export function HeroSection() {
       <div className="hero-content flex max-w-4xl flex-col items-center">
         <div className="hero-compass mb-10 md:mb-12">
           <div className="hero-compass-visual relative mx-auto flex h-[100px] w-[100px] items-center justify-center md:h-[120px] md:w-[120px]">
-            <div className="pointer-events-none absolute inset-[-18%] z-0" aria-hidden>
-              {COMPASS_POINT_ANGLES.map((deg, i) => (
-                <span
-                  key={deg}
-                  className={`hero-compass-point-glow ${deg === 180 ? "hero-compass-point-glow--south" : ""}`}
-                  style={
-                    {
-                      "--compass-glow-rotate": `${deg}deg`,
-                      "--compass-glow-delay": `${i * 0.38}s`,
-                    } as CSSProperties
-                  }
-                />
-              ))}
-            </div>
+            <div className="hero-compass-torch-beam pointer-events-none absolute z-0" aria-hidden />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/brand-icon.svg"
