@@ -80,8 +80,12 @@ export function faqJsonLdFromItems(items: FaqItem[]) {
 export function serviceJsonLd(input: {
   name: string;
   description: string;
+  /** Canonical page URL for this service (absolute). */
+  url?: string;
+  /** Hero / representative image (absolute URL). */
+  image?: string;
 }) {
-  return {
+  const doc: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: input.name,
@@ -95,6 +99,29 @@ export function serviceJsonLd(input: {
       name: "Australia",
     },
     description: input.description,
+  };
+  if (input.url) {
+    doc.url = input.url;
+    doc.mainEntityOfPage = { "@type": "WebPage", "@id": input.url };
+  }
+  if (input.image) doc.image = input.image;
+  return doc;
+}
+
+export function serviceBreadcrumbJsonLd(input: { serviceName: string; serviceUrl: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: input.serviceName,
+        item: input.serviceUrl,
+      },
+    ],
   };
 }
 

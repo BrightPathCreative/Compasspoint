@@ -1,3 +1,5 @@
+import { SITE_URL } from "./site";
+
 export type Service = {
   slug: string;
   order: number;
@@ -137,6 +139,21 @@ export const SERVICES: Service[] = [
 /** Public hero image for each service - `public/service-{slug}.jpg`. */
 export function getServiceImagePath(slug: string): `/service-${string}.jpg` {
   return `/service-${slug}.jpg`;
+}
+
+/** Absolute URL for OG, Twitter, and JSON-LD `image`. */
+export function getServiceImageAbsoluteUrl(slug: string): string {
+  return `${SITE_URL}${getServiceImagePath(slug)}`;
+}
+
+/**
+ * Distinct from the visible H1: names the offering + audience for SEO, image search, and assistive tech.
+ * Kept ≤ ~155 characters for practical SERP/tool limits.
+ */
+export function getServiceHeroImageAlt(service: Service): string {
+  const raw = `${service.title} for Australian SMEs — ${service.shortSummary}`;
+  if (raw.length <= 155) return raw;
+  return `${raw.slice(0, 152)}…`;
 }
 
 export function getServiceBySlug(slug: string): Service | undefined {

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/global/Button";
 import { SiteShell } from "@/components/global/SiteShell";
 import { PageHero } from "@/components/sections/PageHero";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -19,8 +21,9 @@ const SECTION_SURFACES = [
   "bg-[color-mix(in_srgb,var(--royal-plum)_30%,var(--brand-black))]",
 ] as const;
 
+/** Light cream / gold chip on dark band — charcoal label (no low-contrast purple on dark). */
 const tagClassName =
-  "rounded-full border border-[var(--metallic-gold)]/28 bg-[color-mix(in_srgb,var(--metallic-gold)_11%,transparent)] px-[14px] py-1 font-[family-name:var(--font-montserrat)] text-xs text-[var(--soft-ivory)]/95";
+  "rounded-full border border-[var(--metallic-gold)]/45 bg-[color-mix(in_srgb,var(--metallic-gold)_28%,var(--ivory-warm))] px-[14px] py-2 font-[family-name:var(--font-montserrat)] text-xs font-medium leading-snug text-[var(--charcoal)] shadow-sm";
 
 export default function ServicesPage() {
   return (
@@ -32,8 +35,7 @@ export default function ServicesPage() {
       <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-8 pt-16 md:px-14 md:pt-20 lg:px-20">
         <p className="max-w-3xl font-[family-name:var(--font-lato)] text-lg leading-[1.7] text-[var(--text-secondary)]">
           Every engagement is tailored to your business, your industry, and your goals. Below is an overview of each
-          offering - including who it&apos;s best for - with full detail on dedicated pages. Book a free discovery call when
-          you&apos;re ready to talk.
+          offering - including who it&apos;s best for - with full detail on dedicated pages.
         </p>
       </div>
 
@@ -71,7 +73,7 @@ export default function ServicesPage() {
                   </div>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="mt-8 inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--metallic-gold)] underline-offset-4 hover:underline"
+                    className="mt-8 inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold tracking-wide text-[var(--soft-ivory)]/85 underline-offset-4 transition-colors hover:text-[var(--metallic-gold)] hover:underline"
                   >
                     Full service detail →
                   </Link>
@@ -81,6 +83,22 @@ export default function ServicesPage() {
           );
         })}
       </div>
+
+      <section className="border-t border-[var(--metallic-gold)]/18 bg-[var(--ivory-warm)] py-16 md:py-24">
+        <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 text-center md:px-14 lg:px-20">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--royal-plum)] md:text-3xl">
+            Ready for a conversation?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl font-[family-name:var(--font-lato)] text-base leading-relaxed text-[var(--charcoal)] md:text-lg">
+            One free discovery call to align on your goals and whether CompassPoint is the right fit. No obligation.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <Button href={BOOK_DISCOVERY_PATH} className="cta-gold-halo">
+              Book a Discovery Call
+            </Button>
+          </div>
+        </div>
+      </section>
     </SiteShell>
   );
 }

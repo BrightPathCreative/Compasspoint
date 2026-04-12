@@ -13,6 +13,16 @@ CompassPoint Advisory is a Melbourne-based strategic consulting firm purpose-bui
 - On-Demand Advisory
 - Growth Accelerator Workshop
 
+## Service detail pages (canonical URLs)
+Each page includes the service summary, who it is for, what to expect, FAQs where relevant, and related services.
+- [Business Strategy Consulting](https://www.compasspointadvisory.com.au/services/business-strategy-consulting)
+- [Operations and Process Optimisation](https://www.compasspointadvisory.com.au/services/operations-process-optimisation)
+- [Change Leadership and Culture Transformation](https://www.compasspointadvisory.com.au/services/change-leadership-culture-transformation)
+- [AI and Digital Transformation Consulting](https://www.compasspointadvisory.com.au/services/ai-digital-transformation-consulting)
+- [Executive Coaching for Senior Leaders](https://www.compasspointadvisory.com.au/services/executive-coaching)
+- [On-Demand Advisory](https://www.compasspointadvisory.com.au/services/on-demand-advisory)
+- [Growth Accelerator Workshop](https://www.compasspointadvisory.com.au/services/growth-accelerator-workshop)
+
 ## Key Facts
 - Location: Melbourne, Victoria, Australia
 - Serves businesses across Australia (Sydney, Brisbane, Perth, Hobart, Adelaide)

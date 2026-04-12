@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Cinzel, Cormorant_Garamond, Lato, Montserrat } from "next/font/google";
 import "lenis/dist/lenis.css";
@@ -34,6 +34,13 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#3e0f34",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
