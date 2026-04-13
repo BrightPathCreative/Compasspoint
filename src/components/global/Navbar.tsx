@@ -74,13 +74,6 @@ export function Navbar() {
                 role="presentation"
               >
                 <div className="rounded-md border border-[var(--metallic-gold)]/25 bg-[var(--plum-dark)]/95 py-2 shadow-2xl backdrop-blur-md">
-                  <a
-                    href="/services"
-                    className="block px-4 py-2.5 text-[15px] font-medium text-[var(--soft-ivory)] transition-colors hover:bg-[var(--metallic-gold)]/10 hover:text-[var(--metallic-gold)]"
-                  >
-                    All services
-                  </a>
-                  <div className="mx-3 my-1 h-px bg-[var(--metallic-gold)]/15" aria-hidden />
                   {SERVICES.map((s) => (
                     <a
                       key={s.slug}
@@ -167,28 +160,30 @@ export function Navbar() {
             </a>
 
             <div className="border-b border-[var(--metallic-gold)]/20">
-              <button
-                type="button"
-                className="flex w-full items-center justify-between gap-3 py-5 text-left text-[1.75rem] leading-tight text-[var(--soft-ivory)] transition-colors hover:text-[var(--metallic-gold)]"
-                aria-expanded={servicesExpanded}
-                onClick={() => setServicesExpanded((v) => !v)}
-              >
-                Services
-                <ChevronDown
-                  className={`h-7 w-7 shrink-0 transition-transform ${servicesExpanded ? "rotate-180" : ""}`}
-                  aria-hidden
-                />
-              </button>
+              <div className="flex items-center gap-1">
+                <a
+                  href="/services"
+                  onClick={() => setOpen(false)}
+                  className="min-w-0 flex-1 py-5 text-left text-[1.75rem] leading-tight text-[var(--soft-ivory)] transition-colors hover:text-[var(--metallic-gold)]"
+                >
+                  Services
+                </a>
+                <button
+                  type="button"
+                  className="shrink-0 rounded-md p-2 text-[var(--soft-ivory)] transition-colors hover:bg-[var(--metallic-gold)]/10 hover:text-[var(--metallic-gold)]"
+                  aria-expanded={servicesExpanded}
+                  aria-label={servicesExpanded ? "Hide individual services" : "Show individual services"}
+                  onClick={() => setServicesExpanded((v) => !v)}
+                >
+                  <ChevronDown
+                    className={`h-7 w-7 transition-transform ${servicesExpanded ? "rotate-180" : ""}`}
+                    aria-hidden
+                  />
+                </button>
+              </div>
               {servicesExpanded ? (
                 <div className="space-y-0 pb-4 pl-3">
                   <div className="border-l-2 border-[var(--metallic-gold)]/35 pl-4">
-                    <a
-                      href="/services"
-                      onClick={() => setOpen(false)}
-                      className="block py-2 text-[1.2rem] font-semibold text-[var(--metallic-gold)]"
-                    >
-                      All services
-                    </a>
                     {SERVICES.map((s) => (
                       <a
                         key={s.slug}
