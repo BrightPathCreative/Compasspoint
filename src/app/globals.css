@@ -44,6 +44,17 @@
   --neon-gold: rgba(212, 175, 55, 0.4);
   --neon-gold-bright: rgba(212, 175, 55, 0.22);
   --neon-ivory: rgba(246, 241, 231, 0.2);
+
+  /* Services overview editorial page — align purples with brand (royal-plum / plum-light) */
+  --plum: var(--royal-plum);
+  --plum-mid: var(--plum-light);
+  --plum-deep: #2a0820;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --cream: #f5f0e8;
+  --cream-dark: #ede5d8;
+  --text-body: #3a2a35;
+  --text-muted: #6b5a63;
 }
 
 @theme inline {
