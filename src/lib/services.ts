@@ -5,6 +5,8 @@ export type Service = {
   order: number;
   /** Short uppercase label on cards and previews (e.g. STRATEGY, ★ SIGNATURE). */
   categoryLabel: string;
+  /** Completes “About …” on the home services accordion (sentence case). */
+  aboutAccordionPhrase: string;
   title: string;
   shortSummary: string;
   question: string;
@@ -19,6 +21,7 @@ export const SERVICES: Service[] = [
     slug: "business-strategy-consulting",
     order: 1,
     categoryLabel: "STRATEGY",
+    aboutAccordionPhrase: "strategy consulting",
     title: "Business Strategy Consulting",
     shortSummary:
       "Future-ready strategies grounded in market insight, positioning, and financial discipline.",
@@ -38,6 +41,7 @@ export const SERVICES: Service[] = [
     slug: "operations-process-optimisation",
     order: 2,
     categoryLabel: "OPERATIONS",
+    aboutAccordionPhrase: "operations & optimisation",
     title: "Operations and Process Optimisation",
     shortSummary: "Map, assess, and redesign core processes - plus practical AI and automation opportunities.",
     question: "Are inefficiencies quietly costing your business time and money?",
@@ -56,6 +60,7 @@ export const SERVICES: Service[] = [
     slug: "change-leadership-culture-transformation",
     order: 3,
     categoryLabel: "CHANGE",
+    aboutAccordionPhrase: "change & culture",
     title: "Change Leadership and Culture Transformation",
     shortSummary: "Human-centred change for restructures, technology rollouts, and culture shifts.",
     question: "Is your team struggling to keep up with the pace of change?",
@@ -74,6 +79,7 @@ export const SERVICES: Service[] = [
     slug: "ai-digital-transformation-consulting",
     order: 4,
     categoryLabel: "TECHNOLOGY",
+    aboutAccordionPhrase: "AI & digital transformation",
     title: "AI and Digital Transformation Consulting",
     shortSummary: "Practical, high-impact AI opportunities and a roadmap right-sized for your business.",
     question: "Not sure how AI fits into your business - or where to start?",
@@ -92,6 +98,7 @@ export const SERVICES: Service[] = [
     slug: "executive-coaching",
     order: 5,
     categoryLabel: "LEADERSHIP",
+    aboutAccordionPhrase: "executive coaching",
     title: "Executive Coaching for Senior Leaders",
     shortSummary: "Clarity, strategy, and accountability for founders, CEOs, and senior leaders.",
     question: "Are you performing at the level your business needs you to?",
@@ -110,6 +117,7 @@ export const SERVICES: Service[] = [
     slug: "on-demand-advisory",
     order: 6,
     categoryLabel: "ADVISORY",
+    aboutAccordionPhrase: "on-demand advisory",
     title: "On-Demand Advisory",
     shortSummary: "Senior consulting expertise by the hour - no retainer, no lock-in.",
     question: "Need expert support without a long-term commitment?",
@@ -128,6 +136,7 @@ export const SERVICES: Service[] = [
     slug: "growth-accelerator-workshop",
     order: 7,
     categoryLabel: "★ SIGNATURE",
+    aboutAccordionPhrase: "the Growth Accelerator",
     title: "Growth Accelerator Workshop",
     shortSummary:
       "Signature facilitated session to diagnose blockers and map a clear 12-month growth plan.",
@@ -144,6 +153,11 @@ export const SERVICES: Service[] = [
       "A focused, high-impact workshop to diagnose what's holding your business back and build a 12-month growth plan.",
   },
 ];
+
+/** Home services tile accordion control label (“About …”). */
+export function getHomeServiceAboutAccordionLabel(service: Service): string {
+  return `About ${service.aboutAccordionPhrase}`;
+}
 
 /** Public hero image for each service - `public/service-{slug}.jpg`. */
 export function getServiceImagePath(slug: string): `/service-${string}.jpg` {
