@@ -3,6 +3,8 @@ import { SITE_URL } from "./site";
 export type Service = {
   slug: string;
   order: number;
+  /** Short uppercase label on cards and previews (e.g. STRATEGY, ★ SIGNATURE). */
+  categoryLabel: string;
   title: string;
   shortSummary: string;
   question: string;
@@ -16,6 +18,7 @@ export const SERVICES: Service[] = [
   {
     slug: "business-strategy-consulting",
     order: 1,
+    categoryLabel: "STRATEGY",
     title: "Business Strategy Consulting",
     shortSummary:
       "Future-ready strategies grounded in market insight, positioning, and financial discipline.",
@@ -34,6 +37,7 @@ export const SERVICES: Service[] = [
   {
     slug: "operations-process-optimisation",
     order: 2,
+    categoryLabel: "OPERATIONS",
     title: "Operations and Process Optimisation",
     shortSummary: "Map, assess, and redesign core processes - plus practical AI and automation opportunities.",
     question: "Are inefficiencies quietly costing your business time and money?",
@@ -51,6 +55,7 @@ export const SERVICES: Service[] = [
   {
     slug: "change-leadership-culture-transformation",
     order: 3,
+    categoryLabel: "CHANGE",
     title: "Change Leadership and Culture Transformation",
     shortSummary: "Human-centred change for restructures, technology rollouts, and culture shifts.",
     question: "Is your team struggling to keep up with the pace of change?",
@@ -68,6 +73,7 @@ export const SERVICES: Service[] = [
   {
     slug: "ai-digital-transformation-consulting",
     order: 4,
+    categoryLabel: "TECHNOLOGY",
     title: "AI and Digital Transformation Consulting",
     shortSummary: "Practical, high-impact AI opportunities and a roadmap right-sized for your business.",
     question: "Not sure how AI fits into your business - or where to start?",
@@ -85,6 +91,7 @@ export const SERVICES: Service[] = [
   {
     slug: "executive-coaching",
     order: 5,
+    categoryLabel: "LEADERSHIP",
     title: "Executive Coaching for Senior Leaders",
     shortSummary: "Clarity, strategy, and accountability for founders, CEOs, and senior leaders.",
     question: "Are you performing at the level your business needs you to?",
@@ -102,6 +109,7 @@ export const SERVICES: Service[] = [
   {
     slug: "on-demand-advisory",
     order: 6,
+    categoryLabel: "ADVISORY",
     title: "On-Demand Advisory",
     shortSummary: "Senior consulting expertise by the hour - no retainer, no lock-in.",
     question: "Need expert support without a long-term commitment?",
@@ -119,6 +127,7 @@ export const SERVICES: Service[] = [
   {
     slug: "growth-accelerator-workshop",
     order: 7,
+    categoryLabel: "★ SIGNATURE",
     title: "Growth Accelerator Workshop",
     shortSummary:
       "Signature facilitated session to diagnose blockers and map a clear 12-month growth plan.",
