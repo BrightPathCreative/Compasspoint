@@ -3,22 +3,27 @@ import { WhyCompassOrbit, type OrbitItemSerialized } from "@/components/sections
 
 const items: OrbitItemSerialized[] = [
   {
+    iconKey: "target",
     title: "Enterprise Experience, SME Focus",
     body: "20+ years of senior corporate expertise, now exclusively focused on SMEs.",
   },
   {
+    iconKey: "clock",
     title: "Results-First, Not Hours-First",
     body: "Every project scoped around your outcomes — not billing targets.",
   },
   {
+    iconKey: "cpu",
     title: "AI-Ready Advisory",
     body: "We stay at the leading edge of AI and digital transformation so you don't have to.",
   },
   {
+    iconKey: "trendingUp",
     title: "Built for the $5M–$20M Business",
     body: "Designed around the specific challenges of this growth stage.",
   },
   {
+    iconKey: "mapPin",
     title: "Melbourne-Based, Nationally Active",
     body: "In-person, remote, or hybrid across Australia.",
   },

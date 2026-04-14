@@ -1,16 +1,28 @@
 "use client";
 
+import type { LucideIcon } from "lucide-react";
+import { Clock, Cpu, MapPin, Target, TrendingUp } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "@/lib/gsap-config";
+
+const ORBIT_ICONS = {
+  target: Target,
+  clock: Clock,
+  cpu: Cpu,
+  trendingUp: TrendingUp,
+  mapPin: MapPin,
+} as const;
 
 /** Serializable from Server Components. */
 export type OrbitItemSerialized = {
+  iconKey: keyof typeof ORBIT_ICONS;
   title: string;
   body: string;
 };
 
 export type OrbitItem = {
+  icon: LucideIcon;
   title: string;
   body: string;
 };
@@ -23,13 +35,21 @@ const START_DEG = -90;
 const CARD_HALF = 110;
 const RING_GAP = 28;
 
-/** Desktop: hollow gold ring + compass + 5 cards outside ring. Mobile: stack. */
-export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
+/** Desktop: ring + dots + compass + copy blocks (no card chrome). Mobile: stacked copy + icons. */
+export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
+  const items: OrbitItem[] = useMemo(
+    () =>
+      serialized.map(({ iconKey, ...rest }) => ({
+        ...rest,
+        icon: ORBIT_ICONS[iconKey],
+      })),
+    [serialized],
+  );
 
   const rootRef = useRef<HTMLDivElement>(null);
   const ringScaleRef = useRef<HTMLDivElement>(null);
   const compassRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const stageRef = useRef<HTMLDivElement>(null);
@@ -63,14 +83,14 @@ export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
     const root = rootRef.current;
     const ringEl = ringScaleRef.current;
     const compass = compassRef.current;
-    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    const blocks = blockRefs.current.filter(Boolean) as HTMLDivElement[];
     const dots = dotRefs.current.filter(Boolean) as HTMLDivElement[];
-    if (!root || !ringEl || cards.length !== 5) return;
+    if (!root || !ringEl || blocks.length !== 5) return;
 
     const ctx = gsap.context(() => {
       gsap.set(ringEl, { scale: 0.8, opacity: 0 });
       if (compass) gsap.set(compass, { opacity: 0 });
-      gsap.set(cards, { opacity: 0 });
+      gsap.set(blocks, { opacity: 0 });
       gsap.set(dots, { opacity: 0, scale: 0.5 });
 
       const tl = gsap.timeline({
@@ -89,13 +109,13 @@ export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
       );
       if (compass) tl.to(compass, { opacity: 1, duration: 0.4 }, "-=0.5");
 
-      cards.forEach((card, i) => {
+      blocks.forEach((block, i) => {
         const angleDeg = START_DEG + i * (360 / 5);
         const rad = (angleDeg * Math.PI) / 180;
         const inwardX = -Math.cos(rad) * 32;
         const inwardY = -Math.sin(rad) * 32;
         tl.fromTo(
-          card,
+          block,
           { opacity: 0, x: inwardX, y: inwardY },
           { opacity: 1, x: 0, y: 0, duration: 0.5, ease: "power2.out" },
           i === 0 ? ">0.05" : "+=0.15",
@@ -108,7 +128,6 @@ export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
 
   return (
     <div ref={rootRef} className="mt-14 w-full">
-      {/* Mobile: &lt;768px */}
       <div className="md:hidden">
         <div className="mb-8 flex justify-center">
           <Image
@@ -119,16 +138,15 @@ export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
             className="h-[72px] w-[72px] opacity-[0.35]"
           />
         </div>
-        <ul className="mx-auto flex max-w-lg flex-col gap-4">
+        <ul className="mx-auto flex max-w-lg flex-col gap-8">
           {items.map((item) => (
             <li key={item.title}>
-              <DifferentiatorCard item={item} variant="stack" />
+              <DifferentiatorCopy item={item} variant="stack" />
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Desktop md+ */}
       <div
         ref={stageRef}
         className="relative mx-auto hidden w-full max-w-[920px] md:block"
@@ -190,12 +208,12 @@ export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
               <div
                 key={item.title}
                 ref={(el) => {
-                  cardRefs.current[i] = el;
+                  blockRefs.current[i] = el;
                 }}
                 className="absolute left-1/2 top-1/2 z-[20] w-[220px] max-w-[220px] -translate-x-1/2 -translate-y-1/2"
                 style={{ left: `calc(50% + ${x}px)`, top: `calc(50% + ${y}px)` }}
               >
-                <DifferentiatorCard item={item} variant="orbit" />
+                <DifferentiatorCopy item={item} variant="orbit" />
               </div>
             );
           })}
@@ -205,22 +223,24 @@ export function WhyCompassOrbit({ items }: WhyCompassOrbitProps) {
   );
 }
 
-function DifferentiatorCard({ item, variant }: { item: OrbitItem; variant: "orbit" | "stack" }) {
-  const wrap =
-    variant === "stack"
-      ? "mx-auto w-full max-w-lg"
-      : "w-[220px]";
+/** Copy + icon only — no white card panel. */
+function DifferentiatorCopy({ item, variant }: { item: OrbitItem; variant: "orbit" | "stack" }) {
+  const Icon = item.icon;
+  const widthCls = variant === "stack" ? "w-full max-w-lg" : "w-[220px]";
 
   return (
-    <article
-      className={`differentiator-card rounded-lg border-l-[3px] border-l-[#D4AF37] bg-white py-5 pl-6 pr-5 shadow-[0_4px_24px_rgba(91,24,76,0.06)] ${wrap}`}
-    >
-      <h3 className="font-[family-name:var(--font-cormorant)] text-base font-bold leading-snug text-[#5B184C]">
-        {item.title}
-      </h3>
-      <p className="mt-2 font-[family-name:var(--font-lato)] text-[15px] font-normal leading-relaxed text-[#2E2E2E]">
-        {item.body}
-      </p>
-    </article>
+    <div className={widthCls}>
+      <div className="flex gap-2.5">
+        <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]" strokeWidth={2} aria-hidden />
+        <div className="min-w-0">
+          <h3 className="font-[family-name:var(--font-cormorant)] text-base font-bold leading-snug text-[#5B184C]">
+            {item.title}
+          </h3>
+          <p className="mt-1.5 font-[family-name:var(--font-lato)] text-[15px] font-normal leading-relaxed text-[#2E2E2E]">
+            {item.body}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
