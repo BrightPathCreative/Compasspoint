@@ -1,30 +1,26 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { WhyCompassOrbit, type OrbitItemSerialized } from "@/components/sections/WhyCompassOrbit";
 
+/** Clockwise from top: Enterprise → Results → AI → Built for → Melbourne */
 const items: OrbitItemSerialized[] = [
   {
-    iconKey: "target",
-    title: "Enterprise Experience, SME Focus",
+    title: "Enterprise experience, SME focus",
     body: "20+ years of senior corporate expertise, now exclusively focused on SMEs.",
   },
   {
-    iconKey: "clock",
-    title: "Results-First, Not Hours-First",
+    title: "Results-first, not hours-first",
     body: "Every project scoped around your outcomes — not billing targets.",
   },
   {
-    iconKey: "cpu",
-    title: "AI-Ready Advisory",
+    title: "AI-ready advisory",
     body: "We stay at the leading edge of AI and digital transformation so you don't have to.",
   },
   {
-    iconKey: "trendingUp",
-    title: "Built for the $5M–$20M Business",
+    title: "Built for the $5M–$20M business",
     body: "Designed around the specific challenges of this growth stage.",
   },
   {
-    iconKey: "mapPin",
-    title: "Melbourne-Based, Nationally Active",
+    title: "Melbourne-based, nationally active",
     body: "In-person, remote, or hybrid across Australia.",
   },
 ];
@@ -34,23 +30,23 @@ type WhyCompassPointSectionProps = {
   className?: string;
 };
 
-/** “Why Australian SMEs Choose CompassPoint Advisory” — orbit layout (desktop) / stacked (mobile). */
+/** “Why Australian SMEs Choose CompassPoint Advisory” — pentagon layout (md+) / stack (mobile). */
 export function WhyCompassPointSection({
   id = "differentiators",
-  className = "bg-[#F6F1E7]",
+  className = "",
 }: WhyCompassPointSectionProps) {
   return (
     <section
       id={id}
       aria-label="Why choose CompassPoint Advisory"
-      className={`border-t border-[#D4AF37]/15 py-20 md:py-28 ${className}`}
+      className={`differentiators-section border-t border-[#D4AF37]/15 ${className}`}
     >
-      <div className="mx-auto w-full max-w-6xl overflow-visible px-8 md:px-14 lg:px-20 xl:px-28">
-        <ScrollReveal className="text-center">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[#5B184C] md:text-4xl">
             Why Australian SMEs Choose CompassPoint Advisory
           </h2>
-          <p className="mx-auto mt-8 max-w-3xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[#2E2E2E] md:text-lg">
+          <p className="mx-auto mt-8 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[#2E2E2E] md:text-lg">
             We&apos;re not a generalist consulting firm. We&apos;re not a freelance marketplace. And we&apos;re not a
             coaching program that hands you a workbook and wishes you luck. We are a dedicated strategic partner —
             one that rolls up its sleeves, learns your business deeply, and works alongside you to drive real,
