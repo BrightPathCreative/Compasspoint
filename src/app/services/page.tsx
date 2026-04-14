@@ -6,6 +6,7 @@ import { ServicesIntroStrip } from "@/components/sections/services-overview/Serv
 import { ServicesOverviewBottomCta } from "@/components/sections/services-overview/ServicesOverviewBottomCta";
 import { ServicesOverviewDivider } from "@/components/sections/services-overview/ServicesOverviewDivider";
 import { ServicesOverviewHero } from "@/components/sections/services-overview/ServicesOverviewHero";
+import { WhyCompassPointSection } from "@/components/sections/WhyCompassPointSection";
 import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function ServicesPage() {
             />
           </>
         ) : null}
+        <WhyCompassPointSection id="differentiators" className="bg-[var(--cream)]" />
       </div>
       <ServicesOverviewBottomCta />
     </SiteShell>
