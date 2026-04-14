@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useMemo, useRef } from "react";
+import { forwardRef, useLayoutEffect, useMemo, useRef } from "react";
 import { gsap } from "@/lib/gsap-config";
 
 export type OrbitItemSerialized = {
@@ -12,18 +12,49 @@ type WhyCompassOrbitProps = {
   items: OrbitItemSerialized[];
 };
 
-const POSITION_CLASS = ["diff-item--1", "diff-item--2", "diff-item--3", "diff-item--4", "diff-item--5"] as const;
+function padNum(n: number) {
+  return String(n).padStart(2, "0");
+}
 
-/** Pentagon layout around centre compass — desktop; stacked on small screens. */
+const DifferentiatorCard = forwardRef<
+  HTMLElement,
+  { index: number; title: string; body: string }
+>(function DifferentiatorCard({ index, title, body }, ref) {
+  return (
+    <article
+      ref={ref}
+      className="diff-card group relative overflow-hidden rounded-xl border border-[#e8e2d9] bg-white pl-6 pr-6 pb-7 pt-7 shadow-[0_1px_0_rgba(62,15,52,0.04),0_12px_40px_-12px_rgba(62,15,52,0.12)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_1px_0_rgba(62,15,52,0.06),0_20px_48px_-16px_rgba(62,15,52,0.14)]"
+    >
+      <div
+        className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-[#D4AF37] via-[#c9a84c] to-[#b8860b]"
+        aria-hidden
+      />
+      <p className="font-[family-name:var(--font-montserrat)] text-[11px] font-semibold tabular-nums tracking-[0.12em] text-[#D4AF37]">
+        {padNum(index)}
+      </p>
+      <h3 className="mt-3 font-[family-name:var(--font-cormorant)] text-lg font-bold leading-snug text-[#5B184C] md:text-[1.15rem]">
+        {title}
+      </h3>
+      <p className="mt-2.5 font-[family-name:var(--font-lato)] text-[13px] leading-relaxed text-[#555] md:text-[14px]">
+        {body}
+      </p>
+    </article>
+  );
+});
+
+/** Desktop: 2 + 3 card grid; mobile: stacked. Scroll-in stagger on cards. */
 export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
   const items = useMemo(() => serialized.slice(0, 5), [serialized]);
   const containerRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
+
+  const row1 = items.slice(0, 2);
+  const row2 = items.slice(2, 5);
 
   useLayoutEffect(() => {
     const container = containerRef.current;
-    const blocks = itemRefs.current.filter(Boolean) as HTMLDivElement[];
-    if (!container || blocks.length !== 5) return;
+    const cards = cardRefs.current.filter(Boolean) as HTMLElement[];
+    if (!container || cards.length !== 5) return;
 
     const reduced =
       typeof window !== "undefined" &&
@@ -31,19 +62,19 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
 
     const ctx = gsap.context(() => {
       if (reduced) {
-        gsap.set(blocks, { opacity: 1, y: 0 });
+        gsap.set(cards, { opacity: 1, y: 0 });
         return;
       }
 
-      gsap.from(blocks, {
-        y: 30,
+      gsap.from(cards, {
+        y: 28,
         opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
+        duration: 0.65,
+        stagger: 0.1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: container,
-          start: "top 75%",
+          start: "top 78%",
           toggleActions: "play none none reverse",
         },
       });
@@ -52,33 +83,32 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
     return () => ctx.revert();
   }, [items]);
 
-  return (
-    <div className="mt-14 w-full">
-      <div
-        ref={containerRef}
-        className="differentiators-container"
-        aria-label="CompassPoint differentiators"
-      >
-        <div className="diff-compass-wrap">
-          <div className="compass-glow" aria-hidden />
-          <div className="compass-centre">
-            {/* eslint-disable-next-line @next/next/no-img-element -- CSS spin animation on img */}
-            <img src="/brand-icon.svg" alt="" width={120} height={120} aria-hidden />
-          </div>
-        </div>
+  const setCardRef = (index: number) => (el: HTMLElement | null) => {
+    cardRefs.current[index] = el;
+  };
 
-        {items.map((item, i) => (
-          <div
+  return (
+    <div ref={containerRef} className="differentiators-grid w-full">
+      <div className="grid gap-6 sm:gap-7 lg:grid-cols-2 lg:gap-8">
+        {row1.map((item, i) => (
+          <DifferentiatorCard
             key={item.title}
-            ref={(el) => {
-              itemRefs.current[i] = el;
-            }}
-            className={`diff-item ${POSITION_CLASS[i]}`}
-          >
-            <div className="diff-divider" aria-hidden />
-            <h3 className="diff-title">{item.title}</h3>
-            <p className="diff-description">{item.body}</p>
-          </div>
+            ref={setCardRef(i)}
+            index={i + 1}
+            title={item.title}
+            body={item.body}
+          />
+        ))}
+      </div>
+      <div className="mt-6 grid gap-6 sm:gap-7 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-8">
+        {row2.map((item, i) => (
+          <DifferentiatorCard
+            key={item.title}
+            ref={setCardRef(i + 2)}
+            index={i + 3}
+            title={item.title}
+            body={item.body}
+          />
         ))}
       </div>
     </div>

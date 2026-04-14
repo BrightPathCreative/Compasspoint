@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "reac
 import Link from "next/link";
 
 type Shared = {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "plum";
   children: ReactNode;
   className?: string;
 };
@@ -24,6 +24,7 @@ export function Button(props: ButtonProps | AnchorProps) {
     primary: "btn-primary",
     secondary: "btn-secondary",
     ghost: "border-0 bg-transparent font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-[0.08em] text-[var(--metallic-gold)] underline-offset-4 transition-colors hover:underline",
+    plum: "btn-plum-cta",
   };
 
   const cls = `${variants[variant]} ${className}`.trim();
