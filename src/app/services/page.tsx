@@ -4,7 +4,6 @@ import { SiteShell } from "@/components/global/SiteShell";
 import { ServiceOverviewRow } from "@/components/sections/services-overview/ServiceOverviewRow";
 import { ServicesIntroStrip } from "@/components/sections/services-overview/ServicesIntroStrip";
 import { ServicesOverviewBottomCta } from "@/components/sections/services-overview/ServicesOverviewBottomCta";
-import { ServicesOverviewDivider } from "@/components/sections/services-overview/ServicesOverviewDivider";
 import { ServicesOverviewHero } from "@/components/sections/services-overview/ServicesOverviewHero";
 import { WhyCompassPointSection } from "@/components/sections/WhyCompassPointSection";
 import { SERVICES } from "@/lib/services";
@@ -28,25 +27,22 @@ export default function ServicesPage() {
         <ServicesIntroStrip />
         {firstSix.map((s, i) => (
           <Fragment key={s.slug}>
-            {i > 0 ? <ServicesOverviewDivider /> : null}
             <ServiceOverviewRow
               service={s}
               flip={i % 2 === 1}
               bodySurface={i % 2 === 0 ? "cream" : "cream-dark"}
               imagePriority={i === 0}
+              isFirst={i === 0}
             />
           </Fragment>
         ))}
         {signature ? (
-          <>
-            <ServicesOverviewDivider />
-            <ServiceOverviewRow
-              service={signature}
-              flip={false}
-              bodySurface="cream"
-              signature
-            />
-          </>
+          <ServiceOverviewRow
+            service={signature}
+            flip={false}
+            bodySurface="cream"
+            signature
+          />
         ) : null}
         <WhyCompassPointSection id="differentiators" className="bg-[var(--cream)]" />
       </div>

@@ -17,25 +17,23 @@ const PILLARS = [
   },
 ] as const;
 
-/** Four-column value strip (responsive 4 → 2×2 → 1 col). */
+const cardClass =
+  "rounded-2xl border border-[rgba(92,26,74,0.08)] bg-[color-mix(in_srgb,var(--cream)_88%,#ffffff)] p-6 shadow-[0_2px_28px_-14px_rgba(91,24,76,0.08)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_-18px_rgba(91,24,76,0.12)]";
+
+/** Value pillars — soft cards instead of rigid full-width columns. */
 export function ServicesIntroStrip() {
   return (
-    <div className="border-b border-[rgba(92,26,74,0.1)] bg-[var(--cream)] px-7 py-[52px] max-[899px]:px-7 max-[899px]:py-10 md:px-14">
-      <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-7 max-[559px]:grid-cols-1 min-[560px]:max-[899px]:grid-cols-2 min-[900px]:grid-cols-4 min-[900px]:gap-0">
-        {PILLARS.map((pillar, i) => (
-          <div
-            key={pillar.title}
-            className={`pr-0 max-[899px]:border-0 max-[899px]:mr-0 min-[900px]:border-r min-[900px]:border-[rgba(92,26,74,0.12)] min-[900px]:pr-10 min-[900px]:mr-10 ${
-              i === PILLARS.length - 1 ? "min-[900px]:mr-0 min-[900px]:border-r-0 min-[900px]:pr-0" : ""
-            }`}
-          >
-            <span className="mb-2.5 block text-[1.1rem] text-[var(--gold)]" aria-hidden>
+    <div className="border-b border-[rgba(92,26,74,0.08)] bg-[var(--cream)] px-4 py-12 sm:px-6 md:px-8 md:py-14 lg:px-12">
+      <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-4 sm:grid-cols-2 min-[1080px]:grid-cols-4 min-[1080px]:gap-5">
+        {PILLARS.map((pillar) => (
+          <div key={pillar.title} className={cardClass}>
+            <span className="mb-3 block font-[family-name:var(--font-cormorant)] text-lg text-[var(--gold)]" aria-hidden>
               ◈
             </span>
-            <h4 className="font-[family-name:var(--font-cormorant)] text-base font-medium leading-snug text-[var(--plum)]">
+            <h4 className="font-[family-name:var(--font-cormorant)] text-[1.05rem] font-medium leading-snug text-[var(--plum)]">
               {pillar.title}
             </h4>
-            <p className="mt-1.5 font-[family-name:var(--font-montserrat)] text-[0.72rem] leading-[1.7] text-[var(--text-muted)]">
+            <p className="mt-2 font-[family-name:var(--font-montserrat)] text-[0.72rem] leading-[1.75] text-[var(--text-muted)]">
               {pillar.body}
             </p>
           </div>

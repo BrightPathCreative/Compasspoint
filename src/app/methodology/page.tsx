@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/global/SiteShell";
-import { Button } from "@/components/global/Button";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { MethodologyFullTimeline } from "@/components/sections/MethodologyFullTimeline";
 import { PageHero } from "@/components/sections/PageHero";
-import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "How We Work - CompassPoint Advisory's Consulting Process",
@@ -27,12 +25,6 @@ export default function MethodologyPage() {
         </p>
 
         <MethodologyFullTimeline />
-
-        <div className="mt-16">
-          <Button href={BOOK_DISCOVERY_PATH}>
-            Book a Free Discovery Call
-          </Button>
-        </div>
       </article>
       <CtaSection />
     </SiteShell>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import GoldDivider from "@/components/GoldDivider";
@@ -95,24 +96,36 @@ export default async function ServiceDetailPage({ params }: Props) {
       <JsonLd data={structuredData} />
       <article aria-labelledby="service-hero-heading">
         <ServiceImageHero
-        title={service.title}
-        question={service.question}
-        shortSummary={service.shortSummary}
-        imageSrc={getServiceImagePath(service.slug)}
-        imageAlt={getServiceHeroImageAlt(service)}
+          title={service.title}
+          question={service.question}
+          shortSummary={service.shortSummary}
         />
 
-        {/* Narrative on warm ivory — hook lives on hero; body starts here */}
+        {/* Narrative + photography on warm ivory */}
       <section className="border-b border-[var(--metallic-gold)]/15 bg-[var(--ivory-warm)] pb-20 pt-16 md:pb-28 md:pt-20">
         <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20 xl:px-28">
-          <ScrollReveal className="mx-auto max-w-3xl text-center">
-            <div className="flex justify-center">
-              <GoldDivider />
-            </div>
-            <p className="mt-10 font-[family-name:var(--font-lato)] text-base leading-[1.75] text-[var(--charcoal)] md:text-lg">
-              {service.description}
-            </p>
-          </ScrollReveal>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+            <ScrollReveal className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-none lg:text-left">
+              <div className="flex justify-center lg:justify-start">
+                <GoldDivider />
+              </div>
+              <p className="mt-10 font-[family-name:var(--font-lato)] text-base leading-[1.75] text-[var(--charcoal)] md:text-lg">
+                {service.description}
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.08} className="w-full">
+              <figure className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-sm border border-[var(--metallic-gold)]/22 shadow-[0_24px_60px_-24px_rgba(62,15,52,0.35)] lg:mx-0 lg:max-w-none">
+                <Image
+                  src={getServiceImagePath(service.slug)}
+                  alt={getServiceHeroImageAlt(service)}
+                  fill
+                  priority
+                  sizes="(max-width: 1023px) min(100vw, 36rem), 50vw"
+                  className="object-cover object-center"
+                />
+              </figure>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

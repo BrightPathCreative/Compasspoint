@@ -104,11 +104,11 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/[0.12] py-8 text-center text-xs text-[var(--text-secondary)]">
-        <p className="font-[family-name:var(--font-montserrat)]">
+      <div className="border-t border-white/[0.12] pt-5 pb-0 text-center text-xs text-[var(--text-secondary)]">
+        <p className="font-[family-name:var(--font-montserrat)] leading-snug">
           © {new Date().getFullYear()} CompassPoint Advisory Pty Ltd. All rights reserved.
         </p>
-        <p className="mt-2 font-[family-name:var(--font-montserrat)] text-[12px] text-[var(--soft-ivory)]/40">
+        <p className="mt-1.5 font-[family-name:var(--font-montserrat)] text-[12px] leading-snug text-[var(--soft-ivory)]/40">
           Built and maintained by{" "}
           <a
             href={BRIGHT_PATH_CONTACT_URL}
