@@ -18,7 +18,7 @@ const footerLinks = [
 export function Footer() {
   return (
     <footer className="site-footer text-[var(--text-primary)]">
-      <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20">
+      <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-10 md:px-14 md:pb-12 lg:px-20">
         <div className="grid gap-12 md:grid-cols-3">
           <div className="space-y-4">
             <div className="footer-emblem-glow flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -104,7 +104,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/[0.12] pt-5 pb-0 text-center text-xs text-[var(--text-secondary)]">
+      <div className="border-t border-white/[0.12] px-8 py-6 text-center text-xs text-[var(--text-secondary)] md:px-14 lg:px-20">
         <p className="font-[family-name:var(--font-montserrat)] leading-snug">
           © {new Date().getFullYear()} CompassPoint Advisory Pty Ltd. All rights reserved.
         </p>
