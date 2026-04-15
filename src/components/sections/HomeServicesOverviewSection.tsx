@@ -18,20 +18,23 @@ function HomeServiceTile({ service, priority }: { service: Service; priority: bo
   const href = `/services/${service.slug}`;
 
   return (
-    <article className="home-service-tile group relative flex min-h-[340px] flex-col overflow-hidden rounded-2xl border border-white/10 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.65)] sm:min-h-[380px] lg:aspect-[3/4] lg:min-h-0">
-      <Image
-        src={getServiceImagePath(service.slug)}
-        alt={getServiceHeroImageAlt(service)}
-        fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-        priority={priority}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a0516] via-[#1a0516]/55 to-transparent"
-        aria-hidden
-      />
-      <div className="relative mt-auto flex flex-col p-5 pt-16 sm:p-6 sm:pt-20">
+    <article className="home-service-tile group relative isolate flex min-h-[340px] flex-col overflow-visible rounded-2xl border border-white/10 shadow-[0_28px_70px_-28px_rgba(0,0,0,0.65)] sm:min-h-[380px] lg:min-h-[400px]">
+      {/* Clip image + gradient only; card body stays overflow-visible so accordion + CTA can grow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
+        <Image
+          src={getServiceImagePath(service.slug)}
+          alt={getServiceHeroImageAlt(service)}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          priority={priority}
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-[#1a0516] via-[#1a0516]/55 to-transparent"
+          aria-hidden
+        />
+      </div>
+      <div className="relative z-[1] mt-auto flex flex-col p-5 pb-6 pt-16 sm:p-6 sm:pb-7 sm:pt-20">
         <p className="font-[family-name:var(--font-montserrat)] text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--metallic-gold)]">
           <span className="inline-block border border-[var(--metallic-gold)]/75 bg-black/35 px-2.5 py-1 backdrop-blur-[2px]">
             {service.categoryLabel}
