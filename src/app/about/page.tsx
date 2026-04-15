@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/global/SiteShell";
-import { Button } from "@/components/global/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { LINKEDIN_URL } from "@/lib/contact";
 import { personAmeliaJsonLd } from "@/lib/seo-schemas";
-import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About CompassPoint Advisory - Melbourne Business Consultants",
@@ -101,12 +99,6 @@ export default function AboutPage() {
             We work alongside you, not above you, so decisions stay yours, momentum builds, and your team grows
             stronger through the process.
           </p>
-
-          <div className="mt-10 flex justify-center">
-            <div className="cta-gold-halo inline-flex rounded-sm">
-              <Button href={BOOK_DISCOVERY_PATH}>Book a Free Discovery Call</Button>
-            </div>
-          </div>
         </section>
       </article>
       <CtaSection />
