@@ -40,9 +40,10 @@ export function ServiceOverviewRow({
     ? "bg-[linear-gradient(to_left,transparent_70%,rgba(245,240,232,0.06))]"
     : "bg-[linear-gradient(to_right,transparent_70%,rgba(245,240,232,0.06))]";
 
+  /** Wider copy column (~74%), narrower image (~26%) — image reads as a side panel. */
   const gridCols = flip
-    ? "md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)]"
-    : "md:grid-cols-[minmax(0,1.22fr)_minmax(0,0.78fr)]";
+    ? "md:grid-cols-[minmax(0,1.48fr)_minmax(0,0.52fr)]"
+    : "md:grid-cols-[minmax(0,0.52fr)_minmax(0,1.48fr)]";
 
   const cardShell = signature
     ? "border-[rgba(201,168,76,0.35)] shadow-[0_28px_70px_-28px_rgba(24,8,20,0.55)]"
@@ -56,7 +57,7 @@ export function ServiceOverviewRow({
       }`}
     >
       <div
-        className={`relative mx-auto grid max-w-[1200px] overflow-hidden rounded-[22px] border md:min-h-[min(520px,70vh)] ${cardShell} ${gridCols}`}
+        className={`relative mx-auto grid max-w-[1200px] overflow-hidden rounded-[22px] border md:min-h-[min(460px,62vh)] ${cardShell} ${gridCols}`}
       >
         {/* Image */}
         <div
@@ -68,7 +69,7 @@ export function ServiceOverviewRow({
             src={imgSrc}
             alt={alt}
             fill
-            sizes="(max-width: 767px) 100vw, min(58vw, 740px)"
+            sizes="(max-width: 767px) 100vw, min(32vw, 420px)"
             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.035]"
             priority={imagePriority}
           />
@@ -84,7 +85,7 @@ export function ServiceOverviewRow({
             flip ? "md:order-1" : "md:order-2"
           } ${bodyBg}`}
         >
-          <div className={`w-full max-w-[440px] ${flip ? "md:ml-auto" : "md:mr-auto"}`}>
+          <div className="w-full max-w-[min(100%,620px)]">
             {signature ? (
               <span className="mb-3 inline-flex items-center gap-1.5 self-start border border-[rgba(201,168,76,0.4)] bg-black/15 px-3 py-1 font-[family-name:var(--font-montserrat)] text-[0.56rem] uppercase tracking-[0.2em] text-[var(--gold)]">
                 ★ SIGNATURE OFFERING

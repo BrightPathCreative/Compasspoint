@@ -104,7 +104,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         {/* Narrative + photography on warm ivory */}
       <section className="border-b border-[var(--metallic-gold)]/15 bg-[var(--ivory-warm)] pb-20 pt-16 md:pb-28 md:pt-20">
         <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20 xl:px-28">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.38fr)_minmax(220px,0.4fr)] lg:items-start lg:gap-14 xl:gap-20">
             <ScrollReveal className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-none lg:text-left">
               <div className="flex justify-center lg:justify-start">
                 <GoldDivider />
@@ -113,14 +113,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                 {service.description}
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={0.08} className="w-full">
-              <figure className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-sm border border-[var(--metallic-gold)]/22 shadow-[0_24px_60px_-24px_rgba(62,15,52,0.35)] lg:mx-0 lg:max-w-none">
+            <ScrollReveal delay={0.08} className="w-full lg:justify-self-end">
+              <figure className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-sm border border-[var(--metallic-gold)]/22 shadow-[0_24px_60px_-24px_rgba(62,15,52,0.35)] lg:mx-0 lg:aspect-[4/3.2] lg:max-w-none">
                 <Image
                   src={getServiceImagePath(service.slug)}
                   alt={getServiceHeroImageAlt(service)}
                   fill
                   priority
-                  sizes="(max-width: 1023px) min(100vw, 36rem), 50vw"
+                  sizes="(max-width: 1023px) min(100vw, 28rem), 28vw"
                   className="object-cover object-center"
                 />
               </figure>
