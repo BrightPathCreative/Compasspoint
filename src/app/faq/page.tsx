@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GoldDivider from "@/components/GoldDivider";
 import { SiteShell } from "@/components/global/SiteShell";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -7,7 +6,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { faqPageJsonLd } from "@/lib/seo-schemas";
 import { FAQ_ITEMS } from "@/lib/faq";
-import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Business Consulting FAQ — CompassPoint Advisory",
@@ -53,23 +51,6 @@ export default function FaqPage() {
         <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 py-14 md:px-14 md:py-20 lg:px-20">
           <div className="mx-auto max-w-3xl">
             <FaqAccordion items={FAQ_ITEMS} variant="minimal" initialOpenIndex={0} />
-          </div>
-
-          <div className="mx-auto mt-16 max-w-3xl rounded-sm border border-[var(--metallic-gold)]/20 bg-[var(--bg-primary)]/80 p-8 text-center md:p-10">
-            <p className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold text-[var(--text-primary)]">
-              Still have questions?
-            </p>
-            <p className="mx-auto mt-3 max-w-lg font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
-              Book a free discovery call — we&apos;ll help you decide if we&apos;re the right fit.
-            </p>
-            <p className="mt-8">
-              <Link
-                href={BOOK_DISCOVERY_PATH}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-[var(--metallic-gold)]/45 bg-transparent px-8 py-3 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--metallic-gold)] transition-colors hover:border-[var(--metallic-gold)] hover:bg-[var(--metallic-gold)]/10"
-              >
-                Book a discovery call
-              </Link>
-            </p>
           </div>
         </div>
       </div>
