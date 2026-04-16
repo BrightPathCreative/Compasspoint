@@ -8,6 +8,7 @@ import { HomeIntroSection } from "@/components/sections/HomeIntroSection";
 import { HomeFaqSection } from "@/components/sections/HomeFaqSection";
 import { HomeMethodologyPreviewSection } from "@/components/sections/HomeMethodologyPreviewSection";
 import { HomeServicesOverviewSection } from "@/components/sections/HomeServicesOverviewSection";
+import { HomeTestimonialsSection } from "@/components/sections/HomeTestimonialsSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessJsonLd } from "@/lib/seo-schemas";
 
@@ -34,6 +35,7 @@ export default function Home() {
       <HomeIntroSection />
       <HomeAboutSnapshotSection />
       <HomeServicesOverviewSection />
+      <HomeTestimonialsSection />
       <HomeMethodologyPreviewSection />
       <HomeDifferentiatorsSection />
       <HomeFaqSection />
