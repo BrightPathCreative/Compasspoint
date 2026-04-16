@@ -46,7 +46,7 @@ export function ServiceOverviewRow({
     : "md:grid-cols-[minmax(0,0.52fr)_minmax(0,1.48fr)]";
 
   const cardShell = signature
-    ? "border-[rgba(201,168,76,0.35)] shadow-[0_28px_70px_-28px_rgba(24,8,20,0.55)]"
+    ? "border-[rgba(199,154,68,0.35)] shadow-[0_28px_70px_-28px_rgba(24,8,20,0.55)]"
     : "border-[rgba(56,7,41,0.09)] shadow-[0_22px_55px_-32px_rgba(56,7,41,0.14)]";
 
   return (
@@ -87,7 +87,7 @@ export function ServiceOverviewRow({
         >
           <div className="w-full max-w-[min(100%,620px)]">
             {signature ? (
-              <span className="mb-3 inline-flex items-center gap-1.5 self-start border border-[rgba(201,168,76,0.4)] bg-black/15 px-3 py-1 font-[family-name:var(--font-montserrat)] text-[0.56rem] uppercase tracking-[0.2em] text-[var(--gold)]">
+              <span className="mb-3 inline-flex items-center gap-1.5 self-start border border-[rgba(199,154,68,0.4)] bg-black/15 px-3 py-1 font-[family-name:var(--font-montserrat)] text-[0.56rem] uppercase tracking-[0.2em] text-[var(--gold)]">
                 ★ SIGNATURE OFFERING
               </span>
             ) : null}
@@ -95,8 +95,8 @@ export function ServiceOverviewRow({
             <span
               className={`mb-5 inline-block self-start border px-3.5 py-1.5 font-[family-name:var(--font-montserrat)] text-[0.58rem] uppercase tracking-[0.22em] ${
                 signature
-                  ? "border-[rgba(201,168,76,0.45)] bg-[rgba(201,168,76,0.12)] text-[var(--gold)]"
-                  : "border-[rgba(201,168,76,0.45)] text-[var(--gold)]"
+                  ? "border-[rgba(199,154,68,0.45)] bg-[rgba(199,154,68,0.12)] text-[var(--gold)]"
+                  : "border-[rgba(199,154,68,0.45)] text-[var(--gold)]"
               }`}
             >
               {getServiceOverviewCategoryLabel(service)}

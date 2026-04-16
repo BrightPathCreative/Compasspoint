@@ -22,7 +22,7 @@ export function ServicesOverviewHero() {
         </div>
         <div className="mt-10 hidden items-end gap-3 border-t border-white/[0.08] pt-8 md:flex md:max-w-[1180px] md:justify-end">
           <div className="text-right">
-            <span className="font-[family-name:var(--font-cormorant)] text-[clamp(3.5rem,6vw,4.75rem)] font-light leading-none text-[rgba(201,168,76,0.2)]">
+            <span className="font-[family-name:var(--font-cormorant)] text-[clamp(3.5rem,6vw,4.75rem)] font-light leading-none text-[rgba(199,154,68,0.2)]">
               7
             </span>
             <span className="mt-1 block font-[family-name:var(--font-montserrat)] text-[0.6rem] uppercase tracking-[0.2em] text-white/30">

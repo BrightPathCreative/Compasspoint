@@ -91,7 +91,7 @@ export function ProblemSection() {
             className="pointer-events-none absolute -inset-px rounded-2xl opacity-80 blur-sm"
             style={{
               boxShadow:
-                "0 0 24px rgba(212, 175, 55, 0.32), 0 0 48px rgba(255, 215, 0, 0.1), inset 0 0 18px rgba(184, 134, 11, 0.08)",
+                "0 0 24px rgba(199, 154, 68, 0.32), 0 0 48px rgba(199, 154, 68, 0.12), inset 0 0 18px rgba(199, 154, 68, 0.1)",
             }}
             aria-hidden
           />

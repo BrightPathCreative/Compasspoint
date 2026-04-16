@@ -28,17 +28,5 @@ export default function GoldDivider({ className = "" }: { className?: string }) 
     return () => ctx.revert();
   }, []);
 
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        height: "1px",
-        background:
-          "linear-gradient(90deg, transparent, #D4AF37 20%, #FFD700 50%, #D4AF37 80%, transparent)",
-        margin: "0 auto",
-        maxWidth: "200px",
-      }}
-    />
-  );
+  return <div ref={ref} className={`gold-divider-line ${className}`} />;
 }

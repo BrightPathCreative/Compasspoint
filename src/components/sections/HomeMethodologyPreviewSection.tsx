@@ -59,7 +59,7 @@ export function HomeMethodologyPreviewSection() {
         <div className="relative mx-auto mt-16 max-w-3xl">
           <div
             ref={lineRef}
-            className="pointer-events-none absolute left-[19px] top-0 bottom-0 w-px origin-top bg-gradient-to-b from-[var(--metallic-gold)] to-[rgba(212,175,55,0.15)]"
+            className="pointer-events-none absolute left-[19px] top-0 bottom-0 w-px origin-top bg-gradient-to-b from-[var(--metallic-gold)] to-[rgba(199,154,68,0.15)]"
             aria-hidden
           />
           <ul className="relative z-[1] space-y-12">

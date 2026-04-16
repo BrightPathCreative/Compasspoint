@@ -41,14 +41,14 @@ export function WhyCompassPointSection({
     <section
       id={id}
       aria-label="Why choose CompassPoint Advisory"
-      className={`differentiators-section border-t border-[#D4AF37]/15 ${className}`}
+      className={`differentiators-section border-t border-[var(--metallic-gold)]/15 ${className}`}
     >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="mb-14 text-left lg:mb-20">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:items-start">
               <div>
-                <p className="mb-4 font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">
+                <p className="mb-4 font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--metallic-gold)]">
                   Our difference
                 </p>
                 <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-semibold leading-[1.15] text-[#5B184C] md:text-4xl lg:text-[2.4rem]">

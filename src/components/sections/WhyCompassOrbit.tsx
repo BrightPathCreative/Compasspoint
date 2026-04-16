@@ -26,10 +26,10 @@ const DifferentiatorCard = forwardRef<
       className="diff-card group relative overflow-hidden rounded-xl border border-[#e8e2d9] bg-white pl-6 pr-6 pb-7 pt-7 shadow-[0_1px_0_rgba(56,7,41,0.04),0_12px_40px_-12px_rgba(56,7,41,0.12)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_1px_0_rgba(56,7,41,0.06),0_20px_48px_-16px_rgba(56,7,41,0.14)]"
     >
       <div
-        className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-[#D4AF37] via-[#c9a84c] to-[#b8860b]"
+        className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-[var(--metallic-gold)] via-[var(--metallic-gold-soft)] to-[var(--metallic-gold-rich)]"
         aria-hidden
       />
-      <p className="font-[family-name:var(--font-montserrat)] text-[11px] font-semibold tabular-nums tracking-[0.12em] text-[#D4AF37]">
+      <p className="font-[family-name:var(--font-montserrat)] text-[11px] font-semibold tabular-nums tracking-[0.12em] text-[var(--metallic-gold)]">
         {padNum(index)}
       </p>
       <h3 className="mt-3 font-[family-name:var(--font-cormorant)] text-lg font-bold leading-snug text-[#5B184C] md:text-[1.15rem]">

@@ -5,9 +5,12 @@
   --royal-plum: #380729;
   --plum-dark: #380729;
   --plum-light: #380729;
-  --metallic-gold: #d4af37;
-  --bright-gold: #ffd700;
-  --antique-gold: #b8860b;
+  /* Core brand gold — single hue; soft/rich are only for gradients & micro-shifts */
+  --metallic-gold: #c79a44;
+  --metallic-gold-soft: color-mix(in srgb, var(--metallic-gold) 78%, #ffffff);
+  --metallic-gold-rich: color-mix(in srgb, var(--metallic-gold) 74%, #000000);
+  --bright-gold: var(--metallic-gold-soft);
+  --antique-gold: var(--metallic-gold-rich);
   --charcoal: #2e2e2e;
   --soft-ivory: #f6f1e7;
   --ivory-warm: #faf6ee;
@@ -39,18 +42,18 @@
   --text-tertiary: rgba(246, 241, 231, 0.45);
 
   --border-subtle: rgba(46, 46, 46, 0.85);
-  --border-gold-soft: rgba(212, 175, 55, 0.28);
+  --border-gold-soft: rgba(199, 154, 68, 0.28);
 
-  --neon-gold: rgba(212, 175, 55, 0.4);
-  --neon-gold-bright: rgba(212, 175, 55, 0.22);
+  --neon-gold: rgba(199, 154, 68, 0.4);
+  --neon-gold-bright: rgba(199, 154, 68, 0.22);
   --neon-ivory: rgba(246, 241, 231, 0.2);
 
   /* Services overview — single brand plum */
   --plum: var(--royal-plum);
   --plum-mid: var(--royal-plum);
   --plum-deep: #380729;
-  --gold: #c9a84c;
-  --gold-light: #e8c97a;
+  --gold: var(--metallic-gold);
+  --gold-light: var(--metallic-gold-soft);
   --cream: #f5f0e8;
   --cream-dark: #ede5d8;
   --text-body: #3a2a35;
@@ -112,7 +115,7 @@ button.faq-accordion-question {
   background: rgba(56, 7, 41, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
+  border-bottom: 1px solid rgba(199, 154, 68, 0.1) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -121,7 +124,7 @@ button.faq-accordion-question {
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.35);
+  background: rgba(199, 154, 68, 0.35);
   color: var(--text-primary);
 }
 
@@ -175,8 +178,8 @@ button.faq-accordion-question {
   background: linear-gradient(
     to bottom,
     rgba(255, 242, 210, 0.38) 0%,
-    rgba(212, 175, 55, 0.22) 32%,
-    rgba(212, 175, 55, 0.07) 58%,
+    rgba(199, 154, 68, 0.22) 32%,
+    rgba(199, 154, 68, 0.07) 58%,
     transparent 100%
   );
   clip-path: polygon(16% 0, 84% 0, 100% 100%, 0 100%);
@@ -185,7 +188,7 @@ button.faq-accordion-question {
 }
 
 .hero-compass-emblem {
-  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.14));
+  filter: drop-shadow(0 0 6px rgba(199, 154, 68, 0.14));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -208,13 +211,11 @@ button.faq-accordion-question {
 .gold-shimmer-text {
   background: linear-gradient(
     90deg,
-    #b8860b 0%,
-    #d4af37 20%,
-    #b8860b 39%,
-    #ffd700 50%,
-    #b8860b 60%,
-    #d4af37 80%,
-    #b8860b 100%
+    var(--metallic-gold-rich) 0%,
+    var(--metallic-gold) 22%,
+    var(--metallic-gold-soft) 50%,
+    var(--metallic-gold) 78%,
+    var(--metallic-gold-rich) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -241,7 +242,7 @@ button.faq-accordion-question {
   50% {
     opacity: 0.92;
     text-shadow:
-      0 0 18px rgba(212, 175, 55, 0.45),
+      0 0 18px rgba(199, 154, 68, 0.45),
       0 0 36px rgba(56, 7, 41, 0.2);
   }
 }
@@ -287,7 +288,7 @@ button.faq-accordion-question {
   align-items: center;
   gap: 8px;
   padding: 14px 32px;
-  background: linear-gradient(135deg, #d4af37, #b8860b);
+  background: linear-gradient(135deg, var(--metallic-gold-soft), var(--metallic-gold-rich));
   color: var(--royal-plum);
   font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 600;
@@ -304,9 +305,13 @@ button.faq-accordion-question {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #ffd700, #d4af37);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--metallic-gold) 88%, #ffffff),
+    var(--metallic-gold)
+  );
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 8px 30px rgba(199, 154, 68, 0.3);
 }
 
 .btn-primary::after {
@@ -357,7 +362,7 @@ button.faq-accordion-question {
 }
 
 .btn-plum-cta:focus-visible {
-  outline: 2px solid rgba(212, 175, 55, 0.65);
+  outline: 2px solid rgba(199, 154, 68, 0.65);
   outline-offset: 3px;
 }
 
@@ -366,16 +371,16 @@ button.faq-accordion-question {
   position: relative;
   isolation: isolate;
   box-shadow:
-    0 0 0 1px rgba(212, 175, 55, 0.42),
-    0 0 20px 2px rgba(212, 175, 55, 0.28),
-    0 0 44px 10px rgba(255, 215, 120, 0.14);
+    0 0 0 1px rgba(199, 154, 68, 0.42),
+    0 0 20px 2px rgba(199, 154, 68, 0.28),
+    0 0 44px 10px rgba(199, 154, 68, 0.16);
 }
 
 .cta-gold-halo:focus-within {
   box-shadow:
-    0 0 0 2px rgba(212, 175, 55, 0.55),
-    0 0 24px 4px rgba(212, 175, 55, 0.32),
-    0 0 52px 12px rgba(255, 215, 120, 0.18);
+    0 0 0 2px rgba(199, 154, 68, 0.55),
+    0 0 24px 4px rgba(199, 154, 68, 0.32),
+    0 0 52px 12px rgba(199, 154, 68, 0.2);
 }
 
 .btn-secondary {
@@ -423,14 +428,14 @@ button.faq-accordion-question {
   transition:
     transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(199, 154, 68, 0.1);
 }
 
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow:
     0 20px 60px rgba(56, 7, 41, 0.08),
-    0 4px 16px rgba(212, 175, 55, 0.06);
+    0 4px 16px rgba(199, 154, 68, 0.06);
 }
 
 .service-card::before {
@@ -440,7 +445,7 @@ button.faq-accordion-question {
   left: 50%;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+  background: linear-gradient(90deg, var(--metallic-gold), var(--metallic-gold-soft), var(--metallic-gold));
   transform: translateX(-50%);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -505,7 +510,7 @@ button.faq-accordion-question {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, var(--metallic-gold), rgba(212, 175, 55, 0.2));
+  background: linear-gradient(to bottom, var(--metallic-gold), rgba(199, 154, 68, 0.2));
 }
 
 .step-number {
@@ -546,12 +551,27 @@ button.faq-accordion-question {
   content: "";
   display: block;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(199, 154, 68, 0.3), transparent);
   margin-bottom: 80px;
 }
 
 .footer-emblem-glow {
-  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.15));
+  filter: drop-shadow(0 0 15px rgba(199, 154, 68, 0.15));
+}
+
+/* Animated divider — core gold with soft center highlight */
+.gold-divider-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--metallic-gold) 20%,
+    var(--metallic-gold-soft) 50%,
+    var(--metallic-gold) 80%,
+    transparent
+  );
+  margin: 0 auto;
+  max-width: 200px;
 }
 
 @media (prefers-reduced-motion: reduce) {

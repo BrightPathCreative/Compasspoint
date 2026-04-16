@@ -41,8 +41,8 @@ export default function OpenGraphImage() {
               width: 120,
               height: 120,
               borderRadius: 999,
-              border: "2px solid rgba(212,175,55,0.45)",
-              boxShadow: "0 0 40px rgba(212,175,55,0.2)",
+              border: "2px solid rgba(199,154,68,0.45)",
+              boxShadow: "0 0 40px rgba(199,154,68,0.2)",
             }}
           />
         </div>
@@ -52,7 +52,7 @@ export default function OpenGraphImage() {
             fontWeight: 700,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "#d4af37",
+            color: "#c79a44",
             textAlign: "center",
             maxWidth: 900,
             lineHeight: 1.15,
