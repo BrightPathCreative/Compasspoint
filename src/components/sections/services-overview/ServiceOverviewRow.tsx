@@ -47,7 +47,7 @@ export function ServiceOverviewRow({
 
   const cardShell = signature
     ? "border-[rgba(201,168,76,0.35)] shadow-[0_28px_70px_-28px_rgba(24,8,20,0.55)]"
-    : "border-[rgba(92,26,74,0.09)] shadow-[0_22px_55px_-32px_rgba(91,24,76,0.14)]";
+    : "border-[rgba(56,7,41,0.09)] shadow-[0_22px_55px_-32px_rgba(56,7,41,0.14)]";
 
   return (
     <section
@@ -112,7 +112,7 @@ export function ServiceOverviewRow({
 
             <p
               className={`mt-3.5 font-[family-name:var(--font-cormorant)] text-base italic leading-normal ${
-                signature ? "text-[var(--gold-light)]" : "text-[var(--plum-mid)]"
+                signature ? "text-[var(--gold-light)]" : "text-[var(--plum)]"
               }`}
             >
               {service.question}
@@ -140,7 +140,7 @@ export function ServiceOverviewRow({
                   className={`rounded-full border px-[13px] py-1 font-[family-name:var(--font-montserrat)] text-[0.62rem] tracking-[0.08em] ${
                     signature
                       ? "border-white/15 bg-white/[0.04] text-white/50"
-                      : "border-[rgba(92,26,74,0.16)] bg-[rgba(92,26,74,0.035)] text-[var(--text-muted)]"
+                      : "border-[rgba(56,7,41,0.16)] bg-[rgba(56,7,41,0.035)] text-[var(--text-muted)]"
                   }`}
                 >
                   {tag}
@@ -154,7 +154,7 @@ export function ServiceOverviewRow({
                 className={`inline-flex items-center gap-2 rounded-full px-[26px] py-3 font-[family-name:var(--font-montserrat)] text-[0.65rem] font-semibold uppercase tracking-[0.14em] transition-colors after:content-['→'] ${
                   signature
                     ? "bg-[var(--gold)] text-[var(--royal-plum)] hover:bg-[var(--gold-light)]"
-                    : "bg-[var(--plum)] text-white hover:bg-[var(--plum-mid)]"
+                    : "bg-[var(--plum)] text-white hover:brightness-110"
                 }`}
               >
                 Full Service Detail
@@ -164,7 +164,7 @@ export function ServiceOverviewRow({
                 className={`font-[family-name:var(--font-montserrat)] text-[0.65rem] uppercase tracking-[0.12em] transition-colors ${
                   signature
                     ? "border-b border-white/20 pb-0.5 text-white/45 hover:border-[var(--gold)] hover:text-[var(--gold)]"
-                    : "border-b border-[rgba(92,26,74,0.25)] pb-0.5 text-[var(--text-muted)] hover:border-[var(--plum)] hover:text-[var(--plum)]"
+                    : "border-b border-[rgba(56,7,41,0.25)] pb-0.5 text-[var(--text-muted)] hover:border-[var(--plum)] hover:text-[var(--plum)]"
                 }`}
               >
                 Book a Discovery Call

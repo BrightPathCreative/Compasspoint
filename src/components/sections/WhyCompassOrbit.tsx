@@ -23,7 +23,7 @@ const DifferentiatorCard = forwardRef<
   return (
     <article
       ref={ref}
-      className="diff-card group relative overflow-hidden rounded-xl border border-[#e8e2d9] bg-white pl-6 pr-6 pb-7 pt-7 shadow-[0_1px_0_rgba(62,15,52,0.04),0_12px_40px_-12px_rgba(62,15,52,0.12)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_1px_0_rgba(62,15,52,0.06),0_20px_48px_-16px_rgba(62,15,52,0.14)]"
+      className="diff-card group relative overflow-hidden rounded-xl border border-[#e8e2d9] bg-white pl-6 pr-6 pb-7 pt-7 shadow-[0_1px_0_rgba(56,7,41,0.04),0_12px_40px_-12px_rgba(56,7,41,0.12)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_1px_0_rgba(56,7,41,0.06),0_20px_48px_-16px_rgba(56,7,41,0.14)]"
     >
       <div
         className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-[#D4AF37] via-[#c9a84c] to-[#b8860b]"

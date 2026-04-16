@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { Cinzel, Cormorant_Garamond, Lato, Montserrat } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
-import { GrainOverlay } from "@/components/GrainOverlay";
 import { BackToTopButton } from "@/components/BackToTopButton";
 import { LenisProvider } from "@/components/global/LenisProvider";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -40,7 +39,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#3e0f34",
+  themeColor: "#380729",
 };
 
 export const metadata: Metadata = {
@@ -72,7 +71,6 @@ export default function RootLayout({
       className={`${lato.variable} ${cormorant.variable} ${cinzel.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[var(--bg-primary)]">
-        <GrainOverlay />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10000] focus:rounded-sm focus:bg-[var(--metallic-gold)] focus:px-4 focus:py-2 focus:font-[family-name:var(--font-montserrat)] focus:text-sm focus:font-semibold focus:text-[var(--royal-plum)] focus:outline-none focus:ring-2 focus:ring-[var(--metallic-gold)] focus:ring-offset-2 focus:ring-offset-[var(--bg-primary)]"

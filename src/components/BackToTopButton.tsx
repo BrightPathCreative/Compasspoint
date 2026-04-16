@@ -105,7 +105,7 @@ export function BackToTopButton({ inline = false }: BackToTopButtonProps) {
           type="button"
           tabIndex={visible ? 0 : -1}
           onClick={() => scrollToTopSmooth()}
-          className="absolute inset-[3px] flex items-center justify-center rounded-full bg-gradient-to-br from-[var(--plum-dark)] to-[var(--royal-plum)] text-[var(--metallic-gold)] shadow-[0_6px_18px_rgba(0,0,0,0.4),0_0_0_1px_rgba(212,175,55,0.1)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(0,0,0,0.48),0_0_0_1px_rgba(212,175,55,0.22),0_0_16px_rgba(212,175,55,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--metallic-gold)] active:translate-y-0"
+          className="absolute inset-[3px] flex items-center justify-center rounded-full bg-[var(--royal-plum)] text-[var(--metallic-gold)] shadow-[0_6px_18px_rgba(0,0,0,0.4),0_0_0_1px_rgba(212,175,55,0.1)] transition-[transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(0,0,0,0.48),0_0_0_1px_rgba(212,175,55,0.22),0_0_16px_rgba(212,175,55,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--metallic-gold)] active:translate-y-0"
           aria-label="Back to top"
         >
           <ChevronUp className="size-[15px]" strokeWidth={2} aria-hidden />

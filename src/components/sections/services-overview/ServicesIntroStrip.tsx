@@ -18,12 +18,12 @@ const PILLARS = [
 ] as const;
 
 const cardClass =
-  "rounded-2xl border border-[rgba(92,26,74,0.08)] bg-[color-mix(in_srgb,var(--cream)_88%,#ffffff)] p-6 shadow-[0_2px_28px_-14px_rgba(91,24,76,0.08)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_-18px_rgba(91,24,76,0.12)]";
+  "rounded-2xl border border-[rgba(56,7,41,0.08)] bg-[color-mix(in_srgb,var(--cream)_88%,#ffffff)] p-6 shadow-[0_2px_28px_-14px_rgba(56,7,41,0.08)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_-18px_rgba(56,7,41,0.12)]";
 
 /** Value pillars — soft cards instead of rigid full-width columns. */
 export function ServicesIntroStrip() {
   return (
-    <div className="border-b border-[rgba(92,26,74,0.08)] bg-[var(--cream)] px-4 py-12 sm:px-6 md:px-8 md:py-14 lg:px-12">
+    <div className="border-b border-[rgba(56,7,41,0.08)] bg-[var(--cream)] px-4 py-12 sm:px-6 md:px-8 md:py-14 lg:px-12">
       <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-4 sm:grid-cols-2 min-[1080px]:grid-cols-4 min-[1080px]:gap-5">
         {PILLARS.map((pillar) => (
           <div key={pillar.title} className={cardClass}>

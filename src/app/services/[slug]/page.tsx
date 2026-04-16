@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="w-full lg:justify-self-end">
-              <figure className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-sm border border-[var(--metallic-gold)]/22 shadow-[0_24px_60px_-24px_rgba(62,15,52,0.35)] lg:mx-0 lg:aspect-[4/3.2] lg:max-w-none">
+              <figure className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-sm border border-[var(--metallic-gold)]/22 shadow-[0_24px_60px_-24px_rgba(56,7,41,0.35)] lg:mx-0 lg:aspect-[4/3.2] lg:max-w-none">
                 <Image
                   src={getServiceImagePath(service.slug)}
                   alt={getServiceHeroImageAlt(service)}

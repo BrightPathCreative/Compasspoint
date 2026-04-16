@@ -1,22 +1,7 @@
-import Image from "next/image";
-import { getServiceImagePath } from "@/lib/services";
-
-/** Hero for /services — plum background, strategy image wash, H1 + “7 service areas”. */
+/** Hero for /services — solid plum, H1 + “7 service areas”. */
 export function ServicesOverviewHero() {
-  const heroBg = getServiceImagePath("business-strategy-consulting");
-
   return (
     <section className="relative overflow-hidden bg-[var(--royal-plum)] px-4 py-[80px] pb-[68px] sm:px-6 md:px-10 md:py-[88px] md:pb-20 lg:px-14">
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <Image
-          src={heroBg}
-          alt=""
-          fill
-          className="object-cover object-[center_40%] opacity-[0.12]"
-          sizes="100vw"
-          priority
-        />
-      </div>
       <div className="relative z-[2] mx-auto max-w-[min(1180px,calc(100%-0.5rem))]">
         <div className="max-w-[640px]">
           <p className="mb-[18px] flex items-center gap-3 font-[family-name:var(--font-montserrat)] text-[0.6rem] uppercase tracking-[0.26em] text-[var(--gold)]">

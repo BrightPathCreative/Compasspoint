@@ -22,7 +22,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(160deg, #3e0f34 0%, #5b184c 45%, #2a071f 100%)",
+          background: "#380729",
           color: "#f6f1e7",
           fontFamily: "system-ui, sans-serif",
         }}

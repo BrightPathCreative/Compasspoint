@@ -35,7 +35,7 @@ export function FaqAccordion({
 
         const questionClass =
           variant === "card"
-            ? "faq-accordion-question flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-[family-name:var(--font-cormorant)] text-xl font-bold leading-[1.2] text-[var(--royal-plum)] transition-colors hover:text-[var(--plum-light)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--metallic-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-ivory)] md:px-6 md:py-5 md:text-2xl"
+            ? "faq-accordion-question flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-[family-name:var(--font-cormorant)] text-xl font-bold leading-[1.2] text-[var(--royal-plum)] transition-colors hover:text-[var(--metallic-gold)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--metallic-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-ivory)] md:px-6 md:py-5 md:text-2xl"
             : "faq-accordion-question flex w-full items-center justify-between gap-4 px-5 py-5 text-left font-[family-name:var(--font-cormorant)] text-xl font-bold leading-[1.2] text-[var(--text-primary)] transition-colors hover:text-[var(--metallic-gold)] md:px-6 md:py-[1.35rem] md:text-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--metallic-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary)]";
 
         const chevronClass =

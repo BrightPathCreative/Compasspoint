@@ -19,22 +19,6 @@ export function ServiceImageHero({
 }: ServiceImageHeroProps) {
   return (
     <section className="relative flex min-h-[min(48dvh,640px)] flex-col items-center justify-center overflow-hidden bg-[var(--royal-plum)] px-8 pb-16 pt-36 text-center md:min-h-[42vh] md:px-14 md:pb-20 md:pt-40 lg:px-20">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        aria-hidden
-        style={{
-          backgroundImage: `url("/brand-icon.svg")`,
-          backgroundPosition: "50% 55%",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "min(420px, 70vw)",
-          transform: "rotate(10deg)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(62,15,52,0.55)_100%)]"
-        aria-hidden
-      />
-
       <div className="relative z-[1] mx-auto w-full max-w-4xl pb-[max(0.5rem,env(safe-area-inset-bottom,0px))]">
         <h1
           id={headingId}
