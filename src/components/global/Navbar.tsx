@@ -1,33 +1,24 @@
 "use client";
 
 import "@/lib/gsap-config";
-import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { SERVICES } from "@/lib/services";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import { NavbarLogo } from "./NavbarLogo";
 import { Button } from "./Button";
-import { useLenisScroll } from "./LenisProvider";
 
 const linksAfterServices = [
   { href: "/methodology", label: "Methodology" },
   { href: "/faq", label: "FAQ" },
 ] as const;
 
+const navLinkClass =
+  "relative text-[15px] font-normal text-[var(--soft-ivory)] transition-colors hover:text-[var(--metallic-gold)] after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--metallic-gold)] after:transition-transform hover:after:scale-x-100";
+
 export function Navbar() {
-  const navRef = useRef<HTMLElement>(null);
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
-  const { scrollY } = useLenisScroll();
-  const scrolled = scrollY > 60;
-  const isHome = pathname === "/" || pathname === "";
-  const solidNav = scrolled || !isHome;
-
-  useEffect(() => {
-    navRef.current?.classList.toggle("nav-scrolled", solidNav);
-  }, [solidNav]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,18 +31,9 @@ export function Navbar() {
     if (!open) setServicesExpanded(false);
   }, [open]);
 
-  const linkBase =
-    "relative text-[15px] font-normal after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:scale-x-0 after:bg-[var(--metallic-gold)] after:transition-transform hover:after:scale-x-100";
-  const linkOnHero = `${linkBase} text-[var(--soft-ivory)] transition-colors hover:text-[var(--metallic-gold)]`;
-  const linkOnCream = `${linkBase} text-[var(--charcoal)] transition-colors hover:text-[var(--royal-plum)]`;
-  const navLinkClass = solidNav ? linkOnCream : linkOnHero;
-
   return (
     <>
-      <header
-        ref={navRef}
-        className={`fixed inset-x-0 top-0 z-50 flex min-h-[5.25rem] items-center border-b border-transparent transition-all duration-300 ease-out md:min-h-[6rem] ${solidNav ? "py-3 md:py-3" : "py-5 md:py-6"}`}
-      >
+      <header className="site-header fixed inset-x-0 top-0 z-50 flex min-h-[5.25rem] items-center border-b border-transparent py-4 transition-all duration-300 ease-out md:min-h-[6rem] md:py-5">
         <div className="mx-auto flex w-full max-w-[min(100%,1920px)] items-center justify-between px-8 md:px-14 lg:px-20">
           <NavbarLogo onNavigate={() => setOpen(false)} />
 
@@ -69,7 +51,7 @@ export function Navbar() {
                   Services
                 </a>
                 <ChevronDown
-                  className={`h-4 w-4 shrink-0 transition-transform group-hover:rotate-180 ${solidNav ? "text-[var(--charcoal)]/70" : "text-[var(--soft-ivory)]/75"}`}
+                  className="h-4 w-4 shrink-0 text-[var(--soft-ivory)]/75 transition-transform group-hover:rotate-180"
                   aria-hidden
                 />
               </span>
@@ -113,7 +95,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className={`rounded-md p-2 md:hidden ${solidNav ? "text-[var(--charcoal)]" : "text-[var(--soft-ivory)]"}`}
+            className="rounded-md p-2 text-[var(--soft-ivory)] md:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}

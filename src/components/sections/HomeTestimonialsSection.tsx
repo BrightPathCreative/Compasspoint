@@ -5,14 +5,19 @@ import ScrollReveal from "@/components/ScrollReveal";
 const TESTIMONIALS = [
   {
     body: (
-      <p>
-        Amelia is an exceptional leader with a proven ability to translate strategy into measurable outcomes. In
-        my capacity at Harbour Consulting, I&apos;ve engaged Amelia and her team across multiple initiatives,
-        where they consistently delivered high-quality, insight-led outcomes. She brings a structured, commercially
-        grounded approach to every engagement, with a clear focus on enabling growth and scale for SMEs. Amelia has
-        a natural ability to build trust with stakeholders while maintaining a sharp consulting lens, making her a
-        highly effective partner for organisations navigating digital transformation.
-      </p>
+      <>
+        <p>
+          Amelia is an exceptional leader with a proven ability to translate strategy into measurable outcomes. In
+          my capacity at Harbour Consulting, I&apos;ve engaged Amelia and her team across multiple initiatives,
+          where they consistently delivered high-quality, insight-led outcomes.
+        </p>
+        <p className="mt-4">
+          She brings a structured, commercially grounded approach to every engagement, with a clear focus on
+          enabling growth and scale for SMEs. Amelia has a natural ability to build trust with stakeholders while
+          maintaining a sharp consulting lens, making her a highly effective partner for organisations navigating
+          digital transformation.
+        </p>
+      </>
     ),
     name: "Suzi Nikoloski",
     attribution: "Managing Partner, Harbour Consulting",
@@ -82,7 +87,7 @@ export function HomeTestimonialsSection() {
                   <div className="font-[family-name:var(--font-lato)] text-[15px] leading-[1.75] text-[var(--charcoal)] md:text-base">
                     {t.body}
                   </div>
-                  <figcaption className="mt-8 border-t border-[var(--metallic-gold)]/15 pt-6">
+                  <figcaption className="mt-8">
                     <p className="font-[family-name:var(--font-cormorant)] text-lg font-semibold text-[var(--royal-plum)]">
                       {t.name}
                     </p>

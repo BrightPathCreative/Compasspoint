@@ -118,12 +118,13 @@ button.faq-accordion-question {
   font-family: var(--font-cormorant), ui-serif, Georgia, serif;
 }
 
-.nav-scrolled {
-  background: rgba(245, 240, 232, 0.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+/* Fixed header — always brand plum (no cream scroll state) */
+.site-header {
+  background: var(--royal-plum);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(199, 154, 68, 0.14) !important;
-  box-shadow: 0 4px 28px rgba(56, 7, 41, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 .section-brand-plum {
@@ -265,9 +266,9 @@ button.faq-accordion-question {
   }
 }
 
-/* Why CompassPoint — section shell (ivory + generous padding) */
+/* Why CompassPoint — section shell (white + generous padding) */
 .differentiators-section {
-  background: #f6f1e7;
+  background: #ffffff;
   padding: 80px 20px;
 }
 
