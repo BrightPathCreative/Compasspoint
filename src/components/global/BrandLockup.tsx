@@ -15,7 +15,7 @@ export function BrandLockup({
   clickable = true,
 }: BrandLockupProps) {
   const ringOffset =
-    variant === "onPlum" ? "focus-visible:ring-offset-[var(--brand-plum)]" : "focus-visible:ring-offset-[var(--brand-black)]";
+    variant === "onPlum" ? "focus-visible:ring-offset-[var(--brand-plum)]" : "focus-visible:ring-offset-[var(--cream)]";
 
   const inner = (
     <div className={`flex items-center gap-3 md:gap-4 ${className}`}>

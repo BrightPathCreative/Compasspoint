@@ -17,14 +17,14 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="site-footer text-[var(--text-primary)]">
+    <footer className="site-footer text-[var(--text-on-dark)]">
       <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-10 md:px-14 md:pb-12 lg:px-20">
         <div className="grid gap-12 md:grid-cols-3">
           <div className="space-y-4">
             <div className="footer-emblem-glow flex flex-col gap-3 sm:flex-row sm:items-center">
               <BrandLockup variant="onPlum" clickable={false} />
             </div>
-            <p className="max-w-sm font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-secondary)]">
+            <p className="max-w-sm font-[family-name:var(--font-lato)] text-sm leading-relaxed text-[var(--text-on-dark-muted)]">
               Strategic consulting for Australian SMEs and startups - Melbourne-based, nationally active.
             </p>
             <div className="flex gap-4">
@@ -56,7 +56,7 @@ export function Footer() {
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                    className="text-[var(--text-on-dark-muted)] transition-colors hover:text-[var(--text-on-dark)]"
                   >
                     {label}
                   </a>
@@ -69,7 +69,7 @@ export function Footer() {
             <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wider text-[var(--brand-gold)]">
               Contact
             </h3>
-            <p className="font-[family-name:var(--font-lato)] text-sm text-[var(--text-secondary)]">
+            <p className="font-[family-name:var(--font-lato)] text-sm text-[var(--text-on-dark-muted)]">
               Melbourne, Victoria, Australia
             </p>
             <p className="mt-3">
@@ -88,7 +88,7 @@ export function Footer() {
                 id="footer-email"
                 type="email"
                 placeholder="Your email"
-                className="min-h-11 flex-1 rounded-md border border-white/15 bg-[rgba(10,10,10,0.35)] px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--soft-ivory)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
+                className="min-h-11 flex-1 rounded-md border border-[var(--metallic-gold)]/25 bg-[var(--cream)]/90 px-3 font-[family-name:var(--font-lato)] text-sm text-[var(--charcoal)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
               />
               <button
                 type="submit"
@@ -97,14 +97,14 @@ export function Footer() {
                 Subscribe
               </button>
             </form>
-            <p className="mt-3 max-w-md font-[family-name:var(--font-lato)] text-[11px] leading-relaxed text-[var(--text-tertiary)]">
+            <p className="mt-3 max-w-md font-[family-name:var(--font-lato)] text-[11px] leading-relaxed text-[var(--text-on-dark-subtle)]">
               We won&apos;t spam you. Expect only occasional emails with practical insights, educational content, and
               CompassPoint Advisory updates - unsubscribe any time.
             </p>
           </div>
         </div>
       </div>
-      <div className="border-t border-white/[0.12] px-8 py-6 text-center text-xs text-[var(--text-secondary)] md:px-14 lg:px-20">
+      <div className="border-t border-white/[0.12] px-8 py-6 text-center text-xs text-[var(--text-on-dark-muted)] md:px-14 lg:px-20">
         <p className="font-[family-name:var(--font-montserrat)] leading-snug">
           © {new Date().getFullYear()} CompassPoint Advisory Pty Ltd. All rights reserved.
         </p>
@@ -114,7 +114,7 @@ export function Footer() {
             href={BRIGHT_PATH_CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--accent-gold-light)] underline decoration-[var(--brand-gold)]/50 underline-offset-2 transition-colors hover:text-[var(--text-primary)] hover:decoration-[var(--brand-gold)]"
+            className="text-[var(--accent-gold-light)] underline decoration-[var(--brand-gold)]/50 underline-offset-2 transition-colors hover:text-[var(--text-on-dark)] hover:decoration-[var(--brand-gold)]"
           >
             Bright Path Creative
           </a>

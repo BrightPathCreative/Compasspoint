@@ -51,7 +51,7 @@ export function ContactForm() {
           type="text"
           required
           autoComplete="name"
-          className="mt-2 w-full rounded-sm border border-white/15 bg-[var(--bg-secondary)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
+          className="mt-2 w-full rounded-sm border border-[var(--brand-charcoal)]/22 bg-[var(--white)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--charcoal)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
           placeholder="Your name"
         />
       </div>
@@ -65,7 +65,7 @@ export function ContactForm() {
           type="email"
           required
           autoComplete="email"
-          className="mt-2 w-full rounded-sm border border-white/15 bg-[var(--bg-secondary)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
+          className="mt-2 w-full rounded-sm border border-[var(--brand-charcoal)]/22 bg-[var(--white)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--charcoal)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
           placeholder="you@company.com.au"
         />
       </div>
@@ -78,7 +78,7 @@ export function ContactForm() {
           name="phone"
           type="tel"
           autoComplete="tel"
-          className="mt-2 w-full rounded-sm border border-white/15 bg-[var(--bg-secondary)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
+          className="mt-2 w-full rounded-sm border border-[var(--brand-charcoal)]/22 bg-[var(--white)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--charcoal)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
           placeholder="+61 …"
         />
       </div>
@@ -91,7 +91,7 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="mt-2 w-full resize-y rounded-sm border border-white/15 bg-[var(--bg-secondary)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
+          className="mt-2 w-full resize-y rounded-sm border border-[var(--brand-charcoal)]/22 bg-[var(--white)] px-4 py-3 font-[family-name:var(--font-lato)] text-[var(--charcoal)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--metallic-gold)] focus:outline-none"
           placeholder="How can we help?"
         />
       </div>

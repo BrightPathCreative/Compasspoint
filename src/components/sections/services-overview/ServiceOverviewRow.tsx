@@ -87,7 +87,7 @@ export function ServiceOverviewRow({
         >
           <div className="w-full max-w-[min(100%,620px)]">
             {signature ? (
-              <span className="mb-3 inline-flex items-center gap-1.5 self-start border border-[rgba(199,154,68,0.4)] bg-black/15 px-3 py-1 font-[family-name:var(--font-montserrat)] text-[0.56rem] uppercase tracking-[0.2em] text-[var(--gold)]">
+              <span className="mb-3 inline-flex items-center gap-1.5 self-start border border-[rgba(199,154,68,0.4)] bg-[var(--royal-plum)]/12 px-3 py-1 font-[family-name:var(--font-montserrat)] text-[0.56rem] uppercase tracking-[0.2em] text-[var(--gold)]">
                 ★ SIGNATURE OFFERING
               </span>
             ) : null}

@@ -65,10 +65,10 @@ export function ProblemSection() {
     <SectionWrapper ref={containerRef} className="problem-section section-brand-plum">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
         <div className="problem-copy max-w-2xl">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[var(--text-primary)] md:text-5xl">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[var(--text-on-dark)] md:text-5xl">
             Scaling a business shouldn&apos;t mean sacrificing control.
           </h2>
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-[var(--text-on-dark-muted)] md:text-lg">
             <p>
               Many founders reach a point where passion and momentum outpace structure and strategy. The
               decisions become more complex, the stakes grow higher, and the gap between where you are and
@@ -107,7 +107,7 @@ export function ProblemSection() {
                 quality={92}
                 priority={false}
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--brand-plum)]/35 via-transparent to-[var(--brand-black)]/10" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--brand-plum)]/35 via-transparent to-[var(--cream)]/10" />
             </div>
           </div>
         </div>

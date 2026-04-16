@@ -37,7 +37,7 @@ export function ContactMessageForm() {
           type="text"
           required
           autoComplete="name"
-          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/40 bg-[var(--bg-secondary)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--text-primary)] focus:border-[var(--brand-gold)] focus:outline-none"
+          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/35 bg-[var(--white)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--charcoal)] focus:border-[var(--brand-gold)] focus:outline-none"
         />
       </div>
       <div>
@@ -53,7 +53,7 @@ export function ContactMessageForm() {
           type="email"
           required
           autoComplete="email"
-          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/40 bg-[var(--bg-secondary)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--text-primary)] focus:border-[var(--brand-gold)] focus:outline-none"
+          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/35 bg-[var(--white)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--charcoal)] focus:border-[var(--brand-gold)] focus:outline-none"
         />
       </div>
       <div>
@@ -68,7 +68,7 @@ export function ContactMessageForm() {
           name="phone"
           type="tel"
           autoComplete="tel"
-          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/40 bg-[var(--bg-secondary)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--text-primary)] focus:border-[var(--brand-gold)] focus:outline-none"
+          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/35 bg-[var(--white)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--charcoal)] focus:border-[var(--brand-gold)] focus:outline-none"
         />
       </div>
       <div>
@@ -83,7 +83,7 @@ export function ContactMessageForm() {
           name="message"
           rows={5}
           required
-          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/40 bg-[var(--bg-secondary)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--text-primary)] focus:border-[var(--brand-gold)] focus:outline-none"
+          className="mt-1 w-full rounded-md border border-[var(--brand-charcoal)]/35 bg-[var(--white)] px-3 py-2 font-[family-name:var(--font-lato)] text-[var(--charcoal)] focus:border-[var(--brand-gold)] focus:outline-none"
         />
       </div>
       <button

@@ -19,7 +19,7 @@ export function NavbarLogo({ className = "", onNavigate }: NavbarLogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex shrink-0 rounded-xl p-1 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-black)] ${className}`}
+      className={`inline-flex shrink-0 rounded-xl p-1 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cream)] ${className}`}
       aria-label="Home"
       onClick={(e) => {
         if (isHome) {
