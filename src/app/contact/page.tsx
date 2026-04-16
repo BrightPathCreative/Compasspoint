@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
-import { Button } from "@/components/global/Button";
 import { SiteShell } from "@/components/global/SiteShell";
-import { BOOK_DISCOVERY_PATH, FOUNDER_WEBSITE } from "@/lib/site";
+import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact CompassPoint Advisory - Send an Enquiry",
@@ -28,35 +27,11 @@ export default function ContactPage() {
           <h1 className="mt-4 font-[family-name:var(--font-cormorant)] text-4xl font-bold text-[var(--text-primary)] md:text-5xl">
             Send an enquiry
           </h1>
-          <p className="mx-auto mt-6 max-w-xl font-[family-name:var(--font-lato)] text-lg leading-relaxed text-[var(--text-secondary)]">
-            Use this page for <strong className="font-medium text-[var(--text-primary)]">written messages</strong>{" "}
-            - scope questions, introductions, or anything that isn&apos;t urgent. We typically reply within two
-            business days.
-          </p>
         </div>
       </div>
 
       <div className="mx-auto w-full max-w-[min(100%,720px)] px-8 py-14 md:px-14 md:py-20 lg:px-20">
-        <section
-          aria-labelledby="book-call-heading"
-          className="rounded-sm border border-[var(--metallic-gold)]/30 bg-[var(--royal-plum)]/35 p-8 text-center md:p-10"
-        >
-          <h2 id="book-call-heading" className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)] md:text-3xl">
-            Want a discovery call instead?
-          </h2>
-          <p className="mx-auto mt-4 max-w-md font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
-            If you&apos;d rather speak live first, book a free 30-minute call - confidential, no obligation - on our
-            scheduling page.
-          </p>
-          <div className="mt-8">
-            <Button href={BOOK_DISCOVERY_PATH}>Book a free discovery call</Button>
-          </div>
-          <p className="mt-5 font-[family-name:var(--font-lato)] text-sm text-[var(--text-tertiary)]">
-            Next, you&apos;ll open our scheduling page with the live calendar - still on this website.
-          </p>
-        </section>
-
-        <section aria-labelledby="form-heading" className="mt-16 md:mt-20">
+        <section aria-labelledby="form-heading">
           <h2 id="form-heading" className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-[var(--text-primary)]">
             Message form
           </h2>
@@ -68,25 +43,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <ul className="mt-14 space-y-3 border-t border-[var(--metallic-gold)]/15 pt-10 font-[family-name:var(--font-lato)] text-[var(--text-secondary)]">
-          <li>
-            <span className="font-semibold text-[var(--text-primary)]">Website: </span>
-            <a
-              href={FOUNDER_WEBSITE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--metallic-gold)] hover:underline"
-            >
-              {FOUNDER_WEBSITE.replace(/^https?:\/\//, "")}
-            </a>
-          </li>
-          <li>
-            <span className="font-semibold text-[var(--text-primary)]">Location: </span>
-            Melbourne, Victoria, Australia
-          </li>
-        </ul>
-
-        <p className="mt-10 text-center font-[family-name:var(--font-lato)] text-sm text-[var(--text-tertiary)]">
+        <p className="mt-14 text-center font-[family-name:var(--font-lato)] text-sm text-[var(--text-tertiary)]">
           Looking for the calendar only?{" "}
           <Link href={BOOK_DISCOVERY_PATH} className="text-[var(--metallic-gold)] underline-offset-2 hover:underline">
             Book a discovery call
