@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
+import { GhlContactFormEmbed } from "@/components/contact/GhlContactFormEmbed";
 import { SiteShell } from "@/components/global/SiteShell";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
             The more context you share, the more useful our reply.
           </p>
           <div className="mt-8 rounded-xl border border-[var(--metallic-gold)]/25 bg-[var(--bg-secondary)]/80 p-8 md:p-10">
-            <ContactForm />
+            <GhlContactFormEmbed />
           </div>
         </section>
 
