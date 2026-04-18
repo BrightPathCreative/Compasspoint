@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <SiteShell>
-      <div className="border-b border-[var(--metallic-gold)]/12 bg-[color-mix(in_srgb,var(--bg-secondary)_92%,var(--royal-plum))]">
-        <div className="mx-auto w-full max-w-5xl px-8 pb-12 pt-32 text-center md:px-14 md:pb-16 md:pt-40 lg:px-20">
+      <div className="bg-[var(--bg-primary)]">
+        <div className="mx-auto w-full max-w-5xl px-8 pb-4 pt-32 text-center md:px-14 md:pb-6 md:pt-40 lg:px-20">
           <p className="font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--metallic-gold)]">
             Contact
           </p>
@@ -28,21 +28,19 @@ export default function ContactPage() {
             Send an enquiry
           </h1>
         </div>
-      </div>
 
-      <div className="mx-auto w-full max-w-5xl px-8 py-14 md:px-14 md:py-20 lg:px-20">
-        <section aria-label="Enquiry form">
-          <div className="rounded-xl border border-[var(--metallic-gold)]/25 bg-[var(--bg-secondary)]/80 p-8 md:p-10">
+        <div className="mx-auto w-full max-w-5xl px-8 pb-14 pt-2 md:px-14 md:pb-20 md:pt-4 lg:px-20">
+          <section aria-label="Enquiry form">
             <GhlContactFormEmbed />
-          </div>
-        </section>
+          </section>
 
-        <p className="mt-14 text-center font-[family-name:var(--font-lato)] text-sm text-[var(--text-tertiary)]">
-          Looking for the calendar only?{" "}
-          <Link href={BOOK_DISCOVERY_PATH} className="text-[var(--metallic-gold)] underline-offset-2 hover:underline">
-            Book a discovery call
-          </Link>
-        </p>
+          <p className="mt-14 text-center font-[family-name:var(--font-lato)] text-sm text-[var(--text-tertiary)]">
+            Looking for the calendar only?{" "}
+            <Link href={BOOK_DISCOVERY_PATH} className="text-[var(--metallic-gold)] underline-offset-2 hover:underline">
+              Book a discovery call
+            </Link>
+          </p>
+        </div>
       </div>
     </SiteShell>
   );
