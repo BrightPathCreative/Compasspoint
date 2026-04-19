@@ -1,4 +1,4 @@
-/** Hero for /services — solid plum, H1 + “7 service areas”. */
+/** Hero for /services — solid plum with H1 and intro. */
 export function ServicesOverviewHero() {
   return (
     <section className="relative overflow-hidden bg-[var(--royal-plum)] px-4 py-[80px] pb-[68px] sm:px-6 md:px-10 md:py-[88px] md:pb-20 lg:px-14">
@@ -19,16 +19,6 @@ export function ServicesOverviewHero() {
             Every engagement with CompassPoint Advisory is built around your business, your industry, and your goals.
             Explore our full range of consulting and advisory services below.
           </p>
-        </div>
-        <div className="mt-10 hidden items-end gap-3 border-t border-white/[0.08] pt-8 md:flex md:max-w-[1180px] md:justify-end">
-          <div className="text-right">
-            <span className="font-[family-name:var(--font-cormorant)] text-[clamp(3.5rem,6vw,4.75rem)] font-light leading-none text-[rgba(199,154,68,0.2)]">
-              7
-            </span>
-            <span className="mt-1 block font-[family-name:var(--font-montserrat)] text-[0.6rem] uppercase tracking-[0.2em] text-white/30">
-              Service areas
-            </span>
-          </div>
         </div>
       </div>
     </section>
