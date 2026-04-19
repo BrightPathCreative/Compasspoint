@@ -13,6 +13,7 @@ const servicesNavOrdered = getServicesOrdered();
 const linksAfterServices = [
   { href: "/methodology", label: "Methodology" },
   { href: "/faq", label: "FAQ" },
+  { href: "/articles", label: "Articles" },
 ] as const;
 
 const navLinkClass =
