@@ -22,7 +22,10 @@ export function ProblemSection() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".problem-section",
-          start: "top 78%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -34,7 +37,10 @@ export function ProblemSection() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".problem-placecard",
-          start: "top 82%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -55,6 +61,7 @@ export function ProblemSection() {
           start: "top bottom",
           end: "bottom top",
           scrub: 1.2,
+          invalidateOnRefresh: true,
         },
       });
     },

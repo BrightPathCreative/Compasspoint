@@ -17,15 +17,13 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   const ordered = [...SERVICES].sort((a, b) => a.order - b.order);
-  const firstSix = ordered.slice(0, 6);
-  const signature = ordered[6];
 
   return (
     <SiteShell>
       <div className="bg-[var(--cream)] text-[var(--text-body)]">
         <ServicesOverviewHero />
         <ServicesIntroStrip />
-        {firstSix.map((s, i) => (
+        {ordered.map((s, i) => (
           <Fragment key={s.slug}>
             <ServiceOverviewRow
               service={s}
@@ -33,17 +31,10 @@ export default function ServicesPage() {
               bodySurface={i % 2 === 0 ? "cream" : "cream-dark"}
               imagePriority={i === 0}
               isFirst={i === 0}
+              signature={s.slug === "growth-accelerator-workshop"}
             />
           </Fragment>
         ))}
-        {signature ? (
-          <ServiceOverviewRow
-            service={signature}
-            flip={false}
-            bodySurface="cream"
-            signature
-          />
-        ) : null}
         <WhyCompassPointSection id="differentiators" className="bg-[var(--cream)]" />
       </div>
       <ServicesOverviewBottomCta />

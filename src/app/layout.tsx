@@ -5,6 +5,7 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 import { BackToTopButton } from "@/components/BackToTopButton";
 import { LenisProvider } from "@/components/global/LenisProvider";
+import { ScrollTriggerLayoutSync } from "@/components/global/ScrollTriggerLayoutSync";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationJsonLd } from "@/lib/seo-schemas";
@@ -87,6 +88,7 @@ export default function RootLayout({
         </a>
         <JsonLd data={organizationJsonLd()} />
         <LenisProvider>
+          <ScrollTriggerLayoutSync />
           <ScrollToTop />
           <BackToTopButton />
           {children}

@@ -33,7 +33,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/20 p-2 transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]"
-                aria-label="Amelia Ghofrany on LinkedIn"
+                aria-label="CompassPoint Advisory on LinkedIn"
               >
                 <LinkedInGlyph className="h-5 w-5" />
               </a>

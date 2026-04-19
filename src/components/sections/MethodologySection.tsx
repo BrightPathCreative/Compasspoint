@@ -21,7 +21,10 @@ export function MethodologySection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: step,
-            start: "top 78%",
+            start: "top 92%",
+            toggleActions: "play none none none",
+            once: true,
+            invalidateOnRefresh: true,
           },
         });
       });

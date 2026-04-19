@@ -33,7 +33,7 @@ export function ServicesIntroStrip() {
             <h4 className="font-[family-name:var(--font-cormorant)] text-[1.05rem] font-medium leading-snug text-[var(--plum)]">
               {pillar.title}
             </h4>
-            <p className="mt-2 font-[family-name:var(--font-montserrat)] text-[0.72rem] leading-[1.75] text-[var(--text-muted)]">
+            <p className="mt-2 font-[family-name:var(--font-montserrat)] text-sm leading-[1.75] text-[var(--charcoal)] md:text-base">
               {pillar.body}
             </p>
           </div>

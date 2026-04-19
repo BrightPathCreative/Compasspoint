@@ -3,13 +3,13 @@ import { SiteShell } from "@/components/global/SiteShell";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
-import { LINKEDIN_URL } from "@/lib/contact";
+import { AMELIA_LINKEDIN_URL, AMELIA_WEBSITE_URL } from "@/lib/contact";
 import { personAmeliaJsonLd } from "@/lib/seo-schemas";
 
 export const metadata: Metadata = {
   title: "About CompassPoint Advisory - Melbourne Business Consultants",
   description:
-    "Founded by Amelia Ghofrany with 20+ years at IBM, Fujitsu, DXC and Bupa. Strategic consulting purpose-built for Australian SMEs turning $5M–$20M.",
+    "Founded by Amelia Ghofrany with 20+ years at IBM, Fujitsu, DXC and Bupa. Strategic consulting for Australian SMEs and startups.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,45 +20,19 @@ export default function AboutPage() {
       <PageHero title="About CompassPoint Advisory" />
 
       <article className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-16 md:px-14 md:pb-28 md:pt-20 lg:px-20">
-        <div className="grid gap-12 rounded-sm border border-[var(--metallic-gold)]/15 bg-[var(--bg-secondary)] p-10 md:grid-cols-[200px_1fr] md:gap-16 md:p-14">
-          <div className="flex flex-col items-center md:items-start">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand-icon.svg"
-              alt=""
-              width={160}
-              height={160}
-              className="h-32 w-32 object-contain opacity-90 md:h-40 md:w-40"
-            />
-          </div>
-          <div>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl">
-              Amelia Ghofrany
-            </h2>
-            <p className="mt-2 font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.18em] text-[var(--metallic-gold)]">
-              Founder &amp; Principal Consultant
-            </p>
-            <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
-              20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian
-              SMEs grow with clarity and control.
-            </p>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
-            >
-              <LinkedInGlyph className="h-5 w-5 text-[var(--metallic-gold)]" />
-              LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <div className="prose-custom mx-auto mt-16 max-w-3xl space-y-6 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:text-lg">
+        <div className="prose-custom mx-auto max-w-3xl space-y-6 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:text-lg">
+          <p className="font-[family-name:var(--font-cormorant)] text-xl font-semibold leading-snug text-[var(--royal-plum)] md:text-2xl">
+            Scaling a business shouldn&apos;t mean sacrificing control.
+          </p>
           <p>
-            CompassPoint Advisory is a Melbourne-based strategic consulting firm for Australian SMEs and
-            startups - typically businesses in the $5M–$20M revenue range - that want Fortune 500–grade thinking without
-            the corporate overhead.
+            Many founders reach a point where passion and momentum outpace structure and strategy. The decisions
+            become more complex, the stakes grow higher, and the gap between where you are and where you need to be
+            starts to feel wider.
+          </p>
+          <p>
+            That is precisely where CompassPoint Advisory comes in. We bridge the space between entrepreneurial vision
+            and institutional execution, bringing the rigour of enterprise strategy to the businesses that need it
+            most.
           </p>
         </div>
 
@@ -86,20 +60,49 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <section className="mx-auto mt-20 flex max-w-3xl flex-col items-center text-center">
-          <blockquote className="w-full">
-            <p className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold italic leading-snug text-[var(--soft-ivory)] md:text-3xl">
-              <span className="text-[var(--metallic-gold)]">&ldquo;</span>
-              Scaling a business shouldn&apos;t mean sacrificing control.
-              <span className="text-[var(--metallic-gold)]">&rdquo;</span>
+        <div className="mt-20 grid gap-12 rounded-sm border border-[var(--metallic-gold)]/15 bg-[var(--bg-secondary)] p-10 md:grid-cols-[200px_1fr] md:gap-16 md:p-14">
+          <div className="flex flex-col items-center md:items-start">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand-icon.svg"
+              alt=""
+              width={160}
+              height={160}
+              className="h-32 w-32 object-contain opacity-90 md:h-40 md:w-40"
+            />
+          </div>
+          <div>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl">
+              Amelia Ghofrany
+            </h2>
+            <p className="mt-2 font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.18em] text-[var(--metallic-gold)]">
+              Founder and Managing Director
             </p>
-          </blockquote>
-
-          <p className="mt-8 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.75] text-[var(--soft-ivory)]/88 md:text-lg">
-            We work alongside you, not above you, so decisions stay yours, momentum builds, and your team grows
-            stronger through the process.
-          </p>
-        </section>
+            <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
+              20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian
+              SMEs grow with clarity and control.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+              <a
+                href={AMELIA_WEBSITE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
+              >
+                Learn more at ameliaghofrany.com.au
+              </a>
+              <a
+                href={AMELIA_LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
+              >
+                <LinkedInGlyph className="h-5 w-5 text-[var(--metallic-gold)]" />
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
       </article>
       <CtaSection />
     </SiteShell>

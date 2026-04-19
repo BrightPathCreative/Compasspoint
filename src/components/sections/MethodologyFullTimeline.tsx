@@ -25,6 +25,7 @@ export function MethodologyFullTimeline() {
             start: "top 60%",
             end: "bottom 35%",
             scrub: true,
+            invalidateOnRefresh: true,
           },
         },
       );

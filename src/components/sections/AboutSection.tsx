@@ -51,7 +51,10 @@ export function AboutSection() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".about-text",
-          start: "top 78%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -63,7 +66,10 @@ export function AboutSection() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".about-portrait-wrap",
-          start: "top 80%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -75,6 +81,7 @@ export function AboutSection() {
           start: "top bottom",
           end: "bottom top",
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -85,7 +92,10 @@ export function AboutSection() {
         stagger: 0.08,
         scrollTrigger: {
           trigger: ".client-logos-row",
-          start: "top 88%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     },

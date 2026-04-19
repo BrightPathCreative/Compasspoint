@@ -22,6 +22,10 @@ export default function StaggerReveal({
   useEffect(() => {
     if (!ref.current) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const items = ref.current.querySelectorAll(childSelector);
     if (!items.length) return;
 
@@ -34,8 +38,10 @@ export default function StaggerReveal({
         ease: "power3.out",
         scrollTrigger: {
           trigger: ref.current,
-          start: "top 75%",
-          toggleActions: "play none none reverse",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     }, ref);

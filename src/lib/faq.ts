@@ -25,11 +25,6 @@ export const FAQ_ITEMS: FaqItem[] = [
       "If you're experiencing rapid growth without systems to support it, a clear ambition but no strategic roadmap, operational inefficiencies eating into margins, a major change underway, or leadership challenges affecting team performance - consulting support could be transformative.",
   },
   {
-    question: "What size businesses does CompassPoint Advisory work with?",
-    answer:
-      "We primarily work with Australian SMEs generating between $5M and $20M in annual revenue - businesses past the startup phase and actively looking to scale, optimise, or transform.",
-  },
-  {
     question: "Does CompassPoint Advisory offer AI consulting for small businesses?",
     answer:
       "Yes. We help SMEs understand where AI can genuinely improve their business - from automating repetitive tasks to using data for smarter decisions and building AI-enabled customer experiences. We cut through the hype and focus on practical, high-ROI applications.",
@@ -52,10 +47,9 @@ export const FAQ_INDEX = {
   accountantVsConsultant: 1,
   cost: 2,
   needConsultant: 3,
-  businessSize: 4,
-  aiConsulting: 5,
-  location: 6,
-  getStarted: 7,
+  aiConsulting: 4,
+  location: 5,
+  getStarted: 6,
 } as const;
 
 export function getFaqItemsByIndices(indices: readonly number[]): FaqItem[] {
@@ -79,7 +73,6 @@ const SERVICE_FAQ_INDICES: Record<string, readonly number[]> = {
     FAQ_INDEX.consultantRole,
     FAQ_INDEX.accountantVsConsultant,
     FAQ_INDEX.needConsultant,
-    FAQ_INDEX.businessSize,
     FAQ_INDEX.getStarted,
   ],
   "operations-process-optimisation": [
@@ -112,7 +105,6 @@ const SERVICE_FAQ_INDICES: Record<string, readonly number[]> = {
   "growth-accelerator-workshop": [
     FAQ_INDEX.needConsultant,
     FAQ_INDEX.consultantRole,
-    FAQ_INDEX.businessSize,
     FAQ_INDEX.getStarted,
   ],
 };

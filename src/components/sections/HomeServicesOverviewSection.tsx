@@ -14,6 +14,17 @@ import {
 
 const ROW1 = 4;
 
+/** Primary entry engagement on the home grid — shown first regardless of catalogue `order`. */
+const HOME_SERVICES_LEAD_SLUG = "growth-accelerator-workshop" as const;
+
+function sortServicesForHome(a: Service, b: Service): number {
+  const aLead = a.slug === HOME_SERVICES_LEAD_SLUG;
+  const bLead = b.slug === HOME_SERVICES_LEAD_SLUG;
+  if (aLead && !bLead) return -1;
+  if (!aLead && bLead) return 1;
+  return a.order - b.order;
+}
+
 function HomeServiceTile({ service, priority }: { service: Service; priority: boolean }) {
   const href = `/services/${service.slug}`;
 
@@ -72,7 +83,7 @@ function HomeServiceTile({ service, priority }: { service: Service; priority: bo
 }
 
 export function HomeServicesOverviewSection() {
-  const ordered = [...SERVICES].sort((a, b) => a.order - b.order);
+  const ordered = [...SERVICES].sort(sortServicesForHome);
   const firstRow = ordered.slice(0, ROW1);
   const secondRow = ordered.slice(ROW1);
 
@@ -101,8 +112,8 @@ export function HomeServicesOverviewSection() {
           stagger={0.1}
         >
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {firstRow.map((s) => (
-              <HomeServiceTile key={s.slug} service={s} priority={s.order <= 4} />
+            {firstRow.map((s, index) => (
+              <HomeServiceTile key={s.slug} service={s} priority={index === 0} />
             ))}
           </div>
           <div className="flex flex-col gap-6 sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-6">

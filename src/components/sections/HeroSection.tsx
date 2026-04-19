@@ -74,7 +74,7 @@ export function HeroSection() {
       ref={containerRef}
       className="hero-section px-8 pb-24 pt-28 md:px-14 md:pt-36 lg:px-20"
     >
-      <div className="hero-content flex max-w-4xl flex-col items-center">
+      <div className="hero-content flex w-full min-w-0 max-w-4xl flex-col items-center px-0">
         <div className="hero-compass mb-10 md:mb-12">
           <div className="hero-compass-visual relative mx-auto flex h-[100px] w-[100px] items-center justify-center md:h-[120px] md:w-[120px]">
             <div className="hero-compass-torch-beam pointer-events-none absolute z-0" aria-hidden />
@@ -101,14 +101,14 @@ export function HeroSection() {
         </div>
 
         <h1
-          className="hero-headline max-w-[22ch] font-[family-name:var(--font-cinzel)] text-[clamp(2.5rem,5vw,3.75rem)] font-bold uppercase leading-[1.12] tracking-[0.04em]"
+          className="hero-headline w-full min-w-0 max-w-[min(22ch,100%)] text-balance text-center font-[family-name:var(--font-cinzel)] text-[clamp(1.5rem,2.65vw+0.85rem,3.75rem)] font-bold uppercase leading-[1.12] tracking-[0.04em] break-words"
           data-hero-heading
         >
           <span className="block text-[var(--soft-ivory)]">Big Business Thinking.</span>
           <span className="gold-shimmer-text mt-2 block">Built for Yours.</span>
         </h1>
 
-        <p className="hero-subheadline mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-lg font-light leading-relaxed text-[var(--soft-ivory)]/80 md:text-xl">
+        <p className="hero-subheadline mt-6 w-full min-w-0 max-w-2xl font-[family-name:var(--font-lato)] text-lg font-light leading-relaxed text-[var(--soft-ivory)]/80 md:text-xl">
           Strategic consulting for Australian SMEs and startups ready to grow smarter, scale faster, and lead
           with confidence.
         </p>

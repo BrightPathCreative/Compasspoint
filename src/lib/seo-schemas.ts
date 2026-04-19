@@ -1,5 +1,6 @@
 import type { FaqItem } from "./faq";
 import { FAQ_ITEMS } from "./faq";
+import { AMELIA_LINKEDIN_URL, AMELIA_WEBSITE_URL, LINKEDIN_URL } from "./contact";
 import { SITE_URL } from "./site";
 
 const orgId = `${SITE_URL}/#organization`;
@@ -28,7 +29,7 @@ export function organizationJsonLd() {
       "@type": "Country",
       name: "Australia",
     },
-    sameAs: ["https://www.linkedin.com/in/amelia-ghofrany-compasspoint/"],
+    sameAs: [LINKEDIN_URL],
   };
 }
 
@@ -130,7 +131,9 @@ export function personAmeliaJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Amelia Ghofrany",
-    jobTitle: "Founder & Principal Consultant",
+    jobTitle: "Founder and Managing Director",
+    url: AMELIA_WEBSITE_URL,
+    sameAs: [AMELIA_LINKEDIN_URL],
     worksFor: {
       "@type": "Organization",
       name: "CompassPoint Advisory",

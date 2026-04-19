@@ -74,8 +74,10 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
         ease: "power3.out",
         scrollTrigger: {
           trigger: container,
-          start: "top 78%",
-          toggleActions: "play none none reverse",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     }, container);

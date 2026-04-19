@@ -27,7 +27,10 @@ export function TestimonialsSection() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".testimonials-grid",
-          start: "top 82%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     },

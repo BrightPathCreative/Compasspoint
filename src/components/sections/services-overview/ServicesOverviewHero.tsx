@@ -15,7 +15,7 @@ export function ServicesOverviewHero() {
             <br />
             of your growth.
           </h1>
-          <p className="mt-5 max-w-[520px] font-[family-name:var(--font-montserrat)] text-[0.84rem] leading-[1.85] text-white/60">
+          <p className="mt-5 max-w-[520px] font-[family-name:var(--font-montserrat)] text-base leading-[1.85] text-white/72 md:text-lg">
             Every engagement with CompassPoint Advisory is built around your business, your industry, and your goals.
             Explore our full range of consulting and advisory services below.
           </p>

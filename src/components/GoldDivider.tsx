@@ -10,6 +10,10 @@ export default function GoldDivider({ className = "" }: { className?: string }) 
   useEffect(() => {
     if (!ref.current) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const el = ref.current;
     const ctx = gsap.context(() => {
       gsap.from(el, {
@@ -19,8 +23,10 @@ export default function GoldDivider({ className = "" }: { className?: string }) 
         ease: "power2.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 88%",
-          toggleActions: "play none none reverse",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     }, ref);

@@ -48,7 +48,10 @@ export function ServicesSection() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".services-grid",
-          start: "top 80%",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     },

@@ -12,10 +12,18 @@ export function CtaSection() {
 
   useGSAP(
     () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gsap.set(".cta-bg-fill", { scaleX: 1 });
+        gsap.set(".cta-content", { opacity: 1, y: 0 });
+        return;
+      }
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".cta-section",
-          start: "top 75%",
+          start: "top 92%",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
 

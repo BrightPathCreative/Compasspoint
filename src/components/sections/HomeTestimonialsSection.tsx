@@ -54,15 +54,15 @@ export function HomeTestimonialsSection() {
     >
       <div className="mx-auto w-full max-w-[min(100%,1920px)] px-8 md:px-14 lg:px-20 xl:px-28">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
-          <p className="font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--metallic-gold)]">
-            Client voices
-          </p>
           <h2
             id="home-testimonials-heading"
-            className="mt-4 font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl"
+            className="font-[family-name:var(--font-cormorant)] text-4xl font-bold leading-tight text-[var(--royal-plum)] md:text-5xl lg:text-[2.85rem] lg:leading-[1.12]"
           >
-            What our clients say
+            Client Testimonials
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-relaxed text-[var(--charcoal)]/80 md:text-lg">
+            What our clients say
+          </p>
           <div className="mt-8 flex justify-center">
             <GoldDivider />
           </div>

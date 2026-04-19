@@ -24,7 +24,7 @@ import {
 
 /** Cream / gold surfaces only; charcoal copy for contrast (no plum on dark). */
 const bestForTagClass =
-  "rounded-full border border-[var(--metallic-gold)]/45 bg-[color-mix(in_srgb,var(--metallic-gold)_32%,var(--ivory-warm))] px-[14px] py-2 font-[family-name:var(--font-montserrat)] text-xs font-medium leading-snug text-[var(--charcoal)] shadow-sm";
+  "rounded-full border border-[var(--metallic-gold)]/45 bg-[color-mix(in_srgb,var(--metallic-gold)_32%,var(--ivory-warm))] px-[14px] py-2 font-[family-name:var(--font-montserrat)] text-sm font-medium leading-snug text-[var(--charcoal)] shadow-sm";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div className="flex justify-center lg:justify-start">
                 <GoldDivider />
               </div>
-              <p className="mt-10 font-[family-name:var(--font-lato)] text-base leading-[1.75] text-[var(--charcoal)] md:text-lg">
+              <p className="mt-10 font-[family-name:var(--font-lato)] text-lg leading-[1.75] text-[var(--charcoal)] md:text-xl">
                 {service.description}
               </p>
             </ScrollReveal>

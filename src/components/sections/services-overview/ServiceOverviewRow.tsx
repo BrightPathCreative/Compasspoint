@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Service } from "@/lib/services";
 import { getServiceHeroImageAlt, getServiceImagePath } from "@/lib/services";
-import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import { getServiceOverviewCategoryLabel } from "./service-overview-utils";
 
 type ServiceOverviewRowProps = {
@@ -111,24 +110,24 @@ export function ServiceOverviewRow({
             </h2>
 
             <p
-              className={`mt-3.5 font-[family-name:var(--font-cormorant)] text-base italic leading-normal ${
-                signature ? "text-[var(--gold-light)]" : "text-[var(--plum)]"
+              className={`mt-3.5 font-[family-name:var(--font-cormorant)] text-[1.05rem] italic leading-snug md:text-lg ${
+                signature ? "text-[var(--gold-light)]" : "text-[var(--charcoal)]"
               }`}
             >
               {service.question}
             </p>
 
             <p
-              className={`mt-[18px] font-[family-name:var(--font-montserrat)] text-[0.8rem] leading-[1.85] ${
-                signature ? "text-white/65" : "text-[var(--text-muted)]"
+              className={`mt-[18px] font-[family-name:var(--font-montserrat)] text-sm leading-[1.8] md:text-base ${
+                signature ? "text-white/65" : "text-[var(--charcoal)]"
               }`}
             >
               {service.description}
             </p>
 
             <p
-              className={`mt-5 font-[family-name:var(--font-montserrat)] text-[0.58rem] font-semibold uppercase tracking-[0.2em] ${
-                signature ? "text-white/50" : "text-[var(--plum)]"
+              className={`mt-5 font-[family-name:var(--font-montserrat)] text-[0.62rem] font-semibold uppercase tracking-[0.2em] md:text-[0.68rem] ${
+                signature ? "text-white/50" : "text-[var(--charcoal)]"
               }`}
             >
               Best for
@@ -137,10 +136,10 @@ export function ServiceOverviewRow({
               {service.bestFor.map((tag) => (
                 <span
                   key={tag}
-                  className={`rounded-full border px-[13px] py-1 font-[family-name:var(--font-montserrat)] text-[0.62rem] tracking-[0.08em] ${
+                  className={`rounded-full border px-[13px] py-1.5 font-[family-name:var(--font-montserrat)] text-xs leading-snug tracking-[0.06em] md:text-sm ${
                     signature
                       ? "border-white/15 bg-white/[0.04] text-white/50"
-                      : "border-[rgba(56,7,41,0.16)] bg-[rgba(56,7,41,0.035)] text-[var(--text-muted)]"
+                      : "border-[rgba(46,46,46,0.2)] bg-[rgba(46,46,46,0.04)] text-[var(--charcoal)]"
                   }`}
                 >
                   {tag}
@@ -158,16 +157,6 @@ export function ServiceOverviewRow({
                 }`}
               >
                 Full Service Detail
-              </Link>
-              <Link
-                href={BOOK_DISCOVERY_PATH}
-                className={`font-[family-name:var(--font-montserrat)] text-[0.65rem] uppercase tracking-[0.12em] transition-colors ${
-                  signature
-                    ? "border-b border-white/20 pb-0.5 text-white/45 hover:border-[var(--gold)] hover:text-[var(--gold)]"
-                    : "border-b border-[rgba(56,7,41,0.25)] pb-0.5 text-[var(--text-muted)] hover:border-[var(--plum)] hover:text-[var(--plum)]"
-                }`}
-              >
-                Book a Discovery Call
               </Link>
             </div>
           </div>

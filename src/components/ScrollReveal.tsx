@@ -24,6 +24,10 @@ export default function ScrollReveal({
   useEffect(() => {
     if (!ref.current) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const el = ref.current;
     const ctx = gsap.context(() => {
       gsap.from(el, {
@@ -34,8 +38,10 @@ export default function ScrollReveal({
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
+          start: "top 92%",
+          toggleActions: "play none none none",
+          once: true,
+          invalidateOnRefresh: true,
         },
       });
     }, ref);

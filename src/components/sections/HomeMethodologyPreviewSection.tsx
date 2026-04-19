@@ -30,6 +30,7 @@ export function HomeMethodologyPreviewSection() {
             start: "top 65%",
             end: "bottom 45%",
             scrub: true,
+            invalidateOnRefresh: true,
           },
         },
       );
