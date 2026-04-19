@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/global/SiteShell";
+import { AboutLeadInNarrative } from "@/components/sections/AboutLeadInNarrative";
+import { CredentialsPanel } from "@/components/sections/CredentialsPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
@@ -20,7 +22,12 @@ export default function AboutPage() {
       <PageHero title="About CompassPoint Advisory" />
 
       <article className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-16 md:px-14 md:pb-28 md:pt-20 lg:px-20">
-        <div className="prose-custom mx-auto max-w-3xl space-y-6 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:text-lg">
+        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20 lg:items-start">
+          <AboutLeadInNarrative />
+          <CredentialsPanel />
+        </div>
+
+        <div className="prose-custom mx-auto mt-16 max-w-3xl space-y-6 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:mt-20 md:text-lg">
           <p className="font-[family-name:var(--font-cormorant)] text-xl font-semibold leading-snug text-[var(--royal-plum)] md:text-2xl">
             Scaling a business shouldn&apos;t mean sacrificing control.
           </p>
