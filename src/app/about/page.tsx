@@ -60,47 +60,35 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-20 grid gap-12 rounded-sm border border-[var(--metallic-gold)]/15 bg-[var(--bg-secondary)] p-10 md:grid-cols-[200px_1fr] md:gap-16 md:p-14">
-          <div className="flex flex-col items-center md:items-start">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand-icon.svg"
-              alt=""
-              width={160}
-              height={160}
-              className="h-32 w-32 object-contain opacity-90 md:h-40 md:w-40"
-            />
-          </div>
-          <div>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl">
-              Amelia Ghofrany
-            </h2>
-            <p className="mt-2 font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.18em] text-[var(--metallic-gold)]">
-              Founder and Managing Director
-            </p>
-            <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
-              20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian
-              SMEs grow with clarity and control.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-              <a
-                href={AMELIA_WEBSITE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
-              >
-                Learn more at ameliaghofrany.com.au
-              </a>
-              <a
-                href={AMELIA_LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
-              >
-                <LinkedInGlyph className="h-5 w-5 text-[var(--metallic-gold)]" />
-                LinkedIn
-              </a>
-            </div>
+        <div className="mt-14 border-t border-[var(--metallic-gold)]/20 pt-14">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl">
+            Amelia Ghofrany
+          </h2>
+          <p className="mt-2 font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.18em] text-[var(--metallic-gold)]">
+            Founder and Managing Director
+          </p>
+          <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
+            20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian
+            SMEs grow with clarity and control.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+            <a
+              href={AMELIA_WEBSITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
+            >
+              Learn more at ameliaghofrany.com.au
+            </a>
+            <a
+              href={AMELIA_LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
+            >
+              <LinkedInGlyph className="h-5 w-5 text-[var(--metallic-gold)]" />
+              LinkedIn
+            </a>
           </div>
         </div>
       </article>
