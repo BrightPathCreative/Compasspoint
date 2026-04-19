@@ -23,11 +23,11 @@ export function GhlContactFormEmbed() {
           data-activation-value=""
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
-          data-form-name="Compasspoint Advisory Enquiry Form"
+          data-form-name="CompassPoint Advisory Enquiry Form"
           data-height={String(FORM_HEIGHT_PX)}
           data-layout-iframe-id={IFRAME_ID}
           data-form-id={FORM_ID}
-          title="Compasspoint Advisory Enquiry Form"
+          title="CompassPoint Advisory Enquiry Form"
         />
       </div>
       <Script src={`${FORM_EMBED_BASE}/js/form_embed.js`} strategy="afterInteractive" />

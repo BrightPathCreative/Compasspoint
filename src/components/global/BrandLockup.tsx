@@ -31,7 +31,7 @@ export function BrandLockup({
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/compasspoint-logotext.svg"
-          alt="Compass Point Advisory"
+          alt="CompassPoint Advisory"
           className="h-auto max-h-10 w-auto max-w-[min(260px,55vw)] object-contain object-left md:max-h-11 md:max-w-[280px]"
         />
       </div>

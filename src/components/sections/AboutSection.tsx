@@ -155,7 +155,7 @@ export function AboutSection() {
               <div className="about-image-inner relative min-h-[220px] w-full flex-1 overflow-hidden rounded-xl lg:min-h-0">
                 <Image
                   src="/amelia-standing-suit.png"
-                  alt="Amelia Ghofrany, founder of Compass Point Advisory"
+                  alt="Amelia Ghofrany, founder of CompassPoint Advisory"
                   fill
                   className="scale-x-[-1] object-cover object-center"
                   sizes="(max-width: 1024px) 380px, 480px"
@@ -165,7 +165,7 @@ export function AboutSection() {
               </div>
             </div>
             <p className="w-full max-w-[min(100%,380px)] shrink-0 text-center font-[family-name:var(--font-montserrat)] text-sm text-[var(--text-tertiary)] lg:text-right">
-              Amelia Ghofrany - Compass Point Advisory.
+              Amelia Ghofrany - CompassPoint Advisory.
             </p>
           </div>
         </div>
