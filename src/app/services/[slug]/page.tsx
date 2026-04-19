@@ -262,7 +262,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <p className="mt-12 text-center md:text-left">
             <Link
               href="/methodology"
-              className="inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--metallic-gold)] underline-offset-4 transition-colors hover:text-[var(--accent-gold-hover)] hover:underline"
+              className="inline-flex font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] underline-offset-4 transition-colors hover:text-[color-mix(in_srgb,var(--royal-plum)_82%,black)] hover:underline"
             >
               How we work - our methodology →
             </Link>
