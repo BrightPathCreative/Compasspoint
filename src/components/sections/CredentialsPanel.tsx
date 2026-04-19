@@ -1,23 +1,23 @@
 import Image from "next/image";
 
-/** Updated work-history logos (`public/credentials/work-history-*.png`). Alts follow prior grid order (1–16). */
+/** Credential marks (`public/credentials/*.png`) — transparent PNGs aligned to the grid order below. */
 const CREDENTIAL_LOGOS = [
-  { src: "/credentials/work-history-01.png", alt: "IBM" },
-  { src: "/credentials/work-history-02.png", alt: "Fujitsu" },
-  { src: "/credentials/work-history-03.png", alt: "DXC Technology" },
-  { src: "/credentials/work-history-04.png", alt: "Bupa" },
-  { src: "/credentials/work-history-05.png", alt: "Telstra" },
-  { src: "/credentials/work-history-06.png", alt: "Qantas" },
-  { src: "/credentials/work-history-07.png", alt: "Commonwealth Bank" },
-  { src: "/credentials/work-history-08.png", alt: "NAB" },
-  { src: "/credentials/work-history-09.png", alt: "GE" },
-  { src: "/credentials/work-history-10.png", alt: "Australia Post" },
-  { src: "/credentials/work-history-11.png", alt: "Australian Taxation Office" },
-  { src: "/credentials/work-history-12.png", alt: "Myer" },
-  { src: "/credentials/work-history-13.png", alt: "Jurlique" },
-  { src: "/credentials/work-history-14.png", alt: "NCVER" },
-  { src: "/credentials/work-history-15.png", alt: "TasNetworks" },
-  { src: "/credentials/work-history-16.png", alt: "Australian Government Department of Defence" },
+  { src: "/credentials/ibm.png", alt: "IBM" },
+  { src: "/credentials/fujitsu.png", alt: "Fujitsu" },
+  { src: "/credentials/dxc.png", alt: "DXC Technology" },
+  { src: "/credentials/bupa.png", alt: "Bupa" },
+  { src: "/credentials/telstra.png", alt: "Telstra" },
+  { src: "/credentials/qantas.png", alt: "Qantas" },
+  { src: "/credentials/commbank.png", alt: "Commonwealth Bank" },
+  { src: "/credentials/nab.png", alt: "NAB" },
+  { src: "/credentials/ge.png", alt: "GE" },
+  { src: "/credentials/australia-post.png", alt: "Australia Post" },
+  { src: "/credentials/ato.png", alt: "Australian Taxation Office" },
+  { src: "/credentials/myer.png", alt: "Myer" },
+  { src: "/credentials/jurlique.png", alt: "Jurlique" },
+  { src: "/credentials/ncver.png", alt: "NCVER" },
+  { src: "/credentials/tas-networks.png", alt: "TasNetworks" },
+  { src: "/credentials/defence.png", alt: "Australian Government Department of Defence" },
 ] as const;
 
 export function CredentialsPanel() {
