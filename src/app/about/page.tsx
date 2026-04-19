@@ -22,25 +22,8 @@ export default function AboutPage() {
       <PageHero title="About CompassPoint Advisory" />
 
       <article className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-16 md:px-14 md:pb-28 md:pt-20 lg:px-20">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20 lg:items-start">
+        <div className="mx-auto max-w-3xl">
           <AboutLeadInNarrative />
-          <CredentialsPanel />
-        </div>
-
-        <div className="prose-custom mx-auto mt-16 max-w-3xl space-y-6 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--text-secondary)] md:mt-20 md:text-lg">
-          <p className="font-[family-name:var(--font-cormorant)] text-xl font-semibold leading-snug text-[var(--royal-plum)] md:text-2xl">
-            Scaling a business shouldn&apos;t mean sacrificing control.
-          </p>
-          <p>
-            Many founders reach a point where passion and momentum outpace structure and strategy. The decisions
-            become more complex, the stakes grow higher, and the gap between where you are and where you need to be
-            starts to feel wider.
-          </p>
-          <p>
-            That is precisely where CompassPoint Advisory comes in. We bridge the space between entrepreneurial vision
-            and institutional execution, bringing the rigour of enterprise strategy to the businesses that need it
-            most.
-          </p>
         </div>
 
         <h2 className="mt-16 font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--text-primary)] md:text-4xl">
@@ -67,6 +50,10 @@ export default function AboutPage() {
           </div>
         </div>
 
+        <div className="mt-16 mx-auto max-w-5xl">
+          <CredentialsPanel />
+        </div>
+
         <div className="mt-14 border-t border-[var(--metallic-gold)]/20 pt-14">
           <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--royal-plum)] md:text-4xl">
             Amelia Ghofrany
@@ -75,18 +62,10 @@ export default function AboutPage() {
             Founder and Managing Director
           </p>
           <p className="mt-6 max-w-2xl font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
-            20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian
-            SMEs grow with clarity and control.
+            20+ years across IBM, Fujitsu, DXC Technology, and Bupa - now focused exclusively on helping Australian SMEs
+            grow with clarity and control.
           </p>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-            <a
-              href={AMELIA_WEBSITE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
-            >
-              Learn more at ameliaghofrany.com.au
-            </a>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-4">
             <a
               href={AMELIA_LINKEDIN_URL}
               target="_blank"
@@ -95,6 +74,14 @@ export default function AboutPage() {
             >
               <LinkedInGlyph className="h-5 w-5 text-[var(--metallic-gold)]" />
               LinkedIn
+            </a>
+            <a
+              href={AMELIA_WEBSITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold text-[var(--royal-plum)] hover:text-[var(--metallic-gold)]"
+            >
+              ameliaghofrany.com.au
             </a>
           </div>
         </div>

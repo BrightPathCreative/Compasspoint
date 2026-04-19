@@ -6,7 +6,7 @@ import { ServicesIntroStrip } from "@/components/sections/services-overview/Serv
 import { ServicesOverviewBottomCta } from "@/components/sections/services-overview/ServicesOverviewBottomCta";
 import { ServicesOverviewHero } from "@/components/sections/services-overview/ServicesOverviewHero";
 import { WhyCompassPointSection } from "@/components/sections/WhyCompassPointSection";
-import { SERVICES } from "@/lib/services";
+import { getServicesOrdered } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Consulting Services for Australian SMEs - CompassPoint Advisory",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const ordered = [...SERVICES].sort((a, b) => a.order - b.order);
+  const ordered = getServicesOrdered();
 
   return (
     <SiteShell>

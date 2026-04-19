@@ -3,10 +3,12 @@
 import "@/lib/gsap-config";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { SERVICES } from "@/lib/services";
+import { getServicesOrdered } from "@/lib/services";
 import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import { NavbarLogo } from "./NavbarLogo";
 import { Button } from "./Button";
+
+const servicesNavOrdered = getServicesOrdered();
 
 const linksAfterServices = [
   { href: "/methodology", label: "Methodology" },
@@ -60,7 +62,7 @@ export function Navbar() {
                 role="presentation"
               >
                 <div className="rounded-md border border-[var(--metallic-gold)]/25 bg-[var(--plum-dark)]/95 py-2 shadow-2xl backdrop-blur-md">
-                  {SERVICES.map((s) => (
+                  {servicesNavOrdered.map((s) => (
                     <a
                       key={s.slug}
                       href={`/services/${s.slug}`}
@@ -166,7 +168,7 @@ export function Navbar() {
               {servicesExpanded ? (
                 <div className="space-y-0 pb-4 pl-3">
                   <div className="border-l-2 border-[var(--metallic-gold)]/35 pl-4">
-                    {SERVICES.map((s) => (
+                    {servicesNavOrdered.map((s) => (
                       <a
                         key={s.slug}
                         href={`/services/${s.slug}`}

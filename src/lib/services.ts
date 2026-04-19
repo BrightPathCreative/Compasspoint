@@ -143,6 +143,11 @@ export const SERVICES: readonly Service[] = [
   },
 ] as const;
 
+/** Same catalogue as `SERVICES`, sorted by `order` (nav dropdown, `/services` listing, sitemaps). */
+export function getServicesOrdered(): Service[] {
+  return [...SERVICES].sort((a, b) => a.order - b.order);
+}
+
 export function getServiceBySlug(slug: string): Service | undefined {
   return SERVICES.find((s) => s.slug === slug);
 }

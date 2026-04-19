@@ -40,6 +40,17 @@ export function CredentialsPanel() {
       <blockquote className="mt-8 border-l-[3px] border-[var(--metallic-gold)] pl-6 font-[family-name:var(--font-lato)] text-lg font-medium leading-snug text-[var(--royal-plum)]">
         Scaling a business shouldn&apos;t mean sacrificing control.
       </blockquote>
+      <div className="mt-6 space-y-4 font-[family-name:var(--font-lato)] text-base leading-[1.7] text-[var(--charcoal)] md:text-lg">
+        <p>
+          Many founders reach a point where passion and momentum outpace structure and strategy. The decisions become
+          more complex, the stakes grow higher, and the gap between where you are and where you need to be starts to
+          feel wider.
+        </p>
+        <p>
+          That is precisely where CompassPoint Advisory comes in. We bridge the space between entrepreneurial vision and
+          institutional execution, bringing the rigour of enterprise strategy to the businesses that need it most.
+        </p>
+      </div>
 
       <ul
         className="mt-10 flex list-none flex-wrap justify-center gap-x-6 gap-y-5 p-0 md:mt-12 md:gap-x-8 md:gap-y-6"

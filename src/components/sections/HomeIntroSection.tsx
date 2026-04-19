@@ -1,6 +1,7 @@
 import Link from "next/link";
 import GoldDivider from "@/components/GoldDivider";
 import ScrollReveal from "@/components/ScrollReveal";
+import { LINKEDIN_URL } from "@/lib/contact";
 
 /** Intro / value proposition - ivory background per site spec */
 export function HomeIntroSection() {
@@ -21,12 +22,22 @@ export function HomeIntroSection() {
             CompassPoint Advisory partners with Australian small and medium businesses and startups to unlock
             the strategy, structure, and systems that ambitious founders need - without the corporate price tag.
           </p>
-          <Link
-            href="/about"
-            className="mt-10 inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--metallic-gold)] underline-offset-4 transition-colors hover:text-[var(--royal-plum)] hover:underline"
-          >
-            Learn more about our approach <span aria-hidden>→</span>
-          </Link>
+          <div className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:flex-wrap sm:justify-center">
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--metallic-gold)] underline-offset-4 transition-colors hover:text-[var(--royal-plum)] hover:underline"
+            >
+              Learn more about our approach <span aria-hidden>→</span>
+            </Link>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-sm font-semibold uppercase tracking-wide text-[var(--metallic-gold)] underline-offset-4 transition-colors hover:text-[var(--royal-plum)] hover:underline"
+            >
+              Connect on LinkedIn <span aria-hidden>→</span>
+            </a>
+          </div>
         </ScrollReveal>
       </div>
     </section>
