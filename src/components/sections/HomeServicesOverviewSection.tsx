@@ -71,6 +71,7 @@ function HomeServiceTile({ service, priority }: { service: Service; priority: bo
             <p className="font-[family-name:var(--font-lato)] text-sm leading-relaxed text-white/88">{service.shortSummary}</p>
             <Link
               href={href}
+              scroll
               className="inline-flex w-full items-center justify-center rounded-sm bg-[var(--metallic-gold)] px-4 py-3 text-center font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-[0.12em] text-[var(--plum-dark)] transition-colors hover:bg-[color-mix(in_srgb,var(--metallic-gold)_88%,#fff)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               View service
