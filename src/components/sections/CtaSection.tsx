@@ -7,7 +7,17 @@ import { BOOK_DISCOVERY_PATH } from "@/lib/site";
 import "@/lib/gsap-config";
 import { Button } from "../global/Button";
 
-export function CtaSection() {
+type CtaSectionProps = {
+  heading?: string;
+  body?: string;
+  buttonLabel?: string;
+};
+
+export function CtaSection({
+  heading = "Ready to Grow Your Business with Confidence?",
+  body = "Whether you're navigating a growth inflection point, looking to sharpen your strategy, or exploring how AI can future-proof your operations - CompassPoint Advisory is your trusted partner.",
+  buttonLabel = "Book Your Free Discovery Call →",
+}: CtaSectionProps = {}) {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -59,16 +69,13 @@ export function CtaSection() {
       <div className="cta-content relative z-10 mx-auto w-full max-w-[min(100%,1920px)] px-8 text-center md:px-14 lg:px-20">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-bold text-[var(--metallic-gold)] md:text-5xl">
-            Ready to Grow Your Business with Confidence?
+            {heading}
           </h2>
           <p className="mt-6 font-[family-name:var(--font-lato)] text-lg leading-relaxed text-[color-mix(in_srgb,var(--soft-ivory)_94%,transparent)] md:text-xl">
-            Whether you&apos;re navigating a growth inflection point, looking to sharpen your strategy, or exploring
-            how AI can future-proof your operations - CompassPoint Advisory is your trusted partner.
+            {body}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4">
-            <Button href={BOOK_DISCOVERY_PATH}>
-              Book Your Free Discovery Call →
-            </Button>
+            <Button href={BOOK_DISCOVERY_PATH}>{buttonLabel}</Button>
             <p className="max-w-lg font-[family-name:var(--font-montserrat)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--soft-ivory)]/60">
               Confidential. No sales pressure. Just straight-talking strategic advice.
             </p>

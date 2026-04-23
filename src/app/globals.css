@@ -585,6 +585,63 @@ button.faq-accordion-question {
   max-width: 200px;
 }
 
+.article-body {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #2e2e2e;
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-weight: 700;
+  color: #5b184c;
+}
+
+.article-body p,
+.article-body ul,
+.article-body ol,
+.article-body blockquote {
+  margin-top: 1rem;
+}
+
+.article-body ul,
+.article-body ol {
+  padding-left: 1.4rem;
+}
+
+.article-body ul {
+  list-style: disc;
+}
+
+.article-body ol {
+  list-style: decimal;
+}
+
+.article-body li {
+  margin-top: 0.4rem;
+}
+
+.article-body strong {
+  font-weight: 700;
+}
+
+.article-body-link {
+  color: #d4af37;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.article-body-link:hover {
+  color: color-mix(in srgb, #d4af37 82%, #ffffff);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
