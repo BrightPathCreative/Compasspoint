@@ -4,17 +4,17 @@ const FORM_EMBED_BASE = "https://links.brightpathcreative.com.au";
 const FORM_ID = "THoD6WD69fNpPUCHkJHq";
 const IFRAME_ID = `inline-${FORM_ID}`;
 /** Matches GHL form embed `data-height` (px). */
-const FORM_HEIGHT_PX = 811;
+const FORM_HEIGHT_PX = 689;
 
 /** GoHighLevel inline form; redirect after submit is configured in GHL (e.g. /thank-you). */
 export function GhlContactFormEmbed() {
   return (
     <>
-      <div className="w-full overflow-hidden rounded-lg" style={{ minHeight: FORM_HEIGHT_PX }}>
+      <div className="w-full overflow-hidden rounded-lg" style={{ height: FORM_HEIGHT_PX }}>
         <iframe
           src={`${FORM_EMBED_BASE}/widget/form/${FORM_ID}`}
-          className="block w-full max-w-full border-0"
-          style={{ borderRadius: 8, width: "100%", height: FORM_HEIGHT_PX }}
+          className="block h-full w-full max-w-full border-0"
+          style={{ borderRadius: 8, width: "100%", height: "100%" }}
           id={IFRAME_ID}
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
@@ -23,11 +23,11 @@ export function GhlContactFormEmbed() {
           data-activation-value=""
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
-          data-form-name="CompassPoint Advisory Enquiry Form"
+          data-form-name="Compasspoint Advisory Enquiry Form"
           data-height={String(FORM_HEIGHT_PX)}
           data-layout-iframe-id={IFRAME_ID}
           data-form-id={FORM_ID}
-          title="CompassPoint Advisory Enquiry Form"
+          title="Compasspoint Advisory Enquiry Form"
         />
       </div>
       <Script src={`${FORM_EMBED_BASE}/js/form_embed.js`} strategy="afterInteractive" />
