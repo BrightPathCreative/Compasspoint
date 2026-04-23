@@ -5,7 +5,7 @@ const CREDENTIAL_LOGOS = [
   { src: "/credentials/ibm.png", alt: "IBM" },
   { src: "/credentials/fujitsu.png", alt: "Fujitsu" },
   { src: "/credentials/dxc.png", alt: "DXC Technology" },
-  { src: "/credentials/bupa.png", alt: "Bupa" },
+  { src: "/credentials/kiwibank.png", alt: "Kiwibank" },
   { src: "/credentials/telstra.png", alt: "Telstra" },
   { src: "/credentials/qantas.png", alt: "Qantas" },
   { src: "/credentials/commbank.png", alt: "Commonwealth Bank" },
@@ -15,7 +15,7 @@ const CREDENTIAL_LOGOS = [
   { src: "/credentials/ato.png", alt: "Australian Taxation Office" },
   { src: "/credentials/myer.png", alt: "Myer" },
   { src: "/credentials/jurlique.png", alt: "Jurlique" },
-  { src: "/credentials/ncver.png", alt: "NCVER" },
+  { src: "/credentials/veterans-affairs.png", alt: "Department of Veterans' Affairs" },
   { src: "/credentials/tas-networks.png", alt: "TasNetworks" },
   { src: "/credentials/defence.png", alt: "Australian Government Department of Defence" },
 ] as const;
