@@ -9,13 +9,13 @@ import { BOOK_DISCOVERY_PATH, SITE_URL } from "@/lib/site";
 import { formatArticleDate, getArticlesNewestFirst } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Insights — CompassPoint Advisory",
+  title: "Articles — CompassPoint Advisory",
   description:
     "Strategic insights for Australian SME leaders. Articles on growth strategy, AI transformation, leadership, operations, and culture — by CompassPoint Advisory.",
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",
-    title: "Insights — CompassPoint Advisory",
+    title: "Articles — CompassPoint Advisory",
     description:
       "Strategic insights for Australian SME leaders. Articles on growth strategy, AI transformation, leadership, operations, and culture — by CompassPoint Advisory.",
     url: "/blog",
@@ -34,7 +34,7 @@ export default async function BlogPage() {
   const collectionPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Insights — CompassPoint Advisory",
+    name: "Articles — CompassPoint Advisory",
     description: "Strategic insights for Australian SME leaders.",
     url: `${SITE_URL}/blog`,
     mainEntity: {
@@ -50,7 +50,7 @@ export default async function BlogPage() {
   return (
     <SiteShell>
       <JsonLd data={collectionPageJsonLd} />
-      <PageHero title="Insights" subtitle="Strategic thinking for growing Australian businesses" />
+      <PageHero title="Articles" subtitle="Strategic thinking for growing Australian businesses" />
 
       <section className="mx-auto w-full max-w-[min(100%,1920px)] px-8 pb-24 pt-16 md:px-14 md:pb-28 md:pt-20 lg:px-20">
         <div className="grid gap-6 md:grid-cols-2 md:gap-8">

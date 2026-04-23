@@ -10,7 +10,7 @@ const footerLinks = [
   ["/services", "Services"],
   ["/methodology", "Methodology"],
   ["/faq", "FAQ"],
-  ["/blog", "Insights"],
+  ["/blog", "Articles"],
   ["/contact", "Contact"],
   ["/privacy-policy", "Privacy Policy"],
   ["/terms", "Terms of Service"],
