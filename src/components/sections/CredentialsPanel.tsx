@@ -1,24 +1,31 @@
 import Image from "next/image";
 
+type CredentialLogo = {
+  src: string;
+  alt: string;
+  /** Normalizes optical size when the PNG has lots of empty canvas or an unusually heavy mark. */
+  imageClassName?: string;
+};
+
 /** Credential marks (`public/credentials/*.png`) — transparent PNGs aligned to the grid order below. */
-const CREDENTIAL_LOGOS = [
-  { src: "/credentials/ibm.png", alt: "IBM" },
+const CREDENTIAL_LOGOS: CredentialLogo[] = [
+  { src: "/credentials/ibm.png", alt: "IBM", imageClassName: "scale-[0.9]" },
   { src: "/credentials/fujitsu.png", alt: "Fujitsu" },
-  { src: "/credentials/dxc.png", alt: "DXC Technology" },
+  { src: "/credentials/dxc.png", alt: "DXC Technology", imageClassName: "scale-[1.08]" },
   { src: "/credentials/bupa.png", alt: "Bupa" },
-  { src: "/credentials/telstra.png", alt: "Telstra" },
-  { src: "/credentials/qantas.png", alt: "Qantas" },
+  { src: "/credentials/telstra.png", alt: "Telstra", imageClassName: "scale-[1.06]" },
+  { src: "/credentials/qantas.png", alt: "Qantas", imageClassName: "scale-[1.2]" },
   { src: "/credentials/commbank.png", alt: "Commonwealth Bank" },
-  { src: "/credentials/nab.png", alt: "NAB" },
-  { src: "/credentials/ge.png", alt: "GE" },
+  { src: "/credentials/nab.png", alt: "NAB", imageClassName: "scale-[1.05]" },
+  { src: "/credentials/ge.png", alt: "GE", imageClassName: "scale-[1.06]" },
   { src: "/credentials/australia-post.png", alt: "Australia Post" },
   { src: "/credentials/ato.png", alt: "Australian Taxation Office" },
-  { src: "/credentials/myer.png", alt: "Myer" },
-  { src: "/credentials/jurlique.png", alt: "Jurlique" },
+  { src: "/credentials/myer.png", alt: "Myer", imageClassName: "scale-[1.12]" },
+  { src: "/credentials/jurlique.png", alt: "Jurlique", imageClassName: "scale-[0.88]" },
   { src: "/credentials/ncver.png", alt: "NCVER" },
-  { src: "/credentials/tas-networks.png", alt: "TasNetworks" },
+  { src: "/credentials/tas-networks.png", alt: "TasNetworks", imageClassName: "scale-[1.06]" },
   { src: "/credentials/defence.png", alt: "Australian Government Department of Defence" },
-] as const;
+];
 
 export function CredentialsPanel() {
   return (
@@ -61,15 +68,17 @@ export function CredentialsPanel() {
         {CREDENTIAL_LOGOS.map((logo) => (
           <li
             key={logo.src}
-            className="flex min-h-[3rem] items-center justify-center sm:min-h-[3.5rem]"
+            className="flex min-h-[4rem] items-center justify-center overflow-visible sm:min-h-[4.25rem]"
           >
-            <div className="relative h-11 w-full max-w-[9.5rem] sm:h-12 sm:max-w-[10.5rem]">
+            <div className="relative h-14 w-full max-w-[11rem] sm:h-16 sm:max-w-[12.5rem]">
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 fill
-                sizes="(max-width: 640px) 45vw, 160px"
-                className="object-contain object-center"
+                sizes="(max-width: 640px) 45vw, 200px"
+                className={["object-contain object-center [transform-origin:center]", logo.imageClassName]
+                  .filter(Boolean)
+                  .join(" ")}
               />
             </div>
           </li>

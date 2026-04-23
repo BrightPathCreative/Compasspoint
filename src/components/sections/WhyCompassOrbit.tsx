@@ -62,16 +62,13 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
 
     const ctx = gsap.context(() => {
       if (reduced) {
-        gsap.set(cards, { opacity: 1, y: 0 });
+        gsap.set(cards, { opacity: 1, y: 0, clearProps: "transform" });
         return;
       }
 
-      gsap.from(cards, {
-        y: 28,
-        opacity: 0,
-        duration: 0.65,
-        stagger: 0.1,
-        ease: "power3.out",
+      // Explicit from→to + clear transform after the stagger so no card keeps a
+      // partial translate (which showed up as the second card sitting higher).
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
           start: "top 92%",
@@ -79,7 +76,21 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
           once: true,
           invalidateOnRefresh: true,
         },
+        onComplete: () => {
+          gsap.set(cards, { clearProps: "transform" });
+        },
       });
+      tl.fromTo(
+        cards,
+        { y: 28, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: "power3.out",
+        },
+      );
     }, container);
 
     return () => ctx.revert();
@@ -91,7 +102,7 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
 
   return (
     <div ref={containerRef} className="differentiators-grid w-full">
-      <div className="grid gap-6 sm:gap-7 lg:grid-cols-2 lg:gap-8">
+      <div className="grid items-start gap-6 sm:gap-7 lg:grid-cols-2 lg:gap-8">
         {row1.map((item, i) => (
           <DifferentiatorCard
             key={item.title}
@@ -102,7 +113,7 @@ export function WhyCompassOrbit({ items: serialized }: WhyCompassOrbitProps) {
           />
         ))}
       </div>
-      <div className="mt-6 grid gap-6 sm:gap-7 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-8">
+      <div className="mt-6 grid items-start gap-6 sm:gap-7 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-8">
         {row2.map((item, i) => (
           <DifferentiatorCard
             key={item.title}
