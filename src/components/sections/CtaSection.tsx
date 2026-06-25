@@ -22,6 +22,9 @@ export function CtaSection({
 
   useGSAP(
     () => {
+      const section = containerRef.current;
+      if (!section) return;
+
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         gsap.set(".cta-bg-fill", { scaleX: 1 });
         gsap.set(".cta-content", { opacity: 1, y: 0 });
@@ -30,7 +33,7 @@ export function CtaSection({
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: ".cta-section",
+          trigger: section,
           start: "top 92%",
           once: true,
           invalidateOnRefresh: true,

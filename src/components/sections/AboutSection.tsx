@@ -44,6 +44,9 @@ export function AboutSection() {
 
   useGSAP(
     () => {
+      const section = containerRef.current;
+      if (!section) return;
+
       gsap.from(".about-text", {
         x: -36,
         opacity: 0,
@@ -77,7 +80,7 @@ export function AboutSection() {
         yPercent: -5,
         ease: "none",
         scrollTrigger: {
-          trigger: ".about-section",
+          trigger: section,
           start: "top bottom",
           end: "bottom top",
           scrub: 1,

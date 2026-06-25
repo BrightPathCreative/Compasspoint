@@ -1,10 +1,10 @@
 import Script from "next/script";
 
 const FORM_EMBED_BASE = "https://links.brightpathcreative.com.au";
-const FORM_ID = "THoD6WD69fNpPUCHkJHq";
+const FORM_ID = "tzXubRShSEXaWhCYCdkQ";
 const IFRAME_ID = `inline-${FORM_ID}`;
 /** Matches GHL form embed `data-height` (px). */
-const FORM_HEIGHT_PX = 689;
+const FORM_HEIGHT_PX = 434;
 
 /** GoHighLevel inline form; redirect after submit is configured in GHL (e.g. /thank-you). */
 export function GhlContactFormEmbed() {

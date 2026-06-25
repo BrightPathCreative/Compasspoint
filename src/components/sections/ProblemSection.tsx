@@ -15,13 +15,16 @@ export function ProblemSection() {
 
   useGSAP(
     () => {
+      const section = containerRef.current;
+      if (!section) return;
+
       gsap.from(".problem-copy", {
         y: 48,
         opacity: 0,
         duration: 0.95,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".problem-section",
+          trigger: section,
           start: "top 92%",
           toggleActions: "play none none none",
           once: true,
@@ -57,7 +60,7 @@ export function ProblemSection() {
         yPercent: -4,
         ease: "none",
         scrollTrigger: {
-          trigger: ".problem-section",
+          trigger: section,
           start: "top bottom",
           end: "bottom top",
           scrub: 1.2,
