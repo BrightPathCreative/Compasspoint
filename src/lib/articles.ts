@@ -16,6 +16,24 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "why-culture-and-engagement-are-strategic-imperatives-for-local-governments",
+    title: "Why Culture and Engagement Are Strategic Imperatives for Local Governments",
+    date: "2026-06-25",
+    pageTitle:
+      "Why Culture and Engagement Are Strategic Imperatives for Local Governments — CompassPoint Advisory",
+    metaDescription:
+      "Gallup's 2026 ANZ Local Government Report shows councils face a structural squeeze — but the highest-return levers are culture, customer engagement, and employee engagement.",
+    topics: ["Local Government", "Culture Transformation", "Employee Engagement", "Leadership", "Customer Engagement"],
+    relatedServices: [
+      {
+        title: "Change Leadership and Culture Transformation",
+        href: "/services/change-leadership-culture-transformation",
+      },
+      { title: "Executive Coaching for Senior Leaders", href: "/services/executive-coaching" },
+    ],
+    author: "Amelia Ghofrany",
+  },
+  {
     slug: "why-most-australian-smes-hit-a-growth-ceiling",
     title: "Why Most Australian SMEs Hit a Growth Ceiling",
     date: "2025-10-20",
